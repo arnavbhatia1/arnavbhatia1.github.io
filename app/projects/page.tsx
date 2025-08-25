@@ -21,9 +21,9 @@ const Chip = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Card = ({ p }: { p: Project }) => (
-  <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm transition hover:shadow-md">
+  <div className="rounded-2xl border border-foreground/10 bg-background p-4 shadow-sm transition hover:shadow-md">
     <h3 className="text-lg font-semibold">{p.title}</h3>
-    <p className="mt-1 text-sm leading-relaxed text-black/70">{p.blurb}</p>
+    <p className="mt-1 text-sm leading-relaxed text-foreground/80">{p.blurb}</p>
     {p.impact && (
       <p className="mt-2 text-sm font-medium text-black/80">
         Impact: <span className="font-normal">{p.impact}</span>
@@ -66,7 +66,7 @@ export default function ProjectsPage() {
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
           <h1 className="text-3xl font-bold">Projects</h1>
-          <p className="mt-1 text-black/70">Impact-focused work and personal builds.</p>
+          <p className="mt-1 text-foreground/80">Impact-focused work and personal builds.</p>
         </div>
       </div>
 
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
             onClick={() => setTab(t.key)}
             className={[
               "rounded-full border px-4 py-2 text-sm transition",
-              tab === t.key ? "border-black/80 bg-black text-white" : "border-black/15 bg-white hover:bg-gray-50",
+              tab === t.key ? "border-black/80 bg-black text-white" : "border-foreground/10 bg-background hover:bg-gray-50",
             ].join(" ")}
             aria-pressed={tab === t.key}
             aria-controls={`panel-${t.key}`}

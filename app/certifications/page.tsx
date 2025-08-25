@@ -23,12 +23,12 @@ const Card = ({
   link?: string;
   note?: string;
 }) => (
-  <div className="rounded-2xl border border-black/10 bg-white p-4 shadow-sm">
+  <div className="rounded-2xl border border-foreground/10 bg-background p-4 shadow-sm">
     <div className="flex items-center justify-between gap-3">
       <h3 className="text-lg font-semibold">{title}</h3>
       {date && <span className="text-xs text-black/60">{date}</span>}
     </div>
-    <p className="mt-1 text-sm text-black/70">{issuer}</p>
+    <p className="mt-1 text-sm text-foreground/80">{issuer}</p>
     {note && <p className="mt-2 text-sm">{note}</p>}
     {link && (
       <a
@@ -49,7 +49,7 @@ export default function CertificationsPage() {
   return (
     <main className="mx-auto min-h-[80vh] w-full max-w-5xl px-5 py-10">
       <h1 className="mb-2 text-3xl font-bold">Certifications</h1>
-      <p className="mb-6 text-black/70">A quick snapshot of what’s done, in progress, and on deck.</p>
+      <p className="mb-6 text-foreground/80">A quick snapshot of what’s done, in progress, and on deck.</p>
 
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap items-center gap-2">
@@ -61,7 +61,7 @@ export default function CertificationsPage() {
               "rounded-full border px-4 py-2 text-sm transition",
               active === t.key
                 ? "border-black/80 bg-black text-white"
-                : "border-black/15 bg-white hover:bg-gray-50",
+                : "border-black/15 bg-background hover:bg-gray-50",
             ].join(" ")}
             aria-pressed={active === t.key}
             aria-controls={`panel-${t.key}`}
