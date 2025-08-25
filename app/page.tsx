@@ -1,3 +1,5 @@
+import Greetings from "./components/greetings";
+
 export const metadata = {
   title: "Arnav Bhatia",
   description:
@@ -19,11 +21,13 @@ export default function Home() {
   return (
     <main className="grid min-h-screen place-items-center px-6">
       <section className="max-w-3xl text-center">
-        <div className="mb-3 inline-block rounded-full bg-black/5 px-3 py-1 text-sm">
-          Full-Stack Engineering • Infrastructure • Machine Learning • AI Deployments
+        <div className="mb-2 text-4xl font-bold md:text-5xl leading-none">
+          <Greetings intervalMs={3000} className="min-w-[3ch]" />
         </div>
 
-        <h1 className="mb-2 text-4xl font-bold md:text-5xl">Hey, I’m Arnav.</h1>
+        <h1 className="mb-4 text-4xl font-bold md:text-5xl leading-none">
+          Welcome to My Page!
+        </h1>
 
         <p className="mx-auto mb-5 max-w-2xl text-lg leading-relaxed text-gray-700">
           Full-stack engineer focused on backend systems, APIs, and cloud-native platforms. I turn prototypes into
@@ -32,10 +36,9 @@ export default function Home() {
           lasting trust.
         </p>
 
-        <div className="mt-4 flex flex-wrap justify-center gap-3">
-          <Btn href="https://www.linkedin.com/in/arnav-bhatia/">LinkedIn</Btn>
-          <Btn href="https://github.com/arnavbahatia1">GitHub</Btn>
-          <Btn href="mailto:arnav.cal@gmail.com">Email</Btn>
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Btn href="/certifications">Certifications</Btn>
+          <Btn href="/projects">Projects</Btn>
           <Btn href="/resume.pdf">Resume</Btn>
         </div>
       </section>
