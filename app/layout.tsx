@@ -23,12 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Arnav Bhatia
             </Link>
             <div className="flex items-center gap-4 text-sm">
-              <Link href="/certifications" className="hover:underline">
-                Certifications
-              </Link>
-              <Link href="/projects" className="hover:underline">
-                Projects
-              </Link>
               <a
                 href="https://www.linkedin.com/in/arnav-bhatia/"
                 target="_blank"
