@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 LinkedIn
               </a>
               <a
-                href="https://github.com/arnavbahatia1"
+                href="https://github.com/arnavbhatia1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
