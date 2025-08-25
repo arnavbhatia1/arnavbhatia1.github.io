@@ -22,7 +22,7 @@ export default function Home() {
     <main className="grid min-h-screen place-items-center px-6">
       <section className="max-w-3xl text-center">
         <div className="mb-2 text-4xl font-bold md:text-5xl leading-none">
-          <Greetings intervalMs={3000} className="min-w-[3ch]" />
+          <Greetings intervalMs={1800} className="min-w-[3ch]" />
         </div>
 
         <h1 className="mb-4 text-4xl font-bold md:text-5xl leading-none">
