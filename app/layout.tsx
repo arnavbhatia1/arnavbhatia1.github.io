@@ -20,7 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="font-semibold">Arnav Bhatia</Link>
             <div className="flex items-center gap-4 text-sm">
               <a href="https://www.linkedin.com/in/arnav-bhatia/" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a>
-              <a href="https://github.com/arnavbahatia1" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
+              <a href="https://github.com/arnavbhatia1" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a>
               <a href="mailto:arnav.cal@gmail.com" className="hover:underline">Email</a>
             </div>
           </nav>
