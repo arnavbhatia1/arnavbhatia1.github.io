@@ -13,10 +13,20 @@ type Experience = {
 
 const experiences: Experience[] = [
   {
+    company: "MoZeus",
+    role: "Software Engineer",
+    location: "Atlanta, GA",
+    period: "September 2024 – Present",
+    achievements: [
+      "Building enterprise software solutions bridging technical and business requirements for diverse client needs.",
+      "Collaborating with cross-functional teams to deliver scalable, client-focused applications.",
+    ],
+  },
+  {
     company: "Blue Yonder",
     role: "Software Engineer",
     location: "Atlanta, GA",
-    period: "June 2024 – Present",
+    period: "June 2024 – September 2024",
     achievements: [
       "Architected and delivered back-for-frontend gateways that ingest 2,700+ microservice endpoints and auto-generates OpenAPI-driven dynamic UIs, improving enterprise client workflows and usability.",
       "Built a multi-environment ML model publishing pipeline across 8 environments, reducing deployment time by 60% while enforcing versioning, rollback, and traceability across teams.",
@@ -182,58 +192,35 @@ export default function ExperiencePage() {
         </div>
       ) : (
         <div className="space-y-8">
-          {/* Professional Journey */}
+          {/* Professional Journey & What Drives Me */}
           <section>
-            <h2 className="mb-4 text-2xl font-bold">My Professional Journey</h2>
+            <h2 className="mb-4 text-2xl font-bold">My Journey & What Drives Me</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                My journey in software engineering began at Boston University, where I combined computer science
-                with business administration to understand not just how to build systems, but why they matter.
-                As Varsity Squash Captain, I learned that winning isn't about individual skill—it's about
-                coordinating a team toward a shared goal, a lesson that has shaped my approach to engineering.
+                I've always been drawn to problems that sit at the intersection of technical complexity and business impact.
+                At Boston University, I deliberately combined computer science with business administration—not just to
+                understand how systems work, but to grasp why they matter and how they create value. That foundation has
+                shaped every role since.
               </p>
               <p>
-                During my internship at <strong>Lighter Than Air</strong>, I discovered the power of documentation
-                and traceability in mission-critical systems. Working on avionics certification taught me that
-                great engineering isn't just about writing code—it's about creating systems that others can
-                understand, maintain, and trust. This experience sparked my passion for developer experience
-                and platform engineering.
+                From documenting avionics systems at <strong>Lighter Than Air</strong> to building supply chain automation at{" "}
+                <strong>Manhattan Associates</strong>, I learned that the best engineering happens when you can translate
+                between technical teams and business stakeholders. At <strong>Blue Yonder</strong>, I built ML pipelines
+                and API gateways that didn't just work—they made entire teams more productive. Now at <strong>MoZeus</strong>,
+                I'm applying that same philosophy: building solutions that bridge technical depth with client needs.
               </p>
               <p>
-                At <strong>Manhattan Associates</strong>, I dove into supply chain automation and learned to
-                measure success in business metrics: 90% reduction in cache errors, 20% faster test cycles.
-                I realized that the best technical solutions are invisible to users—they just work, faster
-                and more reliably than before.
+                What I'm working toward is a role as a <strong>Solutions Engineer</strong>—somewhere I can leverage both my
+                technical expertise and my ability to communicate with non-technical stakeholders. I thrive when I'm the
+                bridge between product, engineering, and clients. I want to be the person who can demo a complex system to
+                a prospect, then turn around and architect the backend that makes it scale. That's where I see myself making
+                the biggest impact.
               </p>
               <p>
-                Today at <strong>Blue Yonder</strong>, I'm building the infrastructure that powers AI-driven
-                supply chain decisions. From API gateways serving 2,700+ endpoints to ML pipelines deploying
-                across 8 environments, I focus on systems that scale. But beyond the technical achievements,
-                I'm most proud of how these platforms enable other engineers and drive adoption across
-                enterprise clients.
-              </p>
-            </div>
-          </section>
-
-          {/* What Drives Me */}
-          <section>
-            <h2 className="mb-4 text-2xl font-bold">What Drives Me Professionally</h2>
-            <div className="space-y-4 text-foreground/80 leading-relaxed">
-              <p>
-                I'm driven by the intersection of <strong>engineering excellence and business impact</strong>.
-                The most satisfying moments in my career aren't just shipping features—they're seeing adoption
-                metrics climb, hearing customers say "this just works," and watching teams move faster because
-                of systems I built.
-              </p>
-              <p>
-                I believe in <strong>building platforms, not just products</strong>. Whether it's an API gateway
-                that auto-generates documentation or a CI/CD pipeline with built-in rollback capabilities,
-                I'm focused on creating foundations that empower entire teams to innovate faster.
-              </p>
-              <p>
-                I'm passionate about <strong>bridging technical and business teams</strong>. My business minor
-                wasn't an accident—I wanted to speak both languages. The best solutions come from understanding
-                not just what to build, but why it matters and how it drives ROI.
+                Beyond the day-to-day, I'm driven by the idea of contributing to the next major advancement—whether that's
+                in AI, infrastructure, finance, or something I haven't discovered yet. I'm not chasing a specific technology;
+                I'm chasing meaningful problems that require both technical rigor and the ability to see the bigger picture.
+                That's what gets me up in the morning.
               </p>
             </div>
           </section>
@@ -243,31 +230,31 @@ export default function ExperiencePage() {
             <h2 className="mb-4 text-2xl font-bold">My Approach to Engineering</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Measure Everything</h3>
+                <h3 className="mb-2 text-lg font-semibold">Metrics Over Intuition</h3>
                 <p className="text-sm text-foreground/80">
-                  From deployment time reductions to error rate improvements, I believe in quantifying impact.
-                  If we can't measure it, we can't improve it.
+                  I don't trust gut feelings when deployment times, error rates, and adoption curves tell the real story.
+                  Data drives decisions—everything else is noise.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Design for Failure</h3>
+                <h3 className="mb-2 text-lg font-semibold">Assume Things Break</h3>
                 <p className="text-sm text-foreground/80">
-                  Versioning, rollback mechanisms, and traceability aren't optional—they're the foundation
-                  of reliable systems that teams can trust.
+                  Rollbacks, versioning, and traceability aren't nice-to-haves. They're the difference between
+                  systems that survive production and ones that crater at 2 AM.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Developer Experience First</h3>
+                <h3 className="mb-2 text-lg font-semibold">Build for the Next Person</h3>
                 <p className="text-sm text-foreground/80">
-                  Great platforms are invisible. Auto-generated docs, clear error messages, and intuitive
-                  APIs make other engineers' lives easier.
+                  Self-documenting APIs, clear error messages, auto-generated docs—if another engineer can't
+                  understand it in 10 minutes, I've failed.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Iterate and Ship</h3>
+                <h3 className="mb-2 text-lg font-semibold">Ship, Learn, Iterate</h3>
                 <p className="text-sm text-foreground/80">
-                  Perfect is the enemy of shipped. I believe in MVPs, feedback loops, and continuous
-                  improvement over waiting for perfection.
+                  Waiting for perfection means you're not learning from real users. Get it out, gather feedback,
+                  and make it better. Repeat.
                 </p>
               </div>
             </div>
@@ -278,24 +265,23 @@ export default function ExperiencePage() {
             <h2 className="mb-4 text-2xl font-bold">Beyond the Code</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
-                Outside of work, I'm deeply involved with the <strong>Atlanta Humane Society</strong>, where
-                I've contributed 90+ hours optimizing TNR (Trap-Neuter-Return) tracking sheets and helping
-                facilitate 100+ successful adoptions. This volunteer work directly inspired my{" "}
-                <strong>CompanionMatcher</strong> project, applying semantic matching algorithms to connect
-                shelter dogs with families based on temperament and lifestyle fit.
+                I've volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
+                their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project—using
+                semantic matching to connect shelter dogs with families based on temperament and lifestyle. It's
+                one of the few side projects I've actually finished, because it solved a real problem I watched
+                play out every weekend.
               </p>
               <p>
-                I maintain an active lifestyle through <strong>competitive squash</strong>, league basketball,
-                and coaching calisthenics. The discipline and strategy from athletics translate directly to
-                engineering—both require mental toughness, pattern recognition, and continuous improvement.
+                I spent years as a competitive athlete—squash, mainly—and that background still shapes how I think.
+                Athletes train with a chip on their shoulder, always assuming they're the underdog with something to
+                prove. That mentality stuck with me. I don't coast. I don't assume I've figured it out. Every project,
+                every role, there's this underlying drive to prove I belong here—and then keep proving it.
               </p>
               <p>
-                I'm fascinated by <strong>space exploration</strong> and the engineering challenges of
-                building systems for extreme environments. I spend time exploring{" "}
-                <strong>AI agentic systems</strong>, prompt engineering, and the intersection of ML with
-                practical business applications. I also follow <strong>quantitative finance</strong> and
-                algorithmic trading, where I see parallels between optimizing trading strategies and
-                optimizing cloud infrastructure.
+                Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>—the
+                intersection of math, systems design, and market dynamics. I'm also drawn to <strong>space exploration</strong>
+                and the engineering challenges of building systems that operate in extreme, unforgiving environments. Both
+                fields demand precision, resilience, and the ability to think in probabilities rather than certainties.
               </p>
             </div>
           </section>

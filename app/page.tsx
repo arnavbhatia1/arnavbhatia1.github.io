@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Greetings from "./components/greetings";
-import Testimonials from "./components/Testimonials";
 import OpenSource from "./components/OpenSource";
 
 export const metadata = {
@@ -37,49 +36,25 @@ export default function Home() {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,transparent_0%,var(--background)_100%)]" />
 
         <div className="max-w-4xl text-center">
-          <div className="mb-4 text-5xl font-bold md:text-6xl leading-tight">
+          <div className="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl leading-tight">
             <Greetings intervalMs={1800} className="min-w-[3ch]" />
           </div>
 
-          <h1 className="mb-6 text-5xl font-bold md:text-6xl lg:text-7xl leading-tight bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
-            I Build Scalable Systems
-          </h1>
-
-          <p className="mx-auto mb-8 max-w-2xl text-lg md:text-xl leading-relaxed text-foreground/70">
+          <p className="mx-auto mb-10 max-w-2xl text-lg md:text-xl leading-relaxed text-foreground/70">
             Full-stack engineer focused on backend systems, APIs, and cloud-native platforms. I turn prototypes into
             reliable products with CI/CD and data flows that improve developer experience and ROI.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
-            <Btn href="/contact" primary>
-              Let's Work Together
-            </Btn>
             <Btn href="/experience">
-              View My Experience
+              Experience
             </Btn>
             <Btn href="/projects">
-              See Projects
+              Projects
             </Btn>
-          </div>
-
-          {/* Key Stats */}
-          <div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
-            <div className="rounded-xl bg-background/50 backdrop-blur-sm border border-foreground/10 p-4">
-              <p className="text-3xl font-bold">60%</p>
-              <p className="mt-1 text-sm text-foreground/60">Faster Deployments</p>
-            </div>
-            <div className="rounded-xl bg-background/50 backdrop-blur-sm border border-foreground/10 p-4">
-              <p className="text-3xl font-bold">2,700+</p>
-              <p className="mt-1 text-sm text-foreground/60">API Endpoints</p>
-            </div>
-            <div className="rounded-xl bg-background/50 backdrop-blur-sm border border-foreground/10 p-4">
-              <p className="text-3xl font-bold">8</p>
-              <p className="mt-1 text-sm text-foreground/60">Environments</p>
-            </div>
-            <div className="rounded-xl bg-background/50 backdrop-blur-sm border border-foreground/10 p-4">
-              <p className="text-3xl font-bold">90%</p>
-              <p className="mt-1 text-sm text-foreground/60">Error Reduction</p>
-            </div>
+            <Btn href="/contact" primary>
+              Contact
+            </Btn>
           </div>
         </div>
 
@@ -151,9 +126,6 @@ export default function Home() {
 
       {/* Open Source Section */}
       <OpenSource />
-
-      {/* Testimonials Section */}
-      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-br from-foreground/5 to-foreground/10">

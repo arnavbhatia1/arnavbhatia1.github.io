@@ -18,14 +18,6 @@ const repositories: Repository[] = [
     topics: ["ai", "semantic-search", "react", "azure", "openai"],
   },
   {
-    name: "arnavbhatia1.github.io",
-    description: "Personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features project showcases, work experience, and blog.",
-    language: "TypeScript",
-    stars: 1,
-    url: "https://github.com/arnavbhatia1/arnavbhatia1.github.io",
-    topics: ["portfolio", "nextjs", "typescript", "tailwind"],
-  },
-  {
     name: "TetrisBot",
     description: "AI agent that plays Tetris using reinforcement learning. Implemented with Python and TensorFlow.",
     language: "Jupyter Notebook",
@@ -56,7 +48,7 @@ export default function OpenSource() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {repositories.map((repo, index) => (
             <a
               key={index}
@@ -161,11 +153,11 @@ export default function OpenSource() {
         {/* Stats Section */}
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
-            <p className="text-3xl font-bold">3</p>
+            <p className="text-3xl font-bold">2</p>
             <p className="mt-1 text-sm text-foreground/60">Public Repositories</p>
           </div>
           <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
-            <p className="text-3xl font-bold">3</p>
+            <p className="text-3xl font-bold">2</p>
             <p className="mt-1 text-sm text-foreground/60">Total Stars</p>
           </div>
           <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
