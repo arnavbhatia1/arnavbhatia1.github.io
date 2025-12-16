@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Arnav Bhatia - Personal Portfolio
 
-## Getting Started
+My personal website showcasing my work as a software engineer, built with modern web technologies.
 
-First, run the development server:
+**Live Site:** [arnavbhatia1.github.io](https://arnavbhatia1.github.io)
+
+## About This Project
+
+This is my digital space where I share my professional journey, technical projects, and approach to engineering. I built this site to serve as both a portfolio and a window into how I think about building systems that bridge technical complexity with business impact.
+
+### What's Inside
+
+- **Experience Timeline**: My professional journey from avionics systems to supply chain automation to enterprise software solutions
+- **Projects Showcase**: Work and personal projects, including ML pipelines, API gateways, and AI-powered applications
+- **Open Source Contributions**: Public repositories and side projects I'm actively working on
+- **Contact Form**: Easy ways to reach me for opportunities, collaborations, or just to chat about engineering
+
+### Built With
+
+- **[Next.js 15](https://nextjs.org)** - React framework with App Router
+- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
+- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first styling
+- **[Geist Font](https://vercel.com/font)** - Modern typography
+
+## Local Development
+
+Clone the repository and run the development server:
 
 ```bash
+# Install dependencies
+npm install
+
+# Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the site locally.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/
+├── components/          # Reusable React components
+│   ├── Footer.tsx      # Site footer with navigation and social links
+│   ├── OpenSource.tsx  # GitHub projects showcase
+│   └── greetings.tsx   # Animated greeting component
+├── contact/            # Contact page with form
+├── experience/         # Professional experience and journey
+├── projects/           # Work and personal projects
+├── certifications/     # Certifications and ongoing education
+├── layout.tsx          # Root layout with navigation
+└── page.tsx           # Homepage
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This site is deployed via GitHub Pages:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Build for production
+npm run build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Output goes to /out directory
+# Commit and push to main branch to deploy
+```
 
-## Deploy on Vercel
+## Design Philosophy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The site is built with these principles:
+- **Performance First**: Static generation, optimized fonts, minimal JavaScript
+- **Accessibility**: Semantic HTML, keyboard navigation, focus states
+- **Responsive Design**: Mobile-first approach that scales to desktop
+- **SEO Optimized**: Meta tags, Open Graph, structured data
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Contact
+
+- **Email**: [arnav.cal@gmail.com](mailto:arnav.cal@gmail.com)
+- **LinkedIn**: [linkedin.com/in/arnav-bhatia](https://www.linkedin.com/in/arnav-bhatia/)
+- **GitHub**: [github.com/arnavbhatia1](https://github.com/arnavbhatia1)
+
+---
+
+Built by Arnav Bhatia | Software Engineer focused on backend systems, ML pipelines, and cloud-native platforms
