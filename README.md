@@ -15,13 +15,6 @@ This is my digital space where I share my professional journey, technical projec
 - **Open Source Contributions**: Public repositories and side projects I'm actively working on
 - **Contact Form**: Easy ways to reach me for opportunities, collaborations, or just to chat about engineering
 
-### Built With
-
-- **[Next.js 15](https://nextjs.org)** - React framework with App Router
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
-- **[Tailwind CSS v4](https://tailwindcss.com/)** - Utility-first styling
-- **[Geist Font](https://vercel.com/font)** - Modern typography
-
 ## Local Development
 
 Clone the repository and run the development server:
@@ -54,15 +47,7 @@ app/
 
 ## Deployment
 
-This site is deployed via GitHub Pages:
-
-```bash
-# Build for production
-npm run build
-
-# Output goes to /out directory
-# Commit and push to main branch to deploy
-```
+This site is deployed via GitHub Pages.
 
 ## Design Philosophy
 
@@ -80,4 +65,4 @@ The site is built with these principles:
 
 ---
 
-Built by Arnav Bhatia | Software Engineer focused on backend systems, ML pipelines, and cloud-native platforms
+Built by Arnav Bhatia

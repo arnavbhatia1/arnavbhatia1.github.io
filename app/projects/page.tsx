@@ -46,6 +46,7 @@ const Card = ({ p }: { p: Project }) => (
 );
 
 const WORK: Project[] = [
+  { title: "Full-Stack Architecture Containerization", blurb: "Spearheaded complete containerization of end-to-end solutions from AI/ML processing layers to API systems—establishing Docker and Kubernetes infrastructure for all services.", impact: "Significant OpEx reduction; reproducible deployments; scalable foundation for future growth.", tech: ["Docker","Kubernetes","Azure","CI/CD","Infrastructure"] },
   { title: "ML Model Publishing Pipeline", blurb: "GitHub Actions → JFrog → Azure across 8 environments with gates & rollbacks.", impact: "≈60% faster releases; standardized deployments.", tech: ["GitHub Actions","JFrog","Azure","Python","CI/CD"] },
   { title: "Back-for-Frontend Gateway", blurb: "Unified ~2,700+ endpoints into composable routes with auto OpenAPI docs.", impact: "Faster onboarding; unlocked bundlable SKUs.", tech: ["Node.js","TypeScript","OpenAPI","Gateway"] },
   { title: "CI/CD Security & Coverage", blurb: "SAST/DAST/licensing and coverage gates with reporting dashboards.", impact: "Higher coverage; blocked regressions pre-merge.", tech: ["Security Scans","Coverage","Reporting"] },
@@ -53,8 +54,9 @@ const WORK: Project[] = [
 ];
 
 const PERSONAL: Project[] = [
-  { title: "Companion Matcher - MVP", blurb: "Matching app for dog shelters & grieving owners; fit by temperament & lifestyle.", impact: "Better matches, smoother adoptions.", tech: ["Next.js","TypeScript","Tailwind","Vector Search (planned)"] },
-  { title: "DevOps Assistant (Semantic Kernel) - Upcoming ", blurb: "Agent drafts CI/CD, IaC, and policy-as-code using Azure OpenAI + SK.", impact: "Faster platform work; standardized patterns.", tech: ["Azure OpenAI","Semantic Kernel","TypeScript/.NET","GitHub Actions"] },
+  { title: "TetrisBot – ML Reinforcement Learning Agent", blurb: "Built a neural network agent to play Tetris, evaluating board states and automating training and GUI evaluation pipelines.", impact: "Autonomous gameplay; optimized decision-making.", tech: ["Python","TensorFlow","Reinforcement Learning","Neural Networks"], code: "https://github.com/arnavbhatia1/TetrisBot" },
+  { title: "Shelter Match", blurb: "Matching app for dog shelters & adopters; fit by temperament & lifestyle.", impact: "Better matches, smoother adoptions.", tech: ["Next.js","TypeScript","Tailwind","Vector Search (planned)"], code: "https://github.com/arnavbhatia1/CompanionMatcher" },
+  { title: "Prediction Market Analytics – Upcoming", blurb: "Quantitative analysis platform using statistical models and ML to surface insights and pricing inefficiencies in prediction markets.", impact: "Data-driven decision support.", tech: ["Python","ML/Statistics","Data Pipelines","Market APIs"] },
 ];
 
 export default function ProjectsPage() {

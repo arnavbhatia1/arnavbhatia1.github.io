@@ -14,71 +14,83 @@ type Experience = {
 const experiences: Experience[] = [
   {
     company: "MoZeus",
-    role: "Software Engineer",
+    role: "Product Engineer",
     location: "Atlanta, GA",
-    period: "September 2024 – Present",
+    period: "September 2024 - Present",
     achievements: [
-      "Building enterprise software solutions bridging technical and business requirements for diverse client needs.",
-      "Collaborating with cross-functional teams to deliver scalable, client-focused applications.",
+      "Own end-to-end delivery for high-profile enterprise clients, from joining discovery calls and scoping requirements through production deployment and ongoing iteration.",                                                                      
+      "Participate in client meetings to understand business problems firsthand, translating requirements into technical solutions that align with platform architecture.",                                                                           
+      "Containerized the entire MoZeus architecture stack using Docker and Kubernetes, reducing operational costs and enabling rapid, reproducible deployments across client environments.",
+      "Built and maintain data-intensive pipelines handling large-scale datasets—data filtering, parsing, transformation, and validation—directly tied to client deliverables and revenue.",
+      "Act as a technical resource for client engagements, presenting solutions and fielding technical questions alongside sales and customer success teams.",                                                                                        
+      "Own the data layer of MoZeus's architecture, designing scalable ingestion and processing systems that power client-facing products."
     ],
   },
   {
     company: "Blue Yonder",
     role: "Software Engineer",
     location: "Atlanta, GA",
-    period: "June 2024 – September 2024",
+    period: "March 2024 - September 2024",
     achievements: [
-      "Architected and delivered back-for-frontend gateways that ingest 2,700+ microservice endpoints and auto-generates OpenAPI-driven dynamic UIs, improving enterprise client workflows and usability.",
-      "Built a multi-environment ML model publishing pipeline across 8 environments, reducing deployment time by 60% while enforcing versioning, rollback, and traceability across teams.",
-      "Redesigned frontend flows by identifying UX friction points and building meta-link driven pages, enabling faster access to APIs and smoother adoption for customers.",
-      "Implemented backend scheduling services to automate ML retraining and regression tests to reduce release defects and increase deployment velocity.",
+      "Full-stack owner of backend-for-frontend gateways serving 2,700+ microservice endpoints—designed UIs, architected backend services, and shipped features that enterprise clients interacted with daily.",
+      "Partnered with enterprise clients and customer success teams to surface pain points, translating feedback into product improvements that drove platform adoption and reduced churn.",
+      "Built dynamic, OpenAPI-driven interfaces that simplified API discovery for customers, cutting onboarding time and enabling faster time-to-value for new accounts.",
+      "Architected CI/CD pipelines for ML model publishing across 8 environments, reducing deployment time by 60% while enforcing versioning, rollback, and traceability.",
+      "Designed backend scheduling services and automated testing infrastructure, increasing deployment velocity and reducing release defects across Blue Yonder's supply chain suite.",
     ],
   },
   {
     company: "Manhattan Associates",
-    role: "R&D Software Engineer Intern",
+    role: "Research Engineer Intern",
     location: "Atlanta, GA",
-    period: "May 2023 – August 2023",
+    period: "May 2023 - August 2023",
     achievements: [
-      "Built REST microservices and dashboards automating allocation across 200+ fulfillment nodes, improving reliability and supply chain execution.",
-      "Refactored cache-mapping logic, reducing mismatch errors by 90% and boosting order throughput across PSR lines.",
-      "Created Python Jenkins plugins for dynamic ML dataset filtering, cutting test cycle times by 20%.",
+      "Researched and prototyped machine learning models for demand forecasting and inventory optimization, presenting findings to R&D leadership and influencing product roadmap decisions.",
+      "Designed RESTful microservices following decoupled architecture patterns, enabling modular integration across 200+ fulfillment nodes in Manhattan's enterprise WMS platform.",
+      "Built dashboards and automation tooling used by internal teams and demoed to prospective clients, showcasing supply chain execution capabilities.",
+      "Created Python Jenkins plugins for ML dataset filtering and preprocessing, accelerating model training pipelines and cutting test cycle times by 20%.",
     ],
   },
   {
     company: "Lighter Than Air",
     role: "Technical Project Engineer Manager Intern",
     location: "Sunnyvale, CA",
-    period: "June 2022 – September 2022",
+    period: "June 2022 - September 2022",
     achievements: [
-      "Unified 1,200+ avionics artifacts from GitHub, JIRA, and Confluence into a traceability matrix to accelerate FAA reviews.",
-      "Coordinated cross-functional syncs across embedded hardware, flight software, and test teams, unblocking critical path items and keeping certification milestones on track.",
-      "Authored self-documenting API references and SEO-optimized pages for 24 avionics modules, doubling internal discovery rates and cutting onboarding time for new engineers.",
+      "Unified 1,200+ avionics artifacts from GitHub, JIRA, and Confluence into a traceability matrix, presenting progress to leadership and accelerating FAA certification reviews.",
+      "Ran cross-functional syncs across embedded hardware, flight software, and test teams—facilitating communication between technical and non-technical stakeholders to unblock critical path items.",
+      "Authored self-documenting API references and technical documentation for 24 avionics modules, improving internal discovery and reducing onboarding time for new engineers.",
     ],
   },
 ];
 
-const education = {
-  school: "Boston University",
-  degree: "B.A. – Computer Science",
-  minor: "Minor – Business Administration and Management",
-  location: "Boston, MA",
-  period: "August 2020 – May 2024",
-  societies: [
-    "Varsity Squash Captain",
-    "IM Basketball",
-    "BizTech Club",
-    "Stock Trading Club",
-    "Cybersecurity Club",
-  ],
-};
+const education = [
+  {
+    school: "Georgia Institute of Technology",
+    degree: "M.S. - Computer Science",
+    specialization: "Specialization - AI/ML",
+    location: "Atlanta, GA",
+    period: "Fall 2026 (Incoming)",
+  },
+  {
+    school: "Boston University",
+    degree: "B.A. - Computer Science",
+    minor: "Minor - Business Administration and Management",
+    location: "Boston, MA",
+    period: "August 2020 - May 2024",
+    societies: [
+      "Varsity Squash Captain",
+      "IM Basketball",
+      "BizTech Club",
+      "Stock Trading Club",
+      "Cybersecurity Club",
+    ],
+  },
+];
 
 const TimelineItem = ({ exp }: { exp: Experience }) => (
   <div className="relative pl-8 pb-12 last:pb-0">
-    {/* Timeline line */}
     <div className="absolute left-[11px] top-[8px] bottom-0 w-[2px] bg-gradient-to-b from-foreground/20 to-transparent last:hidden" />
-
-    {/* Timeline dot */}
     <div className="absolute left-0 top-[4px] h-6 w-6 rounded-full border-2 border-foreground bg-background flex items-center justify-center">
       <div className="h-2 w-2 rounded-full bg-foreground" />
     </div>
@@ -116,7 +128,7 @@ export default function ExperiencePage() {
       <div className="mb-8">
         <h1 className="mb-3 text-4xl font-bold">Professional Experience</h1>
         <p className="max-w-3xl text-lg leading-relaxed text-foreground/80">
-          A journey through impactful engineering roles building scalable systems, ML pipelines, and cloud-native platforms.
+          Full-stack product engineer with a track record of shipping client-facing solutions, bridging technical depth with business outcomes.
         </p>
       </div>
 
@@ -161,32 +173,39 @@ export default function ExperiencePage() {
           {/* Education */}
           <section>
             <h2 className="mb-6 text-2xl font-bold">Education</h2>
-            <div className="rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm">
-              <div className="mb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                <div>
-                  <h3 className="text-xl font-bold">{education.school}</h3>
-                  <p className="text-lg text-foreground/90">{education.degree}</p>
-                  <p className="text-foreground/70">{education.minor}</p>
-                </div>
-                <div className="text-sm text-foreground/60 sm:text-right">
-                  <p>{education.period}</p>
-                  <p>{education.location}</p>
-                </div>
-              </div>
+            <div className="space-y-4">
+              {education.map((edu, index) => (
+                <div key={index} className="rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm">
+                  <div className="mb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                    <div>
+                      <h3 className="text-xl font-bold">{edu.school}</h3>
+                      <p className="text-lg text-foreground/90">{edu.degree}</p>
+                      {edu.specialization && <p className="text-foreground/70">{edu.specialization}</p>}
+                      {edu.minor && <p className="text-foreground/70">{edu.minor}</p>}
+                    </div>
+                    <div className="text-sm text-foreground/60 sm:text-right">
+                      <p>{edu.period}</p>
+                      <p>{edu.location}</p>
+                    </div>
+                  </div>
 
-              <div className="mt-4">
-                <p className="mb-2 text-sm font-semibold text-foreground/90">Societies & Activities:</p>
-                <div className="flex flex-wrap gap-2">
-                  {education.societies.map((society, i) => (
-                    <span
-                      key={i}
-                      className="inline-block rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium"
-                    >
-                      {society}
-                    </span>
-                  ))}
+                  {edu.societies && (
+                    <div className="mt-4">
+                      <p className="mb-2 text-sm font-semibold text-foreground/90">Societies & Activities:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {edu.societies.map((society, i) => (
+                          <span
+                            key={i}
+                            className="inline-block rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium"
+                          >
+                            {society}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
           </section>
         </div>
@@ -198,63 +217,62 @@ export default function ExperiencePage() {
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
                 I've always been drawn to problems that sit at the intersection of technical complexity and business impact.
-                At Boston University, I deliberately combined computer science with business administration—not just to
-                understand how systems work, but to grasp why they matter and how they create value. That foundation has
-                shaped every role since.
+                At Boston University, I combined computer science with business administration to understand how systems work
+                and to grasp how they create value together. That foundation has shaped my thought process in every role,
+                and it's why I'm naturally drawn to client-facing technical roles.
               </p>
               <p>
-                From documenting avionics systems at <strong>Lighter Than Air</strong> to building supply chain automation at{" "}
-                <strong>Manhattan Associates</strong>, I learned that the best engineering happens when you can translate
-                between technical teams and business stakeholders. At <strong>Blue Yonder</strong>, I built ML pipelines
-                and API gateways that didn't just work—they made entire teams more productive. Now at <strong>MoZeus</strong>,
-                I'm applying that same philosophy: building solutions that bridge technical depth with client needs.
+                From coordinating cross-functional teams at <strong>Lighter Than Air</strong> to building enterprise platforms at{" "}
+                <strong>Manhattan Associates</strong> and <strong>Blue Yonder</strong>, I've consistently operated at the boundary
+                between engineering and business. Now at <strong>MoZeus</strong>, I work as a product engineer with significant
+                client exposure—joining discovery calls, scoping requirements, and shipping solutions that directly impact revenue
+                and reduce operational expense.
               </p>
               <p>
-                What I'm working toward is a role as a <strong>Solutions Engineer</strong>—somewhere I can leverage both my
-                technical expertise and my ability to communicate with non-technical stakeholders. I thrive when I'm the
-                bridge between product, engineering, and clients. I want to be the person who can demo a complex system to
-                a prospect, then turn around and architect the backend that makes it scale. That's where I see myself making
-                the biggest impact.
+                I'm working towards being a <strong>Solutions Engineer</strong>, <strong>Forward Deployed Engineer</strong>,
+                or <strong>Sales Engineer</strong>. I believe I can leverage my full-stack technical depth alongside my ability to
+                communicate with stakeholders, run client engagements, and close deals through technical expertise. I like to be the
+                bridge between product, engineering, and customers. I want to be the person who can demo a complex system,
+                scope the technical requirements, architect the solution, and build it. That's where I make the biggest impact.
               </p>
               <p>
-                Beyond the day-to-day, I'm driven by the idea of contributing to the next major advancement—whether that's
-                in AI, infrastructure, finance, or something I haven't discovered yet. I'm not chasing a specific technology;
-                I'm chasing meaningful problems that require both technical rigor and the ability to see the bigger picture.
-                That's what gets me up in the morning.
+                Beyond the day-to-day, I'm driven by the idea of contributing to the next major advancement, whether that's
+                in AI, infrastructure, finance, or something not discovered yet. Rather than chasing a specific stack, I am
+                drawn to meaningful problems that require both technical rigor and the ability to see the bigger picture.
               </p>
             </div>
           </section>
 
           {/* Engineering Approach */}
           <section>
-            <h2 className="mb-4 text-2xl font-bold">My Approach to Engineering</h2>
+            <h2 className="mb-4 text-2xl font-bold">How I Work With Clients</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Metrics Over Intuition</h3>
+                <h3 className="mb-2 text-lg font-semibold">Understand Before Building</h3>
                 <p className="text-sm text-foreground/80">
-                  I don't trust gut feelings when deployment times, error rates, and adoption curves tell the real story.
-                  Data drives decisions—everything else is noise.
+                  I dig into the architecture and client feedback before writing code. The best technical solution is useless if it
+                  doesn't solve what the client actually needs.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Assume Things Break</h3>
+                <h3 className="mb-2 text-lg font-semibold">Communicate Constantly</h3>
                 <p className="text-sm text-foreground/80">
-                  Rollbacks, versioning, and traceability aren't nice-to-haves. They're the difference between
-                  systems that survive production and ones that crater at 2 AM.
+                  Clients don't want surprises. I keep stakeholders in the loop, set realistic expectations, and
+                  flag blockers early—trust is built through transparency.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Build for the Next Person</h3>
+                <h3 className="mb-2 text-lg font-semibold">Demo Early, Iterate Fast</h3>
                 <p className="text-sm text-foreground/80">
-                  Self-documenting APIs, clear error messages, auto-generated docs—if another engineer can't
-                  understand it in 10 minutes, I've failed.
+                  I ship working prototypes quickly and refine based on feedback. Real user input beats assumptions
+                  every time—get it in front of clients and learn.
                 </p>
               </div>
               <div className="rounded-xl border border-foreground/10 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Ship, Learn, Iterate</h3>
+                <h3 className="mb-2 text-lg font-semibold">Own It End-to-End</h3>
                 <p className="text-sm text-foreground/80">
-                  Waiting for perfection means you're not learning from real users. Get it out, gather feedback,
-                  and make it better. Repeat.
+                  From scoping to deployment to support, I take full ownership. Clients have one point of contact
+                  who can answer technical and business questions alike.
                 </p>
               </div>
             </div>
@@ -266,7 +284,7 @@ export default function ExperiencePage() {
             <div className="space-y-4 text-foreground/80 leading-relaxed">
               <p>
                 I've volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
-                their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project—using
+                their adoption processes. That work inspired my <strong>Shelter Match</strong> project—using
                 semantic matching to connect shelter dogs with families based on temperament and lifestyle. It's
                 one of the few side projects I've actually finished, because it solved a real problem I watched
                 play out every weekend.
@@ -274,12 +292,12 @@ export default function ExperiencePage() {
               <p>
                 I spent years as a competitive athlete—squash, mainly—and that background still shapes how I think.
                 Athletes train with a chip on their shoulder, always assuming they're the underdog with something to
-                prove. That mentality stuck with me. I don't coast. I don't assume I've figured it out. Every project,
-                every role, there's this underlying drive to prove I belong here—and then keep proving it.
+                prove. That mentality stuck with me. I don't coast. I don't assume I've figured it out. Every project
+                and role has an underlying drive to prove my aptitude.
               </p>
               <p>
-                Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>—the
-                intersection of math, systems design, and market dynamics. I'm also drawn to <strong>space exploration</strong>
+                Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>, the
+                intersection of math, systems design, and market dynamics. I'm drawn to <strong>space exploration</strong>
                 and the engineering challenges of building systems that operate in extreme, unforgiving environments. Both
                 fields demand precision, resilience, and the ability to think in probabilities rather than certainties.
               </p>
