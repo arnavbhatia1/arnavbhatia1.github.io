@@ -2,6 +2,7 @@ import Link from "next/link";
 import Greetings from "./components/Greetings";
 import TypeWriter from "./components/TypeWriter";
 import OpenSource from "./components/OpenSource";
+import MetricsSection from "./components/MetricsSection";
 
 export const metadata = {
   title: "Arnav Bhatia | Software Engineer",
@@ -82,50 +83,156 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Impact Metrics - Animated */}
+      <MetricsSection />
+
       {/* Skills Section */}
       <section className="py-16 px-6">
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
-            <h2 className="mb-3 text-3xl font-bold">Technical Expertise</h2>
-            <p className="text-foreground/70">Technologies and tools I work with daily</p>
+            <h2 className="mb-3 text-3xl font-bold">Technical Stack</h2>
+            <p className="text-foreground/70">Production-tested technologies</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10">
+            <div className="group rounded-2xl border border-foreground/10 bg-background p-6 transition hover:border-blue-500/30 hover:shadow-lg">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 transition group-hover:scale-110">
                 <svg className="h-6 w-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                 </svg>
               </div>
               <h3 className="mb-2 text-lg font-semibold">Cloud & Infrastructure</h3>
               <p className="text-sm text-foreground/70">
-                Azure, AWS, Docker, Kubernetes, Terraform, CI/CD Automation
+                Azure, AWS, Docker, Kubernetes, Terraform, Jenkins, CI/CD Pipelines
               </p>
             </div>
 
-            <div className="rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10">
+            <div className="group rounded-2xl border border-foreground/10 bg-background p-6 transition hover:border-green-500/30 hover:shadow-lg">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-green-500/10 transition group-hover:scale-110">
                 <svg className="h-6 w-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                 </svg>
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Backend Development</h3>
+              <h3 className="mb-2 text-lg font-semibold">Backend & APIs</h3>
               <p className="text-sm text-foreground/70">
-                Python, Java, C#/.NET, Node.js, REST/gRPC APIs, SQL/NoSQL
+                Python, C#/.NET, Java, REST, OpenAPI, Microservices, BFF Gateway
               </p>
             </div>
 
-            <div className="rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10">
+            <div className="group rounded-2xl border border-foreground/10 bg-background p-6 transition hover:border-purple-500/30 hover:shadow-lg">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 transition group-hover:scale-110">
                 <svg className="h-6 w-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="mb-2 text-lg font-semibold">AI & ML</h3>
+              <h3 className="mb-2 text-lg font-semibold">Data & ML</h3>
               <p className="text-sm text-foreground/70">
-                TensorFlow, GenAI/LLMs, Model Pipelines, OpenAI, Azure AI
+                TensorFlow, GenAI/LLMs, OpenAI API, ETL Pipelines, Model Serving
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Highlights */}
+      <section className="py-16 px-6 bg-gradient-to-b from-foreground/5 to-background">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 text-3xl font-bold">Career Highlights</h2>
+            <p className="text-foreground/70">Key achievements across enterprise engagements</p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-blue-500/10 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-500/10 px-3 py-1 text-xs font-medium text-blue-600 dark:text-blue-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                  MoZeus
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">Full Lifecycle Client Delivery</h3>
+                <p className="text-sm text-foreground/70">
+                  Primary technical POC for 6+ enterprise clients—owned discovery, architecture, deployment, and iteration as a one-person technical team.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-green-500/10 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-600 dark:text-green-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                  Blue Yonder
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">Enterprise Gateway Architecture</h3>
+                <p className="text-sm text-foreground/70">
+                  Built and owned BFF gateway serving 100+ daily enterprise users, unifying 2,700+ microservice endpoints with auto-generated OpenAPI docs.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-purple-500/10 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-600 dark:text-purple-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+                  Blue Yonder
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">ML Deployment Pipeline</h3>
+                <p className="text-sm text-foreground/70">
+                  Architected CI/CD for ML model publishing across 8 environments—60% faster deployments with versioning, rollback, and full traceability.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/10 bg-background p-6 transition hover:shadow-lg">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-orange-500/10 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-3 py-1 text-xs font-medium text-orange-600 dark:text-orange-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+                  Manhattan Associates
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">ML Demand Forecasting</h3>
+                <p className="text-sm text-foreground/70">
+                  Prototyped TensorFlow models improving inventory prediction by 25%, supporting integration across 200+ fulfillment nodes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I'm Looking For */}
+      <section className="py-16 px-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-3xl border border-foreground/10 bg-gradient-to-br from-blue-500/5 via-background to-purple-500/5 p-8 md:p-12">
+            <div className="mb-6 text-center">
+              <h2 className="mb-3 text-3xl font-bold">What I'm Looking For</h2>
+              <p className="text-foreground/70">Roles where I can combine technical depth with client impact</p>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+              <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
+                <div className="mb-2 text-2xl">🛠️</div>
+                <p className="font-semibold">Solutions Engineer</p>
+              </div>
+              <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
+                <div className="mb-2 text-2xl">🚀</div>
+                <p className="font-semibold">Forward Deployed Engineer</p>
+              </div>
+              <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
+                <div className="mb-2 text-2xl">🤝</div>
+                <p className="font-semibold">Sales Engineer</p>
+              </div>
+              <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
+                <div className="mb-2 text-2xl">⚙️</div>
+                <p className="font-semibold">Backend Engineer</p>
+              </div>
+            </div>
+
+            <p className="mt-6 text-center text-sm text-foreground/60">
+              I thrive at the intersection of engineering and business—building technical solutions while working directly with clients and stakeholders.
+            </p>
           </div>
         </div>
       </section>
