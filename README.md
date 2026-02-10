@@ -1,8 +1,6 @@
-# Arnav Bhatia - Personal Portfolio
+# Personal Portfolio
 
-My personal website showcasing my work as a software engineer, built with modern web technologies.
-
-**Live Site:** [arnavbhatia1.github.io](https://arnavbhatia1.github.io)
+My personal website showcasing my work as a software engineer, built with modern web technologies. This site is deployed via GitHub Pages: [arnavbhatia1.github.io](https://arnavbhatia1.github.io)
 
 ## About This Project
 
@@ -61,8 +59,8 @@ The site is built with these principles:
 
 - **Email**: [arnav.cal@gmail.com](mailto:arnav.cal@gmail.com)
 - **LinkedIn**: [linkedin.com/in/arnav-bhatia](https://www.linkedin.com/in/arnav-bhatia/)
-- **GitHub**: [github.com/arnavbhatia1](https://github.com/arnavbhatia1)
 
 ---
 
+Built by Arnav Bhatia
 Built by Arnav Bhatia
