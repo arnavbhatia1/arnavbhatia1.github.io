@@ -55,7 +55,7 @@ export default function Home() {
 
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-foreground/70">
             2+ years building production systems for enterprise clients, from discovery to deployment.
-            Currently at MoZeus, incoming M.S. CS (AI/ML) at Georgia Tech.
+            Incoming M.S. CS (AI/ML) at Georgia Tech.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
