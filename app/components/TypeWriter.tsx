@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const TITLES = [
-  "Full-Stack Engineer",
+  "Software Engineer",
   "Product Engineer",
   "Solutions Engineer",
   "Forward Deployed Engineer",

@@ -16,27 +16,24 @@ const experiences: Experience[] = [
     company: "MoZeus",
     role: "Product Engineer",
     location: "Atlanta, GA",
-    period: "September 2024 - Present",
+    period: "September 2025 - Present",
     achievements: [
-      "Own end-to-end delivery for high-profile enterprise clients, from joining discovery calls and scoping requirements through production deployment and ongoing iteration.",                                                                      
-      "Participate in client meetings to understand business problems firsthand, translating requirements into technical solutions that align with platform architecture.",                                                                           
-      "Containerized the entire MoZeus architecture stack using Docker and Kubernetes, reducing operational costs and enabling rapid, reproducible deployments across client environments.",
-      "Built and maintain data-intensive pipelines handling large-scale datasets—data filtering, parsing, transformation, and validation—directly tied to client deliverables and revenue.",
-      "Act as a technical resource for client engagements, presenting solutions and fielding technical questions alongside sales and customer success teams.",                                                                                        
-      "Own the data layer of MoZeus's architecture, designing scalable ingestion and processing systems that power client-facing products."
+      "Owned full lifecycle delivery for 6+ enterprise clients—discovery, scoping, architecture, and production deployment—as the primary technical point of contact.",
+      "Architected containerized platforms on Azure (Docker, Kubernetes, Bicep), cutting operational costs by 40% and enabling reproducible deployments across environments.",
+      "Built ETL pipelines for 1M+ data points, powering core products and eliminating manual data preparation workflows.",
+      "Led technical demos for stakeholders, translating requirements into SOWs and architecture proposals to accelerate closure.",
     ],
   },
   {
     company: "Blue Yonder",
     role: "Software Engineer",
     location: "Atlanta, GA",
-    period: "March 2024 - September 2024",
+    period: "March 2024 - September 2025",
     achievements: [
-      "Full-stack owner of backend-for-frontend gateways serving 2,700+ microservice endpoints—designed UIs, architected backend services, and shipped features that enterprise clients interacted with daily.",
-      "Partnered with enterprise clients and customer success teams to surface pain points, translating feedback into product improvements that drove platform adoption and reduced churn.",
-      "Built dynamic, OpenAPI-driven interfaces that simplified API discovery for customers, cutting onboarding time and enabling faster time-to-value for new accounts.",
-      "Architected CI/CD pipelines for ML model publishing across 8 environments, reducing deployment time by 60% while enforcing versioning, rollback, and traceability.",
-      "Designed backend scheduling services and automated testing infrastructure, increasing deployment velocity and reducing release defects across Blue Yonder's supply chain suite.",
+      "Owned BFF gateway aggregating 2,700+ microservice endpoints for 100+ daily enterprise users, building backend services in .NET and React UIs.",
+      "Architected CI/CD pipelines for ML model publishing across 8 environments, cutting deployment time by 60% while enforcing versioning, rollback, and traceability.",
+      "Automated backend scheduling (Python, C#) and testing infrastructure (NUnit), boosting velocity by 30%.",
+      "Developed OpenAPI-driven API documentation layer, directly cited by sales as a factor in increasing platform close rates.",
     ],
   },
   {
@@ -45,21 +42,19 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "May 2023 - August 2023",
     achievements: [
-      "Researched and prototyped machine learning models for demand forecasting and inventory optimization, presenting findings to R&D leadership and influencing product roadmap decisions.",
-      "Designed RESTful microservices following decoupled architecture patterns, enabling modular integration across 200+ fulfillment nodes in Manhattan's enterprise WMS platform.",
-      "Built dashboards and automation tooling used by internal teams and demoed to prospective clients, showcasing supply chain execution capabilities.",
-      "Created Python Jenkins plugins for ML dataset filtering and preprocessing, accelerating model training pipelines and cutting test cycle times by 20%.",
+      "Prototyped demand forecast models (TensorFlow) to improve inventory prediction by 25% and aid WMOS decisions.",
+      "Designed RESTful microservices to support integration across 200+ fulfillment nodes in production environments.",
+      "Built Python automation dashboard to reduce test cycles by 20% and enable monitoring for non-technical stakeholders.",
     ],
   },
   {
     company: "Lighter Than Air",
-    role: "Technical Project Engineer Manager Intern",
+    role: "Technical Project Engineer Intern",
     location: "Sunnyvale, CA",
     period: "June 2022 - September 2022",
     achievements: [
-      "Unified 1,200+ avionics artifacts from GitHub, JIRA, and Confluence into a traceability matrix, presenting progress to leadership and accelerating FAA certification reviews.",
-      "Ran cross-functional syncs across embedded hardware, flight software, and test teams—facilitating communication between technical and non-technical stakeholders to unblock critical path items.",
-      "Authored self-documenting API references and technical documentation for 24 avionics modules, improving internal discovery and reducing onboarding time for new engineers.",
+      "Consolidated 1,200+ avionics and API artifacts into a unified traceability system, accelerating FAA certification.",
+      "Led cross-functional coordination across hardware, software, and test teams to unblock critical-path certification milestones.",
     ],
   },
 ];
@@ -68,22 +63,18 @@ const education = [
   {
     school: "Georgia Institute of Technology",
     degree: "M.S. - Computer Science",
-    specialization: "Specialization - AI/ML",
+    specialization: "Specialization: Artificial Intelligence / Machine Learning",
     location: "Atlanta, GA",
-    period: "Fall 2026 (Incoming)",
+    period: "Starting Fall 2026",
   },
   {
     school: "Boston University",
     degree: "B.A. - Computer Science",
-    minor: "Minor - Business Administration and Management",
+    minor: "Minor: Business Administration and Management",
     location: "Boston, MA",
     period: "August 2020 - May 2024",
     societies: [
-      "Varsity Squash Captain",
-      "IM Basketball",
-      "BizTech Club",
-      "Stock Trading Club",
-      "Cybersecurity Club",
+      "Varsity Squash Team Captain",
     ],
   },
 ];
@@ -128,7 +119,7 @@ export default function ExperiencePage() {
       <div className="mb-8">
         <h1 className="mb-3 text-4xl font-bold">Professional Experience</h1>
         <p className="max-w-3xl text-lg leading-relaxed text-foreground/80">
-          Full-stack product engineer with a track record of shipping client-facing solutions, bridging technical depth with business outcomes.
+          Software Engineer with 2+ years building production systems for enterprise clients, from discovery to deployment. Combines hands-on backend and cloud-native development (Azure, Python, C#) with customer-facing delivery.
         </p>
       </div>
 

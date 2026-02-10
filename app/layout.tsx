@@ -11,14 +11,14 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arnav Bhatia | Full-Stack Engineer",
-  description: "Full-stack product engineer specializing in client-facing solutions, backend systems, and cloud-native platforms. Incoming MS CS at Georgia Tech.",
-  keywords: ["Software Engineer", "Full-Stack", "Product Engineer", "Solutions Engineer", "ML", "AI", "Cloud", "DevOps", "Azure", "AWS", "Georgia Tech"],
+  title: "Arnav Bhatia | Software Engineer",
+  description: "Software Engineer with 2+ years building production systems for enterprise clients, from discovery to deployment. Incoming M.S. CS (AI/ML) at Georgia Tech.",
+  keywords: ["Software Engineer", "Full-Stack", "Product Engineer", "Solutions Engineer", "ML", "AI", "Cloud", "DevOps", "Azure", "AWS", "Georgia Tech", "Python", "C#"],
   authors: [{ name: "Arnav Bhatia" }],
   metadataBase: new URL("https://arnavbhatia1.github.io"),
   openGraph: {
-    title: "Arnav Bhatia | Full-Stack Engineer",
-    description: "Full-stack product engineer specializing in client-facing solutions, backend systems, and cloud-native platforms.",
+    title: "Arnav Bhatia | Software Engineer",
+    description: "Software Engineer with 2+ years building production systems for enterprise clients. Hands-on backend and cloud-native development with customer-facing delivery.",
     url: "https://arnavbhatia1.github.io",
     siteName: "Arnav Bhatia",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Arnav Bhatia - Full-Stack Engineer",
+        alt: "Arnav Bhatia - Software Engineer",
       },
     ],
     type: "website",
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arnav Bhatia | Full-Stack Engineer",
-    description: "Full-stack product engineer specializing in client-facing solutions, backend systems, and cloud-native platforms.",
+    title: "Arnav Bhatia | Software Engineer",
+    description: "Software Engineer with 2+ years building production systems for enterprise clients. Incoming M.S. CS (AI/ML) at Georgia Tech.",
     images: ["/og-image.svg"],
   },
   robots: {

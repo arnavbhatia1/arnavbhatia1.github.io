@@ -4,9 +4,9 @@ import TypeWriter from "./components/TypeWriter";
 import OpenSource from "./components/OpenSource";
 
 export const metadata = {
-  title: "Arnav Bhatia | Full-Stack Engineer",
+  title: "Arnav Bhatia | Software Engineer",
   description:
-    "Full-stack product engineer delivering client-facing solutions, backend systems, and cloud-native platforms.",
+    "Software Engineer with 2+ years building production systems for enterprise clients. Incoming M.S. CS (AI/ML) at Georgia Tech.",
 };
 
 const Btn = ({ href, children, primary }: { href: string; children: React.ReactNode; primary?: boolean }) => (
@@ -53,8 +53,8 @@ export default function Home() {
           </div>
 
           <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-foreground/70">
-            Building client-facing solutions at the intersection of engineering and business.
-            Currently at MoZeus, incoming MS CS at Georgia Tech (ML).
+            2+ years building production systems for enterprise clients, from discovery to deployment.
+            Currently at MoZeus, incoming M.S. CS (AI/ML) at Georgia Tech.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">

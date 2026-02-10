@@ -2,7 +2,7 @@
 
 export const SITE_CONFIG = {
   name: "Arnav Bhatia",
-  title: "Full-Stack Engineer",
+  title: "Software Engineer",
   email: "arnav.cal@gmail.com",
   phone: "(510) 386-7045",
   phoneRaw: "5103867045",
