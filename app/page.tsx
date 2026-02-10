@@ -211,7 +211,7 @@ export default function Home() {
               <p className="text-foreground/70">Roles where I can combine technical depth with client impact</p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-5">
               <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
                 <div className="mb-2 text-2xl">🛠️</div>
                 <p className="font-semibold">Solutions Engineer</p>
@@ -227,6 +227,10 @@ export default function Home() {
               <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
                 <div className="mb-2 text-2xl">⚙️</div>
                 <p className="font-semibold">Backend Engineer</p>
+              </div>
+              <div className="rounded-xl bg-background/80 p-4 text-center shadow-sm">
+                <div className="mb-2 text-2xl">💻</div>
+                <p className="font-semibold">Software Engineer</p>
               </div>
             </div>
 

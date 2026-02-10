@@ -56,6 +56,7 @@ const WORK: Project[] = [
 const PERSONAL: Project[] = [
   { title: "Shelter Match", blurb: "Full-stack platform connecting 3 shelters with prospective adopters using semantic matching powered by GPT-4. Dynamic shelter portals with real-time animal availability, filtering, and personalized recommendations.", impact: "AI-powered adoption matching.", tech: ["Python","OpenAI API","React","PostgreSQL"], code: "https://github.com/arnavbhatia1/CompanionMatcher" },
   { title: "TetrisBot - Reinforcement Learning Agent", blurb: "Trained a deep Q-learning agent to play Tetris, achieving 250 average lines cleared per game after 10 training episodes. Automated training pipelines with hyperparameter tuning and real-time GUI for evaluation.", impact: "Autonomous gameplay with optimized decision-making.", tech: ["Python","TensorFlow","Pygame","Deep Q-Learning"], code: "https://github.com/arnavbhatia1/TetrisBot" },
+  { title: "RecipeFinder", blurb: "Web app enabling users to discover recipes based on available ingredients via the Spoonacular API. Features include favorites management, community reviews with star ratings, dark mode, and local persistence.", impact: "Ingredient-driven recipe discovery with community engagement.", tech: ["React","JavaScript","Axios","CSS3","Spoonacular API"], code: "https://github.com/arnavbhatia1/RecipeFinder" },
 ];
 
 export default function ProjectsPage() {

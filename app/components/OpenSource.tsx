@@ -21,6 +21,15 @@ const repositories: Repository[] = [
     url: "https://github.com/arnavbhatia1/TetrisBot",
     topics: ["ai", "reinforcement-learning", "tensorflow", "game-ai"],
   },
+  {
+    name: "RecipeFinder",
+    description:
+      "Web app for discovering recipes based on available ingredients via Spoonacular API. Features favorites, community reviews, and dark mode.",
+    language: "JavaScript",
+    stars: 1,
+    url: "https://github.com/arnavbhatia1/RecipeFinder",
+    topics: ["react", "spoonacular-api", "axios", "css3"],
+  },
 ];
 
 const LANGUAGE_COLORS: Record<string, string> = {
