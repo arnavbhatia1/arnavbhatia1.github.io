@@ -13,40 +13,6 @@ This is my digital space where I share my professional journey, technical projec
 - **Open Source Contributions**: Public repositories and side projects I'm actively working on
 - **Contact Form**: Easy ways to reach me for opportunities, collaborations, or just to chat about engineering
 
-## Local Development
-
-Clone the repository and run the development server:
-
-```bash
-# Install dependencies
-npm install
-
-# Start dev server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the site locally.
-
-## Project Structure
-
-```
-app/
-├── components/          # Reusable React components
-│   ├── Footer.tsx      # Site footer with navigation and social links
-│   ├── OpenSource.tsx  # GitHub projects showcase
-│   └── greetings.tsx   # Animated greeting component
-├── contact/            # Contact page with form
-├── experience/         # Professional experience and journey
-├── projects/           # Work and personal projects
-├── certifications/     # Certifications and ongoing education
-├── layout.tsx          # Root layout with navigation
-└── page.tsx           # Homepage
-```
-
-## Deployment
-
-This site is deployed via GitHub Pages.
-
 ## Design Philosophy
 
 The site is built with these principles:
@@ -59,8 +25,3 @@ The site is built with these principles:
 
 - **Email**: [arnav.cal@gmail.com](mailto:arnav.cal@gmail.com)
 - **LinkedIn**: [linkedin.com/in/arnav-bhatia](https://www.linkedin.com/in/arnav-bhatia/)
-
----
-
-Built by Arnav Bhatia
-Built by Arnav Bhatia
