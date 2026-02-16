@@ -17,15 +17,15 @@ type Project = {
 };
 
 const Chip = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block rounded-full bg-black/5 px-2.5 py-1 text-xs">{children}</span>
+  <span className="inline-block rounded-full bg-foreground/5 px-2.5 py-1 text-xs">{children}</span>
 );
 
 const Card = ({ p }: { p: Project }) => (
-  <div className="rounded-2xl border border-foreground/10 bg-background p-4 shadow-sm transition hover:shadow-md">
+  <div className="rounded-2xl border border-foreground/8 bg-background p-4 shadow-sm transition hover:shadow-md hover:border-accent/20">
     <h3 className="text-lg font-semibold">{p.title}</h3>
     <p className="mt-1 text-sm leading-relaxed text-foreground/80">{p.blurb}</p>
     {p.impact && (
-      <p className="mt-2 text-sm font-medium text-black/80">
+      <p className="mt-2 text-sm font-medium text-foreground/80">
         Impact: <span className="font-normal">{p.impact}</span>
       </p>
     )}
@@ -46,7 +46,7 @@ const Card = ({ p }: { p: Project }) => (
 );
 
 const WORK: Project[] = [
-  { title: "Full-Stack Architecture Containerization", blurb: "Spearheaded complete containerization of end-to-end solutions from AI/ML processing layers to API systems—establishing Docker and Kubernetes infrastructure for all services.", impact: "Significant OpEx reduction; reproducible deployments; scalable foundation for future growth.", tech: ["Docker","Kubernetes","Azure","CI/CD","Infrastructure"] },
+  { title: "Full-Stack Architecture Containerization", blurb: "Spearheaded complete containerization of end-to-end solutions from AI/ML processing layers to API systems, establishing Docker and Kubernetes infrastructure for all services.", impact: "Significant OpEx reduction; reproducible deployments; scalable foundation for future growth.", tech: ["Docker","Kubernetes","Azure","CI/CD","Infrastructure"] },
   { title: "ML Model Publishing Pipeline", blurb: "GitHub Actions → JFrog → Azure across 8 environments with gates & rollbacks.", impact: "≈60% faster releases; standardized deployments.", tech: ["GitHub Actions","JFrog","Azure","Python","CI/CD"] },
   { title: "Back-for-Frontend Gateway", blurb: "Unified ~2,700+ endpoints into composable routes with auto OpenAPI docs.", impact: "Faster onboarding; unlocked bundlable SKUs.", tech: ["Node.js","TypeScript","OpenAPI","Gateway"] },
   { title: "CI/CD Security & Coverage", blurb: "SAST/DAST/licensing and coverage gates with reporting dashboards.", impact: "Higher coverage; blocked regressions pre-merge.", tech: ["Security Scans","Coverage","Reporting"] },
@@ -67,8 +67,8 @@ export default function ProjectsPage() {
     <main className="mx-auto min-h-[80vh] w-full max-w-5xl px-5 py-10">
       <div className="mb-6 flex items-end justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold">Projects</h1>
-          <p className="mt-1 text-foreground/80">Impact-focused work and personal builds.</p>
+          <h1 className="font-serif text-3xl">Projects</h1>
+          <p className="mt-1 text-muted">Impact-focused work and personal builds.</p>
         </div>
       </div>
 
@@ -79,7 +79,7 @@ export default function ProjectsPage() {
             onClick={() => setTab(t.key)}
             className={[
               "rounded-full border px-4 py-2 text-sm transition",
-              tab === t.key ? "border-black/80 bg-black text-white" : "border-foreground/10 bg-background hover:bg-gray-50",
+              tab === t.key ? "border-foreground/80 bg-foreground text-background" : "border-foreground/8 bg-background hover:bg-foreground/5",
             ].join(" ")}
             aria-pressed={tab === t.key}
             aria-controls={`panel-${t.key}`}

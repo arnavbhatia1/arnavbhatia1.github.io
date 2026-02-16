@@ -23,12 +23,12 @@ const Card = ({
   link?: string;
   note?: string;
 }) => (
-  <div className="rounded-2xl border border-foreground/10 bg-background p-4 shadow-sm">
+  <div className="rounded-2xl border border-foreground/8 bg-background p-4 shadow-sm transition hover:border-accent/20 hover:shadow-md">
     <div className="flex items-center justify-between gap-3">
       <h3 className="text-lg font-semibold">{title}</h3>
-      {date && <span className="text-xs text-black/60">{date}</span>}
+      {date && <span className="text-xs text-muted">{date}</span>}
     </div>
-    <p className="mt-1 text-sm text-foreground/80">{issuer}</p>
+    <p className="mt-1 text-sm text-muted">{issuer}</p>
     {note && <p className="mt-2 text-sm">{note}</p>}
     {link && (
       <a
@@ -48,8 +48,8 @@ export default function CertificationsPage() {
 
   return (
     <main className="mx-auto min-h-[80vh] w-full max-w-5xl px-5 py-10">
-      <h1 className="mb-2 text-3xl font-bold">Certifications</h1>
-      <p className="mb-6 text-foreground/80">A quick snapshot of what’s done, in progress, and on deck.</p>
+      <h1 className="mb-2 font-serif text-3xl">Certifications</h1>
+      <p className="mb-6 text-muted">A quick snapshot of what&apos;s done, in progress, and on deck.</p>
 
       {/* Tabs */}
       <div className="mb-6 flex flex-wrap items-center gap-2">
@@ -60,8 +60,8 @@ export default function CertificationsPage() {
             className={[
               "rounded-full border px-4 py-2 text-sm transition",
               active === t.key
-                ? "border-black/80 bg-black text-white"
-                : "border-black/15 bg-background hover:bg-gray-50",
+                ? "border-foreground/80 bg-foreground text-background"
+                : "border-foreground/8 bg-background hover:bg-foreground/5",
             ].join(" ")}
             aria-pressed={active === t.key}
             aria-controls={`panel-${t.key}`}
@@ -98,7 +98,7 @@ export default function CertificationsPage() {
         {active === "upcoming" && (
           <>
             <Card
-              title="AWS Certified Developer — Associate"
+              title="AWS Certified Developer - Associate"
               issuer="Amazon Web Services"
               note="Serverless deployments, SDKs, CI/CD on AWS, observability."
             />

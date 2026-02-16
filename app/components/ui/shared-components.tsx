@@ -10,7 +10,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm transition hover:shadow-md ${className}`}
+      className={`rounded-2xl border border-foreground/8 bg-background p-6 shadow-sm transition hover:shadow-md ${className}`}
     >
       {children}
     </div>
@@ -33,8 +33,8 @@ export function TabButton({
       className={[
         "rounded-full border px-4 py-2 text-sm font-medium transition",
         active
-          ? "border-black/80 bg-black text-white"
-          : "border-foreground/10 bg-background hover:bg-gray-50",
+          ? "border-foreground/80 bg-foreground text-background"
+          : "border-foreground/8 bg-background hover:bg-foreground/5",
       ].join(" ")}
     >
       {children}
@@ -66,7 +66,7 @@ export function ButtonLink({
   const className = `inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold shadow-sm transition ${
     primary
       ? "bg-foreground text-background hover:bg-foreground/90"
-      : "border border-foreground/20 bg-background hover:bg-foreground/5"
+      : "border border-foreground/15 bg-background hover:bg-foreground/5"
   }`;
 
   if (external) {
@@ -95,7 +95,7 @@ export function SectionHeader({
   return (
     <div className="mb-10 text-center">
       <h2 className="mb-3 text-3xl font-bold">{title}</h2>
-      {subtitle && <p className="text-foreground/70">{subtitle}</p>}
+      {subtitle && <p className="text-muted">{subtitle}</p>}
     </div>
   );
 }

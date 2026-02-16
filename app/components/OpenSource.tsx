@@ -60,11 +60,11 @@ function ForkIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
 
 export default function OpenSource() {
   return (
-    <section className="py-16 bg-foreground/[0.02]">
+    <section className="py-20 bg-foreground/[0.02]">
       <div className="mx-auto max-w-5xl px-5">
-        <div className="mb-10 text-center">
-          <h2 className="mb-3 text-3xl font-bold">Open Source Contributions</h2>
-          <p className="text-foreground/70">Projects and contributions I&apos;m working on</p>
+        <div className="mb-12 text-center">
+          <h2 className="mb-3 font-serif text-3xl md:text-4xl">Open Source Contributions</h2>
+          <p className="text-muted">Projects and contributions I&apos;m working on</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -74,19 +74,19 @@ export default function OpenSource() {
               href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl border border-foreground/10 bg-background p-6 shadow-sm transition hover:shadow-md hover:border-foreground/20"
+              className="group rounded-2xl border border-foreground/8 bg-background p-6 shadow-sm transition hover:shadow-md hover:border-accent/20"
             >
               {/* Header */}
               <div className="mb-3 flex items-start justify-between gap-2">
                 <div className="flex items-center gap-2">
-                  <RepoIcon className="h-5 w-5 text-foreground/60" />
-                  <h3 className="font-semibold group-hover:underline">{repo.name}</h3>
+                  <RepoIcon className="h-5 w-5 text-muted" />
+                  <h3 className="font-semibold group-hover:text-accent transition-colors">{repo.name}</h3>
                 </div>
-                <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 text-foreground/40 transition group-hover:translate-x-0.5" />
+                <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:text-accent" />
               </div>
 
               {/* Description */}
-              <p className="mb-4 text-sm leading-relaxed text-foreground/70">{repo.description}</p>
+              <p className="mb-4 text-sm leading-relaxed text-muted">{repo.description}</p>
 
               {/* Topics */}
               {repo.topics && repo.topics.length > 0 && (
@@ -94,7 +94,7 @@ export default function OpenSource() {
                   {repo.topics.map((topic) => (
                     <span
                       key={topic}
-                      className="inline-block rounded-full bg-foreground/5 px-2 py-0.5 text-xs text-foreground/70"
+                      className="inline-block rounded-full bg-foreground/5 px-2 py-0.5 text-xs text-muted"
                     >
                       {topic}
                     </span>
@@ -103,7 +103,7 @@ export default function OpenSource() {
               )}
 
               {/* Footer */}
-              <div className="flex items-center gap-4 text-xs text-foreground/60">
+              <div className="flex items-center gap-4 text-xs text-muted">
                 <div className="flex items-center gap-1.5">
                   <span
                     className={`h-3 w-3 rounded-full ${LANGUAGE_COLORS[repo.language] || "bg-gray-400"}`}
@@ -131,7 +131,7 @@ export default function OpenSource() {
             href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/20 bg-background px-5 py-2.5 text-sm font-semibold transition hover:bg-foreground/5"
+            className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-semibold transition hover:bg-foreground/5 hover:border-accent/20"
           >
             <GitHubIcon className="h-4 w-4" />
             View all projects on GitHub
@@ -140,19 +140,19 @@ export default function OpenSource() {
 
         {/* Stats Section */}
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
-            <p className="text-3xl font-bold">{repositories.length}</p>
-            <p className="mt-1 text-sm text-foreground/60">Public Repositories</p>
+          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
+            <p className="text-3xl font-bold text-accent">{repositories.length}</p>
+            <p className="mt-1 text-sm text-muted">Public Repositories</p>
           </div>
-          <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
-            <p className="text-3xl font-bold">
+          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
+            <p className="text-3xl font-bold text-accent">
               {repositories.reduce((sum, repo) => sum + repo.stars, 0)}
             </p>
-            <p className="mt-1 text-sm text-foreground/60">Total Stars</p>
+            <p className="mt-1 text-sm text-muted">Total Stars</p>
           </div>
-          <div className="rounded-xl border border-foreground/10 bg-background p-5 text-center">
-            <p className="text-3xl font-bold">Open</p>
-            <p className="mt-1 text-sm text-foreground/60">For Collaboration</p>
+          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
+            <p className="text-3xl font-bold text-accent">Open</p>
+            <p className="mt-1 text-sm text-muted">For Collaboration</p>
           </div>
         </div>
       </div>

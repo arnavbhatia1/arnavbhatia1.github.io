@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Instrument_Serif, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
@@ -7,7 +7,8 @@ import ScrollProgress from "./components/ScrollProgress";
 import PageTransition from "./components/PageTransition";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
+const instrumentSerif = Instrument_Serif({ weight: "400", subsets: ["latin"], variable: "--font-instrument" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -62,16 +63,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-background text-foreground antialiased`}>
+      <body className={`${dmSans.variable} ${instrumentSerif.variable} ${geistMono.variable} grain font-sans bg-background text-foreground antialiased`}>
         <ScrollProgress />
-        <header className="sticky top-1 z-40 border-b border-foreground/10 bg-background/80 backdrop-blur">
-          <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-3">
-            <Link href="/" className="text-lg font-bold">Arnav Bhatia</Link>
-            <div className="flex items-center gap-4 text-sm">
-              <Link href="/experience" className="hidden sm:inline hover:underline">Experience</Link>
-              <Link href="/projects" className="hidden sm:inline hover:underline">Projects</Link>
-              <Link href="/resume" className="hidden sm:inline hover:underline">Resume</Link>
-              <Link href="/contact" className="hover:underline">Contact</Link>
+        <header className="sticky top-0 z-40 border-b border-foreground/8 bg-background/85 backdrop-blur-lg">
+          <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+            <Link href="/" className="font-serif text-xl tracking-tight text-foreground hover:text-accent transition-colors">
+              Arnav Bhatia
+            </Link>
+            <div className="flex items-center gap-6 text-sm">
+              <Link href="/experience" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Experience</Link>
+              <Link href="/projects" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Projects</Link>
+              <Link href="/resume" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Resume</Link>
+              <Link href="/contact" className="nav-link text-muted hover:text-foreground transition-colors">Contact</Link>
               <ThemeToggle />
             </div>
           </nav>

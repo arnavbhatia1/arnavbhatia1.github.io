@@ -8,22 +8,22 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-foreground/10 bg-background">
+    <footer className="border-t border-foreground/8 bg-background">
       <div className="mx-auto max-w-5xl px-5 py-10">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* About */}
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground/60">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
               About
             </h3>
-            <p className="text-sm leading-relaxed text-foreground/70">
+            <p className="text-sm leading-relaxed text-muted">
               Full-stack engineer building scalable backend systems, ML pipelines, and cloud-native platforms.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground/60">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
               Quick Links
             </h3>
             <ul className="space-y-2 text-sm">
@@ -31,7 +31,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-foreground/70 hover:text-foreground hover:underline"
+                    className="text-muted hover:text-foreground hover:underline"
                   >
                     {link.label}
                   </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground/60">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
               Resources
             </h3>
             <ul className="space-y-2 text-sm">
@@ -51,7 +51,7 @@ export default function Footer() {
                   href={SITE_CONFIG.resumePath}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/70 hover:text-foreground hover:underline"
+                  className="text-muted hover:text-foreground hover:underline"
                 >
                   Resume
                 </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                   href={SOCIAL_LINKS.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/70 hover:text-foreground hover:underline"
+                  className="text-muted hover:text-foreground hover:underline"
                 >
                   GitHub
                 </a>
@@ -71,7 +71,7 @@ export default function Footer() {
                   href={SOCIAL_LINKS.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/70 hover:text-foreground hover:underline"
+                  className="text-muted hover:text-foreground hover:underline"
                 >
                   LinkedIn
                 </a>
@@ -81,14 +81,14 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-foreground/60">
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
               Get in Touch
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <a
                   href={SOCIAL_LINKS.email}
-                  className="text-foreground/70 hover:text-foreground hover:underline"
+                  className="text-muted hover:text-foreground hover:underline"
                 >
                   {SITE_CONFIG.email}
                 </a>
@@ -96,7 +96,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`tel:${SITE_CONFIG.phoneRaw}`}
-                  className="text-foreground/70 hover:text-foreground hover:underline"
+                  className="text-muted hover:text-foreground hover:underline"
                 >
                   {SITE_CONFIG.phone}
                 </a>
@@ -114,8 +114,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-foreground/10 pt-8 sm:flex-row">
-          <p className="text-sm text-foreground/60">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-foreground/8 pt-8 sm:flex-row">
+          <p className="text-sm text-muted">
             &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
           </p>
 
@@ -125,7 +125,7 @@ export default function Footer() {
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/60 transition hover:text-foreground"
+              className="text-muted transition hover:text-foreground"
               aria-label="LinkedIn"
             >
               <LinkedInIcon />
@@ -134,14 +134,14 @@ export default function Footer() {
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-foreground/60 transition hover:text-foreground"
+              className="text-muted transition hover:text-foreground"
               aria-label="GitHub"
             >
               <GitHubIcon />
             </a>
             <a
               href={SOCIAL_LINKS.email}
-              className="text-foreground/60 transition hover:text-foreground"
+              className="text-muted transition hover:text-foreground"
               aria-label="Email"
             >
               <EmailIcon />
@@ -152,7 +152,7 @@ export default function Footer() {
         {/* Back to Top Button */}
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mx-auto mt-8 flex items-center gap-2 text-sm text-foreground/60 transition hover:text-foreground"
+          className="mx-auto mt-8 flex items-center gap-2 text-sm text-muted transition hover:text-foreground"
           aria-label="Back to top"
         >
           <ChevronUpIcon />

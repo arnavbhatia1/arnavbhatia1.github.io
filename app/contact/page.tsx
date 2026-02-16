@@ -64,10 +64,10 @@ export default function ContactPage() {
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Left Column - Contact Info */}
         <div>
-          <h1 className="mb-4 text-4xl font-bold">Let&apos;s Connect</h1>
-          <p className="mb-8 text-lg leading-relaxed text-foreground/80">
+          <h1 className="mb-4 font-serif text-4xl">Let&apos;s Connect</h1>
+          <p className="mb-8 text-lg leading-relaxed text-muted">
             Whether you&apos;re looking to hire, collaborate on a project, or just want to chat about
-            engineering and AI systems—I&apos;d love to hear from you.
+            engineering and AI systems, I&apos;d love to hear from you.
           </p>
 
           {/* Contact Methods */}
@@ -102,7 +102,7 @@ export default function ContactPage() {
 
           {/* Quick Response Note */}
           <div className="mt-8 rounded-xl bg-foreground/5 p-5">
-            <p className="text-sm leading-relaxed text-foreground/80">
+            <p className="text-sm leading-relaxed text-muted">
               <strong>Quick to respond!</strong> I typically reply within 24 hours. For urgent matters,
               feel free to reach out via phone or LinkedIn message.
             </p>
@@ -111,8 +111,8 @@ export default function ContactPage() {
 
         {/* Right Column - Contact Form */}
         <div>
-          <div className="rounded-2xl border border-foreground/10 bg-background p-8 shadow-lg">
-            <h2 className="mb-6 text-2xl font-bold">Send a Message</h2>
+          <div className="rounded-2xl border border-foreground/8 bg-background p-8 shadow-lg">
+            <h2 className="mb-6 font-serif text-2xl">Send a Message</h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <FormField
@@ -155,7 +155,7 @@ export default function ContactPage() {
                   required
                   value={formData.purpose}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-foreground/20 bg-background px-4 py-3 text-sm transition focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                  className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
                 >
                   {PURPOSES.map((p) => (
                     <option key={p.value} value={p.value}>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full rounded-lg border border-foreground/20 bg-background px-4 py-3 text-sm transition focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
+                  className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
                   placeholder="Tell me about your inquiry..."
                 />
               </div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full rounded-lg bg-foreground px-6 py-3 font-semibold text-background transition hover:bg-foreground/90 disabled:opacity-50"
+                className="w-full rounded-lg bg-accent px-6 py-3 font-semibold text-accent-foreground transition hover:opacity-90 disabled:opacity-50"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
@@ -217,13 +217,13 @@ function ContactCard({
   external?: boolean;
 }) {
   return (
-    <div className="rounded-xl border border-foreground/10 bg-background p-5">
+    <div className="rounded-xl border border-foreground/8 bg-background p-5">
       <div className="flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/5">
           {icon}
         </div>
         <div>
-          <p className="text-sm font-medium text-foreground/60">{label}</p>
+          <p className="text-sm font-medium text-muted">{label}</p>
           <a
             href={href}
             {...(external && { target: "_blank", rel: "noopener noreferrer" })}
@@ -260,7 +260,7 @@ function FormField({
     <div>
       <label htmlFor={name} className="mb-2 block text-sm font-medium">
         {label} {required && "*"}
-        {optional && <span className="text-foreground/50">(optional)</span>}
+        {optional && <span className="text-muted">(optional)</span>}
       </label>
       <input
         type={type}
@@ -269,7 +269,7 @@ function FormField({
         required={required}
         value={value}
         onChange={onChange}
-        className="w-full rounded-lg border border-foreground/20 bg-background px-4 py-3 text-sm transition focus:border-foreground focus:outline-none focus:ring-2 focus:ring-foreground/20"
+        className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
         placeholder={placeholder}
       />
     </div>
