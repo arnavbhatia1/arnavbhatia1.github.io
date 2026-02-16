@@ -10,6 +10,7 @@ This is my digital space where I share my professional journey, technical projec
 
 - **Experience Timeline**: My professional journey from avionics systems to supply chain automation to enterprise software solutions
 - **Projects Showcase**: Work and personal projects, including ML pipelines, API gateways, and AI-powered applications
+- **Certifications**: Completed, in-progress, and upcoming professional certifications
 - **Open Source Contributions**: Public repositories and side projects I'm actively working on
 - **Contact Form**: Easy ways to reach me for opportunities, collaborations, or just to chat about engineering
 
