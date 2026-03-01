@@ -16,7 +16,7 @@ export default function ResumePage() {
         </div>
         <div className="flex gap-3">
           <a
-            href="/resume.pdf"
+            href="/Arnav_Bhatia_Resume.pdf"
             download
             className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition hover:opacity-90"
           >
@@ -26,7 +26,7 @@ export default function ResumePage() {
             Download PDF
           </a>
           <a
-            href="/resume.pdf"
+            href="/Arnav_Bhatia_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-semibold transition hover:bg-foreground/5"
@@ -50,7 +50,7 @@ export default function ResumePage() {
           </div>
         )}
         <iframe
-          src="/resume.pdf#view=FitH"
+          src="/Arnav_Bhatia_Resume.pdf#view=FitH"
           className="w-full h-[80vh] min-h-[600px]"
           onLoad={() => setIsLoading(false)}
           title="Resume PDF Viewer"
@@ -61,7 +61,7 @@ export default function ResumePage() {
       <div className="mt-6 rounded-xl bg-foreground/5 p-4 text-center">
         <p className="text-sm text-muted">
           Can't see the PDF?{" "}
-          <a href="/resume.pdf" download className="font-semibold underline">
+          <a href="/Arnav_Bhatia_Resume.pdf" download className="font-semibold underline">
             Download it directly
           </a>{" "}
           or{" "}
