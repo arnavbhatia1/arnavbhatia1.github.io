@@ -4,6 +4,15 @@ import { GitHubIcon, StarIcon, ExternalLinkIcon } from "./ui/Icons";
 
 const repositories: Repository[] = [
   {
+    name: "MarketPulse",
+    description:
+      "Sentiment intelligence for financial markets. Ingests posts from Reddit, Stocktwits, and news APIs, applies weak supervision with 16 labeling functions, and visualizes per-ticker sentiment through a Streamlit dashboard.",
+    language: "Python",
+    stars: 1,
+    url: "https://github.com/arnavbhatia1/MarketPulse",
+    topics: ["ml", "nlp", "sentiment-analysis", "streamlit", "finance"],
+  },
+  {
     name: "CompanionMatcher",
     description:
       "Web platform matching shelter dogs to grieving owners using semantic similarity. Built with React.js, Azure, and OpenAI Embeddings.",
