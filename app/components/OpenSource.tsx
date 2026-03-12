@@ -4,6 +4,15 @@ import { GitHubIcon, StarIcon, ExternalLinkIcon } from "./ui/Icons";
 
 const repositories: Repository[] = [
   {
+    name: "FinancialMCP",
+    description:
+      "MCP server for AI-powered stock market intelligence. 24 tools covering SEC filings, macro indicators, futures positioning, sentiment, and market regime detection. No API keys required. Published on PyPI.",
+    language: "Python",
+    stars: 1,
+    url: "https://github.com/arnavbhatia1/FinancialMCP",
+    topics: ["mcp", "finance", "ai", "sec-edgar", "stock-market", "python"],
+  },
+  {
     name: "MarketPulse",
     description:
       "Sentiment intelligence for financial markets. Ingests posts from Reddit, Stocktwits, and news APIs, applies weak supervision with 16 labeling functions, and visualizes per-ticker sentiment through a Streamlit dashboard.",
