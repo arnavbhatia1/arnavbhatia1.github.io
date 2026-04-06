@@ -18,10 +18,10 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Owned full lifecycle delivery for 6+ enterprise clients, from discovery and scoping to architecture and production deployment, as the primary technical point of contact.",
-      "Architected containerized platforms on Azure (Docker, Kubernetes, Bicep), cutting operational costs by 40% and enabling reproducible deployments across environments.",
-      "Built ETL pipelines for 1M+ data points, powering core products and eliminating manual data preparation workflows.",
-      "Led technical demos for stakeholders, translating requirements into SOWs and architecture proposals to accelerate closure.",
+      "Built MoZeus Forge, an internal Azure deployment platform automating product deployments via IaC templates, directly contributing to 30% month-over-month revenue growth by converting manual client workflows into scalable, repeatable offerings.",
+      "Cut Azure infrastructure expense from $20K to $8K/month by redesigning cloud architecture across active client environments.",
+      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production handoff; built cross-account patterns that directly influenced product roadmaps and expanded sales surface area.",
+      "Built ETL pipelines processing 1M+ data points, accelerating client onboarding by 3 weeks and reducing go-live time for accounts.",
     ],
   },
   {
@@ -30,10 +30,9 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "March 2024 - September 2025",
     achievements: [
-      "Owned BFF gateway aggregating 2,700+ microservice endpoints for 100+ daily enterprise users, building backend services in .NET and React UIs.",
-      "Architected CI/CD pipelines for ML model publishing across 8 environments, cutting deployment time by 60% while enforcing versioning, rollback, and traceability.",
-      "Automated backend scheduling (Python, C#) and testing infrastructure (NUnit), boosting velocity by 30%.",
-      "Developed OpenAPI-driven API documentation layer, directly cited by sales as a factor in increasing platform close rates.",
+      "Architected backend aggregation layer spanning 2,700+ microservice endpoints serving 100+ daily enterprise users; built production .NET services and React UIs while acting as primary technical escalation across client integration teams.",
+      "Architected ML publishing pipelines across 8 environments, cutting deployment cycles by 60% and enforcing strict versioning, automated rollback, and full traceability to meet enterprise audit and compliance requirements.",
+      "Automated backend scheduling workflows (Python, C#) and established NUnit testing infrastructure, reducing manual QA overhead and increasing team delivery velocity by 30% for enterprise client-facing features.",
     ],
   },
   {

@@ -4,11 +4,20 @@ import { GitHubIcon, StarIcon, ExternalLinkIcon } from "./ui/Icons";
 
 const repositories: Repository[] = [
   {
+    name: "PolyBot",
+    description:
+      "Implements Brownian motion probability modeling, Kelly Criterion position sizing, and a daily agentic learning pipeline that backtests performance and hot-swaps weight autonomously.",
+    language: "Python",
+    stars: 0,
+    url: "#",
+    topics: ["python", "sqlite", "discord-api", "anthropic-api", "polymarket", "trading-bot"],
+  },
+  {
     name: "FinancialMCP",
     description:
       "MCP server for AI-powered stock market intelligence. 24 tools covering SEC filings, macro indicators, futures positioning, sentiment, and market regime detection. No API keys required. Published on PyPI.",
     language: "Python",
-    stars: 1,
+    stars: 2,
     url: "https://github.com/arnavbhatia1/FinancialMCP",
     topics: ["mcp", "finance", "ai", "sec-edgar", "stock-market", "python"],
   },
