@@ -54,7 +54,8 @@ export default function Home() {
           </div>
 
           <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-            2+ years building production systems for enterprise clients, from discovery to deployment.
+            2+ years owning both client-facing delivery and the internal platform that powers it.
+            Built the deployment infrastructure behind exponential revenue growth.
             Incoming M.S. CS (AI/ML) at Georgia Tech.
           </p>
 
@@ -103,7 +104,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Cloud & Infrastructure</h3>
               <p className="text-sm text-muted">
-                Azure, AWS, Docker, Kubernetes, Terraform, Jenkins, CI/CD Pipelines
+                Azure (Container Apps, Bicep, RBAC), AWS, Docker, Kubernetes, GitHub Actions, CI/CD Pipelines
               </p>
             </div>
 
@@ -115,7 +116,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Backend & APIs</h3>
               <p className="text-sm text-muted">
-                Python, C#/.NET, Java, REST, OpenAPI, Microservices, BFF Gateway
+                C#/.NET, Python, Go, TypeScript, REST, OpenAPI, Clean Architecture
               </p>
             </div>
 
@@ -125,9 +126,9 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="mb-2 text-lg font-semibold">Data & ML</h3>
+              <h3 className="mb-2 text-lg font-semibold">Data, ML & AI</h3>
               <p className="text-sm text-muted">
-                TensorFlow, GenAI/LLMs, OpenAI API, ETL Pipelines, Model Serving
+                TensorFlow, Claude API, MCP Servers, Weak Supervision, ETL Pipelines, Kelly Criterion, Brownian Motion Models
               </p>
             </div>
           </div>
@@ -150,9 +151,23 @@ export default function Home() {
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
                   MoZeus
                 </div>
-                <h3 className="mb-2 text-lg font-semibold">Full Lifecycle Client Delivery</h3>
+                <h3 className="mb-2 text-lg font-semibold">MoZeus Forge: Internal Deployment Platform</h3>
                 <p className="text-sm text-muted">
-                  Primary technical POC for 6+ enterprise clients. Owned discovery, architecture, deployment, and iteration as a one-person technical team.
+                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut client onboarding from days to minutes. Direct contributor to 30% MoM revenue growth and an $18M annual trajectory.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/8 bg-background p-6 transition hover:shadow-lg hover:shadow-accent/5">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-amber-500/8 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                  MoZeus
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">Dynamic Package Loading Architecture</h3>
+                <p className="text-sm text-muted">
+                  Built a runtime plugin system where a single shared container image loads client-specific logic via NuGet packages at request time. Adding a new client became configuration, not deployment.
                 </p>
               </div>
             </div>
@@ -181,6 +196,20 @@ export default function Home() {
                 <h3 className="mb-2 text-lg font-semibold">ML Deployment Pipeline</h3>
                 <p className="text-sm text-muted">
                   Architected CI/CD for ML model publishing across 8 environments, achieving 60% faster deployments with versioning, rollback, and full traceability.
+                </p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden rounded-2xl border border-foreground/8 bg-background p-6 transition hover:shadow-lg hover:shadow-accent/5">
+              <div className="absolute top-0 right-0 h-24 w-24 translate-x-8 -translate-y-8 rounded-full bg-amber-500/8 transition group-hover:scale-150" />
+              <div className="relative">
+                <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-medium text-amber-700 dark:text-amber-400">
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                  MoZeus
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">Cloud Cost Optimization</h3>
+                <p className="text-sm text-muted">
+                  Redesigned Azure container infrastructure around scale-to-zero, cutting monthly spend from $20K to $8K. $144K annual savings, standardized as defaults in every future deployment.
                 </p>
               </div>
             </div>
@@ -227,7 +256,7 @@ export default function Home() {
             </div>
 
             <p className="mt-8 text-center text-sm text-muted">
-              I thrive at the intersection of engineering and business, building technical solutions while working directly with clients and stakeholders.
+              I&apos;ve always been the engineer closest to the customer, writing the code and sitting in the room where the problem arose. That feedback loop is what I build my career around.
             </p>
           </div>
         </div>

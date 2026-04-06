@@ -3,10 +3,10 @@
 import AnimatedCounter from "./AnimatedCounter";
 
 const metrics = [
-  { value: 40, suffix: "%", label: "Infrastructure cost reduction via containerization" },
-  { value: 60, suffix: "%", label: "Faster ML deployments with CI/CD pipelines" },
-  { value: 2700, suffix: "+", label: "Microservice endpoints unified in BFF gateway" },
+  { value: 30, suffix: "%", label: "Month-over-month revenue growth since platform launch" },
+  { value: 144, prefix: "$", suffix: "K", label: "Annual cloud savings from infrastructure redesign" },
   { value: 6, suffix: "+", label: "Enterprise clients delivered end-to-end" },
+  { value: 60, suffix: "%", label: "Faster deployments with CI/CD pipelines" },
 ];
 
 export default function MetricsSection() {

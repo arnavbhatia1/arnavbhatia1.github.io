@@ -18,10 +18,12 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Built MoZeus Forge, an internal Azure deployment platform automating product deployments via IaC templates, directly contributing to 30% month-over-month revenue growth by converting manual client workflows into scalable, repeatable offerings.",
-      "Cut Azure infrastructure expense from $20K to $8K/month by redesigning cloud architecture across active client environments.",
-      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production handoff; built cross-account patterns that directly influenced product roadmaps and expanded sales surface area.",
-      "Built ETL pipelines processing 1M+ data points, accelerating client onboarding by 3 weeks and reducing go-live time for accounts.",
+      "Designed and built MoZeus Forge from scratch, a .NET 9 Blazor Server application that automates Azure infrastructure provisioning using Bicep templates. Clean Architecture with Strategy Pattern, dynamic template catalog, MCP Server (10 tools), REST API (8 endpoints), role-based access control, and full audit trail. Onboarding went from 4-5 days of manual work to minutes. Direct contributor to 30% month-over-month revenue growth, putting MoZeus on track for $18M against a $10M target.",
+      "Architected a runtime plugin system (Dynamic Package Loading) where a single shared container image loads client-specific NuGet packages at request time via Managed Identity, reflection-based factory instantiation, and in-memory caching. Adding a new client became a configuration and package publish operation, not a deployment.",
+      "Reduced monthly Azure spend from $20K to $8K ($144K annual savings) by redesigning container infrastructure around scale-to-zero with consumption workload profiles and event-driven scaling. Standardized these cost-efficient defaults inside Forge for every future deployment.",
+      "Catalogued patterns across 6+ enterprise accounts and fed them back into the core product line, working with sales, revenue, and post-sales teams to define a palette of ready-to-sell offerings. Shortened deal cycles, accelerated onboarding, and eliminated greenfield rebuilds on every new account.",
+      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production handoff.",
+      "Built ETL pipelines processing 1M+ data points, accelerating client onboarding by 3 weeks.",
     ],
   },
   {
@@ -30,9 +32,10 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "March 2024 - September 2025",
     achievements: [
-      "Architected backend aggregation layer spanning 2,700+ microservice endpoints serving 100+ daily enterprise users; built production .NET services and React UIs while acting as primary technical escalation across client integration teams.",
-      "Architected ML publishing pipelines across 8 environments, cutting deployment cycles by 60% and enforcing strict versioning, automated rollback, and full traceability to meet enterprise audit and compliance requirements.",
-      "Automated backend scheduling workflows (Python, C#) and established NUnit testing infrastructure, reducing manual QA overhead and increasing team delivery velocity by 30% for enterprise client-facing features.",
+      "Architected backend aggregation layer spanning 2,700+ microservice endpoints serving 100+ daily enterprise users. Built production .NET services and React UIs while acting as primary technical escalation across client integration teams.",
+      "Standardized ML publishing pipeline across 8 production environments using GitHub Actions, JFrog Artifactory, and Azure. Designed a compensation pattern for partial deployment failures across environment chains (not in original spec). Passed compliance audit on first review. Adopted as company-wide reference standard within two quarters.",
+      "Led migration from existing security scanning to GitHub CodeQL. Ran side-by-side comparison that surfaced 3 critical issues missed by the previous tool with fewer false positives. Completed migration two sprints ahead of deadline.",
+      "Automated backend scheduling workflows (Python, C#) and established NUnit testing infrastructure, increasing team delivery velocity by 30%.",
     ],
   },
   {
@@ -118,7 +121,7 @@ export default function ExperiencePage() {
       <div className="mb-8">
         <h1 className="mb-3 font-serif text-4xl">Professional Experience</h1>
         <p className="max-w-3xl text-lg leading-relaxed text-muted">
-          Software Engineer with 2+ years building production systems for enterprise clients, from discovery to deployment. Combines hands-on backend and cloud-native development (Azure, Python, C#) with customer-facing delivery.
+          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform behind 30% month-over-month revenue growth.
         </p>
       </div>
 
@@ -206,29 +209,31 @@ export default function ExperiencePage() {
             <h2 className="mb-4 font-serif text-2xl">My Journey & What Drives Me</h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                I've always been drawn to problems that sit at the intersection of technical complexity and business impact.
-                At Boston University, I combined computer science with business administration to understand how systems work
-                and to grasp how they create value together. That foundation has shaped my thought process in every role,
-                and it's why I'm naturally drawn to client-facing technical roles.
+                The common thread across everything I've done is that I've always been the engineer closest to the customer.
+                At Boston University, I combined computer science with business administration because I wanted to understand
+                how systems create value, not just how they work. That instinct has shaped every role since.
               </p>
               <p>
-                From coordinating cross-functional teams at <strong>Lighter Than Air</strong> to building enterprise platforms at{" "}
-                <strong>Manhattan Associates</strong> and <strong>Blue Yonder</strong>, I've consistently operated at the boundary
-                between engineering and business. Now at <strong>MoZeus</strong>, I work as a product engineer with significant
-                client exposure, joining discovery calls, scoping requirements, and shipping solutions that directly impact revenue
-                and reduce operational expense.
+                At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I've expanded
+                into building the internal platform that now powers how the company sells and deploys its products. That work
+                operates on two layers: <strong>Layer 1</strong> is running technical discovery with enterprise clients, designing
+                and deploying containerized Azure infrastructure, and building the data pipelines and webhook integrations that
+                power client workflows. <strong>Layer 2</strong> is identifying that MoZeus had a scaling problem, where every
+                client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
+                That second layer, the platform work, has had a direct, measurable impact on company revenue.
               </p>
               <p>
-                I'm working towards being a <strong>Solutions Engineer</strong>, <strong>Forward Deployed Engineer</strong>,
-                or <strong>Sales Engineer</strong>. I believe I can leverage my full-stack technical depth alongside my ability to
-                communicate with stakeholders, run client engagements, and close deals through technical expertise. I like to be the
-                bridge between product, engineering, and customers. I want to be the person who can demo a complex system,
-                scope the technical requirements, architect the solution, and build it. That's where I make the biggest impact.
+                Outside of work I build production-grade systems that stay live and require real engineering discipline to maintain.
+                A quantitative trading bot for prediction markets using Brownian motion probability models and Kelly Criterion
+                position sizing. A financial sentiment pipeline with a published MCP server on PyPI. Both share a design philosophy:
+                <strong> probability over prediction, math over intuition, systems over scripts</strong>. That's the same philosophy
+                I bring to infrastructure work at MoZeus: design for the math to be right, build systems that adapt, and let the
+                data decide.
               </p>
               <p>
-                Beyond the day-to-day, I'm driven by the idea of contributing to the next major advancement, whether that's
-                in AI, infrastructure, finance, or something not discovered yet. Rather than chasing a specific stack, I am
-                drawn to meaningful problems that require both technical rigor and the ability to see the bigger picture.
+                I've realized my best work comes from being the person writing the code and sitting in the room where the problem
+                arose. That feedback loop is what I want to build my career around. I'm starting my Master's in Computer Science
+                at Georgia Tech focused on AI and ML next fall.
               </p>
             </div>
           </section>
@@ -287,9 +292,11 @@ export default function ExperiencePage() {
               </p>
               <p>
                 Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>, the
-                intersection of math, systems design, and market dynamics. I'm drawn to <strong>space exploration</strong>
-                and the engineering challenges of building systems that operate in extreme, unforgiving environments. Both
-                fields demand precision, resilience, and the ability to think in probabilities rather than certainties.
+                intersection of math, systems design, and market dynamics. Both PolyBot and MarketPulse reflect that: PolyBot
+                doesn't predict where BTC goes, it computes whether the market's implied probability is miscalibrated.
+                MarketPulse's trading bot doesn't guess which stocks will go up, it sizes positions based on demonstrated
+                edge from actual trade statistics. Both use Kelly Criterion, both have learning pipelines that adapt based on
+                outcomes, both have automated test suites in the hundreds, and both are live, running systems.
               </p>
             </div>
           </section>
