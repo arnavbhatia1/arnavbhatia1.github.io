@@ -22,8 +22,8 @@ const experiences: Experience[] = [
       "Architected a runtime plugin system (Dynamic Package Loading) where a single shared container image loads client-specific NuGet packages at request time via Managed Identity, reflection-based factory instantiation, and in-memory caching. Adding a new client became a configuration and package publish operation, not a deployment.",
       "Reduced monthly Azure spend from $20K to $8K ($144K annual savings) by redesigning container infrastructure around scale-to-zero with consumption workload profiles and event-driven scaling. Standardized these cost-efficient defaults inside Forge for every future deployment.",
       "Catalogued patterns across 6+ enterprise accounts and fed them back into the core product line, working with sales, revenue, and post-sales teams to define a palette of ready-to-sell offerings. Shortened deal cycles, accelerated onboarding, and eliminated greenfield rebuilds on every new account.",
-      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production handoff.",
-      "Built ETL pipelines processing 1M+ data points, accelerating client onboarding by 3 weeks.",
+      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production engineering; funneled cross-account patterns to directly influence product roadmaps and expand sales surface area.",
+      "Established ETL pipelines that processed 1M+ data points, accelerating account onboarding by 3 weeks.",
     ],
   },
   {
