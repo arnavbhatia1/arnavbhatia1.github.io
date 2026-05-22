@@ -6,7 +6,8 @@
       "Bash(npm run build:*)",
       "Bash(gh workflow:*)",
       "Bash(gh repo:*)",
-      "WebFetch(domain:pypi.org)"
+      "WebFetch(domain:pypi.org)",
+      "Bash(Copy-Item *)"
     ]
   }
 }

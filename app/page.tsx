@@ -153,7 +153,7 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">MoZeus Forge: Internal Deployment Platform</h3>
                 <p className="text-sm text-muted">
-                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut client onboarding from days to minutes. Direct contributor to 30% MoM revenue growth and an $18M annual trajectory.
+                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 4 weeks to 1 day. Direct contributor to 20% MoM revenue growth.
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">Cloud Cost Optimization</h3>
                 <p className="text-sm text-muted">
-                  Redesigned Azure container infrastructure around scale-to-zero, cutting monthly spend from $20K to $8K. $144K annual savings, standardized as defaults in every future deployment.
+                  Cut Azure infrastructure spend 50% from $20K to $10K/month by redesigning container infrastructure around scale-to-zero. Standardized as defaults in every future deployment.
                 </p>
               </div>
             </div>

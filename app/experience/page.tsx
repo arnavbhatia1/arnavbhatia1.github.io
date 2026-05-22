@@ -14,16 +14,14 @@ type Experience = {
 const experiences: Experience[] = [
   {
     company: "MoZeus",
-    role: "Product Engineer",
+    role: "Software Engineer",
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Designed and built MoZeus Forge from scratch, a .NET 9 Blazor Server application that automates Azure infrastructure provisioning using Bicep templates. Clean Architecture with Strategy Pattern, dynamic template catalog, MCP Server (10 tools), REST API (8 endpoints), role-based access control, and full audit trail. Onboarding went from 4-5 days of manual work to minutes. Direct contributor to 30% month-over-month revenue growth, putting MoZeus on track for $18M against a $10M target.",
-      "Architected a runtime plugin system (Dynamic Package Loading) where a single shared container image loads client-specific NuGet packages at request time via Managed Identity, reflection-based factory instantiation, and in-memory caching. Adding a new client became a configuration and package publish operation, not a deployment.",
-      "Reduced monthly Azure spend from $20K to $8K ($144K annual savings) by redesigning container infrastructure around scale-to-zero with consumption workload profiles and event-driven scaling. Standardized these cost-efficient defaults inside Forge for every future deployment.",
-      "Catalogued patterns across 6+ enterprise accounts and fed them back into the core product line, working with sales, revenue, and post-sales teams to define a palette of ready-to-sell offerings. Shortened deal cycles, accelerated onboarding, and eliminated greenfield rebuilds on every new account.",
-      "Primary technical contact for 6+ enterprise accounts, owning discovery workshops, architecture reviews, live technical demos, and production engineering; funneled cross-account patterns to directly influence product roadmaps and expand sales surface area.",
-      "Established ETL pipelines that processed 1M+ data points, accelerating account onboarding by 3 weeks.",
+      "Drove 20% MoM revenue growth by building MoZeus Forge from zero, an internal Azure deployment platform (Bicep/Terraform) that turned bespoke client engagements into productized, repeatable deployments.",
+      "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; patterns surfaced across accounts shaped core features (RunComfy AI processing; generic API adapter for client specs).",
+      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting compute and storage across client environments.",
+      "Cut new-account onboarding from 4 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
     ],
   },
   {
@@ -32,10 +30,9 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "March 2024 - September 2025",
     achievements: [
-      "Architected backend aggregation layer spanning 2,700+ microservice endpoints serving 100+ daily enterprise users. Built production .NET services and React UIs while acting as primary technical escalation across client integration teams.",
-      "Standardized ML publishing pipeline across 8 production environments using GitHub Actions, JFrog Artifactory, and Azure. Designed a compensation pattern for partial deployment failures across environment chains (not in original spec). Passed compliance audit on first review. Adopted as company-wide reference standard within two quarters.",
-      "Led migration from existing security scanning to GitHub CodeQL. Ran side-by-side comparison that surfaced 3 critical issues missed by the previous tool with fewer false positives. Completed migration two sprints ahead of deadline.",
-      "Automated backend scheduling workflows (Python, C#) and established NUnit testing infrastructure, increasing team delivery velocity by 30%.",
+      "Unified 2,700+ microservice endpoints into a single API surface (.NET + React) used by 100+ daily enterprise users; became the technical escalation point for client integration teams when migrations broke in production.",
+      "Cut ML model deployment cycles 60% across 8 environments by shipping a publishing pipeline with automated rollback, strict versioning, and full audit trail, built to enterprise compliance requirements from day one.",
+      "Automated backend scheduling workflows (Python, C#) and built out NUnit test infrastructure from scratch; caught bugs at commit time instead of QA, freeing the team to ship more client-facing features each quarter.",
     ],
   },
   {
@@ -44,9 +41,9 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "May 2023 - August 2023",
     achievements: [
-      "Prototyped demand forecast models (TensorFlow) to improve inventory prediction by 25% and aid WMOS decisions.",
-      "Designed RESTful microservices to support integration across 200+ fulfillment nodes in production environments.",
-      "Built Python automation dashboard to reduce test cycles by 20% and enable monitoring for non-technical stakeholders.",
+      "Shipped RESTful microservices to production handling inventory updates and order events flow across 200+ fulfillment nodes.",
+      "Improved inventory prediction accuracy 25% over baseline on curated supply chain datasets, evaluated against both precision/recall and business-impact metrics.",
+      "Built Python monitoring dashboard reducing test cycles 20% and surfacing real-time insights to non-technical stakeholders.",
     ],
   },
   {
@@ -55,8 +52,7 @@ const experiences: Experience[] = [
     location: "Sunnyvale, CA",
     period: "June 2022 - September 2022",
     achievements: [
-      "Consolidated 1,200+ avionics and API artifacts into a unified traceability system, accelerating FAA certification.",
-      "Led cross-functional coordination across hardware, software, and test teams to unblock critical-path certification milestones.",
+      "Coordinated avionics certification artifacts and NASA stakeholder schedules for a hydrogen-fueled airship deployment program.",
     ],
   },
 ];
@@ -121,7 +117,7 @@ export default function ExperiencePage() {
       <div className="mb-8">
         <h1 className="mb-3 font-serif text-4xl">Professional Experience</h1>
         <p className="max-w-3xl text-lg leading-relaxed text-muted">
-          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform behind 30% month-over-month revenue growth.
+          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform behind 20% month-over-month revenue growth.
         </p>
       </div>
 
