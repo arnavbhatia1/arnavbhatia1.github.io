@@ -41,3 +41,4 @@ CLAUDE.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+tasks/todo.md
