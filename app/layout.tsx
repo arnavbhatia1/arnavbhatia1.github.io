@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
 import ScrollProgress from "./components/ScrollProgress";
 import PageTransition from "./components/PageTransition";
+import SiteAnalytics from "./components/SiteAnalytics";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -24,10 +25,10 @@ export const metadata: Metadata = {
     siteName: "Arnav Bhatia",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Arnav Bhatia - Software Engineer",
+        alt: "Arnav Bhatia - SWE / FDE / SE",
       },
     ],
     type: "website",
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Arnav Bhatia | Software Engineer",
     description: "Software Engineer with 2+ years building production systems for enterprise clients. Incoming M.S. CS (AI/ML) at Georgia Tech.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`${dmSans.variable} ${instrumentSerif.variable} ${geistMono.variable} grain font-sans bg-background text-foreground antialiased`}>
+        <SiteAnalytics />
         <ScrollProgress />
         <header className="sticky top-0 z-40 border-b border-foreground/8 bg-background/85 backdrop-blur-lg">
           <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
@@ -73,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-6 text-sm">
               <Link href="/experience" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Experience</Link>
               <Link href="/projects" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Projects</Link>
+              <Link href="/certifications" className="nav-link hidden md:inline text-muted hover:text-foreground transition-colors">Certifications</Link>
               <Link href="/resume" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Resume</Link>
               <Link href="/contact" className="nav-link text-muted hover:text-foreground transition-colors">Contact</Link>
               <ThemeToggle />

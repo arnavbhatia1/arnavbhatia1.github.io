@@ -6,7 +6,7 @@ const repositories: Repository[] = [
   {
     name: "PolyBot",
     description:
-      "Implements Brownian motion probability modeling, Kelly Criterion position sizing, and a daily agentic learning pipeline that backtests performance and hot-swaps weight autonomously.",
+      "Live, profitable bot: 39% ROI over 3 months across 10k+ trades. Brownian-motion probability modeling, Kelly Criterion position sizing, and a daily agentic pipeline that backtests performance and hot-swaps weights autonomously.",
     language: "Python",
     stars: 0,
     url: "#",
@@ -24,7 +24,7 @@ const repositories: Repository[] = [
   {
     name: "MarketPulse",
     description:
-      "Sentiment intelligence for financial markets. Ingests posts from Reddit, Stocktwits, and news APIs, applies weak supervision with 16 labeling functions, and visualizes per-ticker sentiment through a Streamlit dashboard.",
+      "Sentiment intelligence for financial markets. Ingests financial news from Google News, Yahoo Finance, CNBC, and MarketWatch RSS feeds, applies weak supervision with 16 labeling functions, and visualizes per-ticker sentiment through a Streamlit dashboard.",
     language: "Python",
     stars: 1,
     url: "https://github.com/arnavbhatia1/MarketPulse",
@@ -33,7 +33,7 @@ const repositories: Repository[] = [
   {
     name: "CompanionMatcher",
     description:
-      "Web platform matching shelter dogs to grieving owners using semantic similarity. Built with React.js, Azure, and OpenAI Embeddings.",
+      "Web platform matching shelter dogs with prospective adopters using semantic similarity over OpenAI embeddings. Built with React, Azure, and OpenAI Embeddings.",
     language: "JavaScript",
     stars: 1,
     url: "https://github.com/arnavbhatia1/CompanionMatcher",

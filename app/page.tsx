@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import Greetings from "./components/Greetings";
-import TypeWriter from "./components/TypeWriter";
 import OpenSource from "./components/OpenSource";
 import MetricsSection from "./components/MetricsSection";
 
@@ -37,26 +37,38 @@ export default function Home() {
         {/* Radial fade */}
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_center,transparent_0%,var(--background)_75%)]" />
 
-        <div className="max-w-4xl text-center">
-          {/* Greeting Animation */}
-          <div className="mb-4 font-serif text-5xl md:text-6xl lg:text-8xl leading-tight">
-            <Greetings intervalMs={1800} className="min-w-[3ch]" />
+        <div className="max-w-3xl text-center">
+          {/* Headshot */}
+          <div className="mb-7 flex justify-center">
+            <Image
+              src="/headshot.jpg"
+              alt="Arnav Bhatia"
+              width={128}
+              height={128}
+              priority
+              className="h-28 w-28 rounded-full object-cover shadow-lg ring-2 ring-accent/40 md:h-32 md:w-32"
+            />
+          </div>
+
+          {/* Greeting Animation (demoted to eyebrow) */}
+          <div className="mb-3 text-lg font-medium text-accent md:text-xl">
+            <Greetings intervalMs={2200} />
           </div>
 
           {/* Name */}
-          <h1 className="mb-3 font-serif text-2xl text-foreground/70 md:text-3xl">
+          <h1 className="mb-5 font-serif text-5xl leading-[1.05] md:text-7xl">
             I&apos;m Arnav Bhatia
           </h1>
 
-          {/* Typing Animation for Role */}
-          <div className="mb-8 h-10 text-lg font-medium text-muted md:text-xl">
-            <TypeWriter />
-          </div>
+          {/* Positioning line */}
+          <p className="mx-auto mb-4 max-w-2xl text-xl font-medium text-foreground/85 md:text-2xl">
+            Engineer who builds the system and runs the customer meeting.
+          </p>
 
           <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-            2+ years owning both client-facing delivery and the internal platform that powers it.
-            Built the deployment infrastructure behind exponential revenue growth.
-            Incoming M.S. CS (AI/ML) at Georgia Tech.
+            Two years shipping enterprise infrastructure and ML pipelines from discovery through
+            production, equally at home in whiteboard architecture, live demos, and customer
+            escalation calls. Part-time Georgia Tech OMSCS (AI/ML).
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -104,7 +116,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Cloud & Infrastructure</h3>
               <p className="text-sm text-muted">
-                Azure (Container Apps, Bicep, RBAC), AWS, Docker, Kubernetes, GitHub Actions, CI/CD Pipelines
+                Azure (2+ yrs production: Container Apps, Bicep, RBAC), AWS, Docker, Kubernetes, CI/CD
               </p>
             </div>
 
@@ -116,7 +128,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Backend & APIs</h3>
               <p className="text-sm text-muted">
-                C#/.NET, Python, Go, TypeScript, REST, OpenAPI, Clean Architecture
+                Python, TypeScript, C#/.NET, SQL, REST, OpenAPI, Node.js, Microservices
               </p>
             </div>
 
@@ -128,7 +140,7 @@ export default function Home() {
               </div>
               <h3 className="mb-2 text-lg font-semibold">Data, ML & AI</h3>
               <p className="text-sm text-muted">
-                TensorFlow, Claude API, MCP Servers, Weak Supervision, ETL Pipelines, Kelly Criterion, Brownian Motion Models
+                Anthropic API, MCP Servers, Agentic Pipelines, LLM Tooling & Evals, Scikit-learn, Pandas, TensorFlow, Weak Supervision
               </p>
             </div>
           </div>
@@ -153,7 +165,7 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">MoZeus Forge: Internal Deployment Platform</h3>
                 <p className="text-sm text-muted">
-                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 4 weeks to 1 day. Direct contributor to 20% MoM revenue growth.
+                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 4 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.
                 </p>
               </div>
             </div>

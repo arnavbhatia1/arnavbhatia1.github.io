@@ -18,7 +18,7 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Drove 20% MoM revenue growth by building MoZeus Forge from zero, an internal Azure deployment platform (Bicep/Terraform) that turned bespoke client engagements into productized, repeatable deployments.",
+      "Drove 20% MoM revenue growth by building MoZeus Forge from zero, an internal Azure deployment platform (Bicep) that turned bespoke client engagements into productized, repeatable deployments.",
       "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; patterns surfaced across accounts shaped core features (RunComfy AI processing; generic API adapter for client specs).",
       "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting compute and storage across client environments.",
       "Cut new-account onboarding from 4 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
@@ -60,8 +60,8 @@ const experiences: Experience[] = [
 const education = [
   {
     school: "Georgia Institute of Technology",
-    degree: "M.S. - Computer Science",
-    specialization: "Specialization: Artificial Intelligence / Machine Learning",
+    degree: "M.S. - Computer Science (OMSCS)",
+    specialization: "Specialization: Artificial Intelligence / Machine Learning · Online & Part-Time",
     location: "Atlanta, GA",
     period: "Starting Fall 2026",
   },
@@ -275,7 +275,7 @@ export default function ExperiencePage() {
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
                 I've volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
-                their adoption processes. That work inspired my <strong>Shelter Match</strong> project, using
+                their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project, using
                 semantic matching to connect shelter dogs with families based on temperament and lifestyle. It's
                 one of the few side projects I've actually finished, because it solved a real problem I watched
                 play out every weekend.

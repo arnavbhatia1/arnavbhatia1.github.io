@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { SITE_CONFIG, SOCIAL_LINKS } from "../lib/site-config";
+import { SITE_CONFIG, SOCIAL_LINKS, CONTACT } from "../lib/site-config";
 import { EmailIcon, PhoneIcon, LinkedInIcon, GitHubIcon } from "../components/ui/Icons";
 
 type FormData = {
@@ -36,18 +36,39 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!CONTACT.web3formsAccessKey) {
+      setStatus("error");
+      return;
+    }
+
     setStatus("sending");
 
-    const mailtoLink = `mailto:${SITE_CONFIG.email}?subject=Contact Form: ${formData.purpose}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nPurpose: ${formData.purpose}\n\nMessage:\n${formData.message}`
-    )}`;
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: CONTACT.web3formsAccessKey,
+          subject: `Portfolio contact: ${formData.purpose || "General Inquiry"}`,
+          from_name: "Portfolio Contact Form",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          purpose: formData.purpose,
+          message: formData.message,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
 
-    window.location.href = mailtoLink;
-
-    setTimeout(() => {
-      setStatus("success");
-      setFormData(INITIAL_FORM_STATE);
-    }, 1000);
+      if (res.ok && data.success === true) {
+        setStatus("success");
+        setFormData(INITIAL_FORM_STATE);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   const handleChange = (
@@ -192,6 +213,16 @@ export default function ContactPage() {
               {status === "success" && (
                 <div className="rounded-lg bg-green-50 p-4 text-sm text-green-800">
                   Thanks for reaching out! I&apos;ll get back to you soon.
+                </div>
+              )}
+
+              {status === "error" && (
+                <div className="rounded-lg bg-red-50 p-4 text-sm text-red-800">
+                  Something went wrong sending your message. Please email me directly at{" "}
+                  <a href={SOCIAL_LINKS.email} className="font-semibold underline">
+                    {SITE_CONFIG.email}
+                  </a>
+                  .
                 </div>
               )}
             </form>
