@@ -40,8 +40,11 @@ export type Repository = {
   name: string;
   description: string;
   language: string;
-  stars: number;
-  forks?: number;
   url: string;
   topics?: string[];
+  highlight?: string;   // key proof stat shown in place of star counts
+  pypi?: string;        // PyPI project URL, if published
+  install?: string;     // install command to display (e.g. pip install ...)
+  stars?: number;
+  forks?: number;
 };

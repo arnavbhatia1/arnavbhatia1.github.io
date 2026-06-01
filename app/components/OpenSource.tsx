@@ -1,60 +1,63 @@
 import { SOCIAL_LINKS } from "../lib/site-config";
 import type { Repository } from "../lib/types";
-import { GitHubIcon, StarIcon, ExternalLinkIcon } from "./ui/Icons";
+import { GitHubIcon, ExternalLinkIcon } from "./ui/Icons";
 
+// Ordered to lead with agentic / AI-native work (most relevant for target roles).
 const repositories: Repository[] = [
-  {
-    name: "PolyBot",
-    description:
-      "Live, profitable bot: 39% ROI over 3 months across 10k+ trades. Brownian-motion probability modeling, Kelly Criterion position sizing, and a daily agentic pipeline that backtests performance and hot-swaps weights autonomously.",
-    language: "Python",
-    stars: 0,
-    url: "#",
-    topics: ["python", "sqlite", "discord-api", "anthropic-api", "polymarket", "trading-bot"],
-  },
   {
     name: "FinancialMCP",
     description:
-      "MCP server for AI-powered stock market intelligence. 24 tools covering SEC filings, macro indicators, futures positioning, sentiment, and market regime detection. No API keys required. Published on PyPI.",
+      "MCP server giving LLM agents structured access to financial intelligence: 24 tools spanning SEC EDGAR filings, CFTC positioning, Treasury yield curves, macro indicators, sentiment, and market-regime detection. No API keys required for core tools. Published on PyPI.",
     language: "Python",
-    stars: 2,
     url: "https://github.com/arnavbhatia1/FinancialMCP",
-    topics: ["mcp", "finance", "ai", "sec-edgar", "stock-market", "python"],
+    pypi: "https://pypi.org/project/financial-mcp-server/",
+    install: "pip install financial-mcp-server",
+    highlight: "v0.1.6 · 200+ downloads/mo · 24 tools",
+    topics: ["mcp", "agentic", "anthropic-api", "sec-edgar", "python", "pypi"],
+  },
+  {
+    name: "PolyBot",
+    description:
+      "Live, profitable trading bot for Polymarket 5-minute BTC markets. Brownian-motion probability modeling, Kelly Criterion sizing, and a daily agentic pipeline that backtests parameter changes and hot-swaps weights autonomously when the Sharpe ratio improves.",
+    language: "Python",
+    url: "https://github.com/arnavbhatia1/PolyBot",
+    highlight: "39% ROI over 3 months · 10k+ trades · live",
+    topics: ["agentic", "anthropic-api", "trading-bot", "polymarket", "python", "sqlite"],
   },
   {
     name: "MarketPulse",
     description:
-      "Sentiment intelligence for financial markets. Ingests financial news from Google News, Yahoo Finance, CNBC, and MarketWatch RSS feeds, applies weak supervision with 16 labeling functions, and visualizes per-ticker sentiment through a Streamlit dashboard.",
+      "Sentiment intelligence for financial markets. Ingests Google News, Yahoo Finance, CNBC, and MarketWatch RSS feeds, applies weak supervision with 16 labeling functions, and trains a classifier paired with a Kelly-sized paper-trading bot for end-to-end signal-to-execution validation.",
     language: "Python",
-    stars: 1,
     url: "https://github.com/arnavbhatia1/MarketPulse",
-    topics: ["ml", "nlp", "sentiment-analysis", "streamlit", "finance"],
+    highlight: "160 automated tests · weak supervision",
+    topics: ["ml", "nlp", "weak-supervision", "streamlit", "finance"],
   },
   {
     name: "CompanionMatcher",
     description:
       "Web platform matching shelter dogs with prospective adopters using semantic similarity over OpenAI embeddings. Built with React, Azure, and OpenAI Embeddings.",
     language: "JavaScript",
-    stars: 1,
     url: "https://github.com/arnavbhatia1/CompanionMatcher",
+    highlight: "Semantic matching · OpenAI embeddings",
     topics: ["ai", "semantic-search", "react", "azure", "openai"],
   },
   {
     name: "TetrisBot",
     description:
-      "AI agent that plays Tetris using reinforcement learning. Implemented with Python and TensorFlow.",
+      "AI agent that plays Tetris with deep Q-learning, clearing 250 average lines per game. Automated parameter tuning and a real-time GUI for agent evaluation.",
     language: "Jupyter Notebook",
-    stars: 1,
     url: "https://github.com/arnavbhatia1/TetrisBot",
+    highlight: "Deep Q-learning · 250 lines/game",
     topics: ["ai", "reinforcement-learning", "tensorflow", "game-ai"],
   },
   {
     name: "RecipeFinder",
     description:
-      "Web app for discovering recipes based on available ingredients via Spoonacular API. Features favorites, community reviews, and dark mode.",
+      "Web app for discovering recipes from available ingredients via the Spoonacular API. Favorites, community reviews, and dark mode.",
     language: "JavaScript",
-    stars: 1,
     url: "https://github.com/arnavbhatia1/RecipeFinder",
+    highlight: "React · Spoonacular API",
     topics: ["react", "spoonacular-api", "axios", "css3"],
   },
 ];
@@ -77,21 +80,13 @@ function RepoIcon({ className = "h-5 w-5" }: { className?: string }) {
   );
 }
 
-function ForkIcon({ className = "h-3.5 w-3.5" }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 16 16">
-      <path d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z" />
-    </svg>
-  );
-}
-
 export default function OpenSource() {
   return (
     <section className="py-20 bg-foreground/[0.02]">
       <div className="mx-auto max-w-5xl px-5">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 font-serif text-3xl md:text-4xl">Open Source Contributions</h2>
-          <p className="text-muted">Projects and contributions I&apos;m working on</p>
+          <h2 className="mb-3 font-serif text-3xl md:text-4xl">Featured Projects</h2>
+          <p className="text-muted">Agentic AI tooling, trading systems, and ML, live, tested, and shipped.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -108,12 +103,25 @@ export default function OpenSource() {
                 <div className="flex items-center gap-2">
                   <RepoIcon className="h-5 w-5 text-muted" />
                   <h3 className="font-semibold group-hover:text-accent transition-colors">{repo.name}</h3>
+                  {repo.pypi && (
+                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
+                      PyPI
+                    </span>
+                  )}
                 </div>
                 <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:text-accent" />
               </div>
 
               {/* Description */}
               <p className="mb-4 text-sm leading-relaxed text-muted">{repo.description}</p>
+
+              {/* Install command */}
+              {repo.install && (
+                <div className="mb-4 rounded-lg border border-foreground/8 bg-foreground/[0.04] px-3 py-2 font-mono text-xs text-foreground/80">
+                  <span className="text-muted">$ </span>
+                  {repo.install}
+                </div>
+              )}
 
               {/* Topics */}
               {repo.topics && repo.topics.length > 0 && (
@@ -129,23 +137,14 @@ export default function OpenSource() {
                 </div>
               )}
 
-              {/* Footer */}
+              {/* Footer: language + proof stat (no vanity star counts) */}
               <div className="flex items-center gap-4 text-xs text-muted">
                 <div className="flex items-center gap-1.5">
-                  <span
-                    className={`h-3 w-3 rounded-full ${LANGUAGE_COLORS[repo.language] || "bg-gray-400"}`}
-                  />
+                  <span className={`h-3 w-3 rounded-full ${LANGUAGE_COLORS[repo.language] || "bg-gray-400"}`} />
                   <span>{repo.language}</span>
                 </div>
-                <div className="flex items-center gap-1">
-                  <StarIcon />
-                  <span>{repo.stars}</span>
-                </div>
-                {repo.forks !== undefined && (
-                  <div className="flex items-center gap-1">
-                    <ForkIcon />
-                    <span>{repo.forks}</span>
-                  </div>
+                {repo.highlight && (
+                  <span className="font-medium text-foreground/70">{repo.highlight}</span>
                 )}
               </div>
             </a>
@@ -165,21 +164,19 @@ export default function OpenSource() {
           </a>
         </div>
 
-        {/* Stats Section */}
+        {/* Proof stats (real signals, not star counts) */}
         <div className="mt-12 grid gap-4 sm:grid-cols-3">
           <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">{repositories.length}</p>
-            <p className="mt-1 text-sm text-muted">Public Repositories</p>
+            <p className="text-3xl font-bold text-accent">PyPI</p>
+            <p className="mt-1 text-sm text-muted">Published: financial-mcp-server v0.1.6</p>
           </div>
           <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">
-              {repositories.reduce((sum, repo) => sum + repo.stars, 0)}
-            </p>
-            <p className="mt-1 text-sm text-muted">Total Stars</p>
+            <p className="text-3xl font-bold text-accent">200+</p>
+            <p className="mt-1 text-sm text-muted">Monthly PyPI downloads</p>
           </div>
           <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">Open</p>
-            <p className="mt-1 text-sm text-muted">For Collaboration</p>
+            <p className="text-3xl font-bold text-accent">400+</p>
+            <p className="mt-1 text-sm text-muted">Automated tests across projects</p>
           </div>
         </div>
       </div>

@@ -6,6 +6,8 @@ import ThemeToggle from "./components/ThemeToggle";
 import ScrollProgress from "./components/ScrollProgress";
 import PageTransition from "./components/PageTransition";
 import SiteAnalytics from "./components/SiteAnalytics";
+import CommandPalette from "./components/CommandPalette";
+import CommandMenuButton from "./components/CommandMenuButton";
 import "./globals.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans" });
@@ -66,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${dmSans.variable} ${instrumentSerif.variable} ${geistMono.variable} grain font-sans bg-background text-foreground antialiased`}>
         <SiteAnalytics />
+        <CommandPalette />
         <ScrollProgress />
         <header className="sticky top-0 z-40 border-b border-foreground/8 bg-background/85 backdrop-blur-lg">
           <nav className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
@@ -78,6 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/certifications" className="nav-link hidden md:inline text-muted hover:text-foreground transition-colors">Certifications</Link>
               <Link href="/resume" className="nav-link hidden sm:inline text-muted hover:text-foreground transition-colors">Resume</Link>
               <Link href="/contact" className="nav-link text-muted hover:text-foreground transition-colors">Contact</Link>
+              <CommandMenuButton />
               <ThemeToggle />
             </div>
           </nav>

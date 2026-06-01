@@ -66,9 +66,10 @@ export default function Home() {
           </p>
 
           <p className="mx-auto mb-10 max-w-2xl text-base leading-relaxed text-muted md:text-lg">
-            Two years shipping enterprise infrastructure and ML pipelines from discovery through
-            production, equally at home in whiteboard architecture, live demos, and customer
-            escalation calls. Part-time Georgia Tech OMSCS (AI/ML).
+            Two years shipping enterprise infrastructure and ML pipelines from discovery to
+            production, plus agentic AI tooling, a published MCP server and a live, profitable
+            trading bot. Equally at home in whiteboard architecture, live demos, and customer
+            escalation calls. Georgia Tech OMSCS (AI/ML).
           </p>
 
           <div className="flex flex-wrap justify-center gap-4">
@@ -93,6 +94,32 @@ export default function Home() {
               d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
           </svg>
+        </div>
+      </section>
+
+      {/* ── Where I've shipped ── */}
+      <section className="border-y border-foreground/8 bg-foreground/[0.02] px-6 py-8">
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-5 text-center text-xs font-semibold uppercase tracking-widest text-muted">
+            Where I&apos;ve shipped
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+            {[
+              { name: "MoZeus" },
+              { name: "Blue Yonder" },
+              { name: "Manhattan Associates" },
+              { name: "Lighter Than Air", sub: "NASA × Brin" },
+            ].map((company) => (
+              <div key={company.name} className="flex flex-col items-center">
+                <span className="font-serif text-xl text-foreground/70 md:text-2xl">{company.name}</span>
+                {company.sub && (
+                  <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-widest text-accent/80">
+                    {company.sub}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -252,13 +279,11 @@ export default function Home() {
               <p className="text-muted">Roles where I can combine technical depth with client impact</p>
             </div>
 
-            <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-5">
+            <div className="grid gap-3 sm:grid-cols-3">
               {[
-                { icon: "\u{1F6E0}\uFE0F", label: "Solutions Engineer" },
                 { icon: "\u{1F680}", label: "Forward Deployed Engineer" },
-                { icon: "\u{1F91D}", label: "Sales Engineer" },
-                { icon: "\u2699\uFE0F", label: "Backend Engineer" },
-                { icon: "\u{1F4BB}", label: "Software Engineer" },
+                { icon: "\u{1F6E0}\uFE0F", label: "Solutions Engineer / Architect" },
+                { icon: "\u{1F4BB}", label: "Software Engineer (Infra / Platform)" },
               ].map((role) => (
                 <div key={role.label} className="rounded-xl border border-foreground/8 bg-background/80 p-4 text-center shadow-sm transition hover:border-accent/20 hover:shadow-md">
                   <div className="mb-2 text-2xl">{role.icon}</div>
