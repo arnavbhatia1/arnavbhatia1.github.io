@@ -21,7 +21,7 @@ const experiences: Experience[] = [
       "Drove 20% MoM revenue growth by building MoZeus Forge from zero, an internal Azure deployment platform (Bicep) that turned bespoke client engagements into productized, repeatable deployments.",
       "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; patterns surfaced across accounts shaped core features (RunComfy AI processing; generic API adapter for client specs).",
       "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting compute and storage across client environments.",
-      "Cut new-account onboarding from 4 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
+      "Cut new-account onboarding from 2 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
     ],
   },
   {
@@ -52,7 +52,7 @@ const experiences: Experience[] = [
     location: "Sunnyvale, CA",
     period: "June 2022 - September 2022",
     achievements: [
-      "Coordinated avionics certification artifacts and NASA stakeholder schedules for a hydrogen-fueled airship deployment program.",
+      "Coordinated avionics certifications and stakeholder schedules for Pathfinder 1, a hydrogen airship at NASA Ames Research Center.",
     ],
   },
 ];

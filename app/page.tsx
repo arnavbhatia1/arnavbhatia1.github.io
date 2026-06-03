@@ -192,7 +192,7 @@ export default function Home() {
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">MoZeus Forge: Internal Deployment Platform</h3>
                 <p className="text-sm text-muted">
-                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 4 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.
+                  Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.
                 </p>
               </div>
             </div>

@@ -12,7 +12,7 @@ const repositories: Repository[] = [
     url: "https://github.com/arnavbhatia1/FinancialMCP",
     pypi: "https://pypi.org/project/financial-mcp-server/",
     install: "pip install financial-mcp-server",
-    highlight: "v0.1.6 · 200+ downloads/mo · 24 tools",
+    highlight: "v0.1.6 · 3,500+ downloads · 24 tools",
     topics: ["mcp", "agentic", "anthropic-api", "sec-edgar", "python", "pypi"],
   },
   {
@@ -171,8 +171,8 @@ export default function OpenSource() {
             <p className="mt-1 text-sm text-muted">Published: financial-mcp-server v0.1.6</p>
           </div>
           <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">200+</p>
-            <p className="mt-1 text-sm text-muted">Monthly PyPI downloads</p>
+            <p className="text-3xl font-bold text-accent">3,500+</p>
+            <p className="mt-1 text-sm text-muted">PyPI downloads</p>
           </div>
           <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
             <p className="text-3xl font-bold text-accent">400+</p>
