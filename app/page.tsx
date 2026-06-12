@@ -69,56 +69,58 @@ export default function Home() {
     <main>
       {/* ── Hero ── */}
       <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-12">
-          <div className="md:col-span-8">
-            <p className="mb-10 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              Arnav Bhatia · Atlanta, GA · Software Engineer @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML)
-            </p>
+        <div className="mx-auto max-w-5xl">
+          <p className="mb-10 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+            Arnav Bhatia · Atlanta, GA · SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML)
+          </p>
 
-            <h1 className="font-serif text-[clamp(2.75rem,6.5vw,4.5rem)] leading-[1.04] tracking-[-0.015em]">
-              Builds the system.
-              <br />
-              Runs the customer meeting.
-            </h1>
+          <div className="grid gap-12 md:grid-cols-12">
+            <div className="md:col-span-8">
+              <h1 className="font-serif text-[clamp(2.75rem,6.5vw,4.5rem)] leading-[1.04] tracking-[-0.015em]">
+                Builds the system.
+                <br />
+                Runs the customer meeting.
+              </h1>
 
-            <p className="mt-8 max-w-[36rem] font-serif text-lg italic leading-relaxed text-foreground/90 md:text-xl">
-              Two years shipping enterprise infrastructure and ML pipelines from discovery to
-              production, plus agentic AI tooling, a published MCP server, and a live, profitable
-              trading bot. Equally at home in whiteboard architecture, live demos, and customer
-              escalation calls.
-            </p>
+              <p className="mt-8 max-w-[36rem] font-serif text-lg italic leading-relaxed text-foreground/90 md:text-xl">
+                Two years shipping enterprise infrastructure and ML pipelines from discovery to
+                production, plus agentic AI tooling, a published MCP server, and a live, profitable
+                trading bot. Equally at home in whiteboard architecture, live demos, and customer
+                escalation calls.
+              </p>
 
-            <div className="mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-4 font-mono text-xs uppercase tracking-[0.12em]">
-              <Link
-                href="/experience"
-                className="border-b border-foreground/30 pb-1 text-foreground transition-colors hover:border-accent hover:text-accent"
-              >
-                Experience
-              </Link>
-              <Link
-                href="/projects"
-                className="border-b border-foreground/30 pb-1 text-foreground transition-colors hover:border-accent hover:text-accent"
-              >
-                Projects
-              </Link>
-              <Link
-                href="/contact"
-                className="border-b border-accent pb-1 text-accent transition-opacity hover:opacity-75"
-              >
-                Get in touch
-              </Link>
+              <div className="mt-12 flex flex-wrap items-baseline gap-x-8 gap-y-4 font-mono text-xs uppercase tracking-[0.12em]">
+                <Link
+                  href="/experience"
+                  className="border-b border-foreground/30 pb-1 text-foreground transition-colors hover:border-accent hover:text-accent"
+                >
+                  Experience
+                </Link>
+                <Link
+                  href="/projects"
+                  className="border-b border-foreground/30 pb-1 text-foreground transition-colors hover:border-accent hover:text-accent"
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="border-b border-accent pb-1 text-accent transition-opacity hover:opacity-75"
+                >
+                  Get in touch
+                </Link>
+              </div>
             </div>
-          </div>
 
-          <div className="order-first flex md:order-none md:col-span-4 md:items-start md:justify-end">
-            <Image
-              src="/headshot.jpg"
-              alt="Arnav Bhatia"
-              width={208}
-              height={208}
-              priority
-              className="h-44 w-44 border border-foreground/15 object-cover lg:h-52 lg:w-52"
-            />
+            <div className="order-first flex md:order-none md:col-span-4 md:items-start md:justify-end">
+              <Image
+                src="/headshot.jpg"
+                alt="Arnav Bhatia"
+                width={208}
+                height={208}
+                priority
+                className="h-44 w-44 border border-foreground/15 object-cover lg:h-52 lg:w-52"
+              />
+            </div>
           </div>
         </div>
       </section>
