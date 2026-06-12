@@ -1,6 +1,5 @@
-"use client";
-
 import AnimatedCounter from "./AnimatedCounter";
+import { EYEBROW } from "../lib/styles";
 
 const metrics = [
   { value: 20, suffix: "%", label: "Month-over-month revenue growth since platform launch" },
@@ -11,15 +10,13 @@ const metrics = [
 
 export default function MetricsSection() {
   return (
-    <section className="border-t border-foreground/15 px-6">
+    <section className="border-t border-hairline px-6">
       <div className="mx-auto max-w-5xl py-16 md:py-20">
-        <p className="mb-12 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-          Impact, measured
-        </p>
+        <p className={`mb-12 text-muted ${EYEBROW}`}>Impact, measured</p>
 
         <div className="grid gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((metric) => (
-            <div key={metric.label} className="border-l border-foreground/15 pl-6 lg:pr-6">
+            <div key={metric.label} className="border-l border-hairline pl-6 lg:pr-6">
               <p className="font-mono text-5xl tracking-tight text-accent md:text-6xl">
                 <AnimatedCounter end={metric.value} prefix={metric.prefix} suffix={metric.suffix} />
               </p>

@@ -1,14 +1,9 @@
-"use client";
+import Tabs from "../components/Tabs";
+import { EYEBROW, RULED, RULED_Y, ENTRY_GRID, ENTRY_META } from "../lib/styles";
+import type { Experience, Education } from "../lib/types";
 
-import { useState } from "react";
-
-type Experience = {
-  company: string;
-  role: string;
-  location: string;
-  period: string;
-  achievements: string[];
-  logo?: string;
+export const metadata = {
+  title: "Experience | Arnav Bhatia",
 };
 
 const experiences: Experience[] = [
@@ -57,7 +52,7 @@ const experiences: Experience[] = [
   },
 ];
 
-const education = [
+const education: Education[] = [
   {
     school: "Georgia Institute of Technology",
     degree: "M.S. - Computer Science (OMSCS)",
@@ -96,31 +91,151 @@ const clientPrinciples = [
   },
 ];
 
-const TimelineItem = ({ exp }: { exp: Experience }) => (
-  <article className="grid gap-3 py-8 md:grid-cols-12 md:gap-6">
-    <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
-      <p>{exp.period}</p>
-      <p className="mt-1.5">{exp.location}</p>
-    </div>
+const workHistoryPanel = (
+  <div>
+    {/* Work Experience */}
+    <section className="mb-16">
+      <h2 className={`mb-8 text-muted ${EYEBROW}`}>Work Experience</h2>
+      <div className={RULED}>
+        {experiences.map((exp) => (
+          <article key={exp.company} className={ENTRY_GRID}>
+            <div className={ENTRY_META}>
+              <p>{exp.period}</p>
+              <p className="mt-1.5">{exp.location}</p>
+            </div>
 
-    <div className="md:col-span-9">
-      <h3 className="font-serif text-2xl">{exp.company}</h3>
-      <p className="font-serif text-lg text-muted">{exp.role}</p>
+            <div className="md:col-span-9">
+              <h3 className="font-serif text-2xl">{exp.company}</h3>
+              <p className="font-serif text-lg text-muted">{exp.role}</p>
 
-      <ul className="mt-4 space-y-2.5 list-disc pl-5 marker:text-foreground/40">
-        {exp.achievements.map((achievement, i) => (
-          <li key={i} className="leading-relaxed text-muted">
-            {achievement}
-          </li>
+              <ul className="mt-4 space-y-2.5 list-disc pl-5 marker:text-foreground/40">
+                {exp.achievements.map((achievement) => (
+                  <li key={achievement} className="leading-relaxed text-muted">
+                    {achievement}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
         ))}
-      </ul>
-    </div>
-  </article>
+      </div>
+    </section>
+
+    {/* Education */}
+    <section>
+      <h2 className={`mb-8 text-muted ${EYEBROW}`}>Education</h2>
+      <div className={RULED}>
+        {education.map((edu) => (
+          <article key={edu.school} className={ENTRY_GRID}>
+            <div className={ENTRY_META}>
+              <p>{edu.period}</p>
+              <p className="mt-1.5">{edu.location}</p>
+            </div>
+
+            <div className="md:col-span-9">
+              <h3 className="font-serif text-2xl">{edu.school}</h3>
+              <p className="text-lg text-muted">{edu.degree}</p>
+              {edu.specialization && (
+                <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.specialization}</p>
+              )}
+              {edu.minor && (
+                <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.minor}</p>
+              )}
+
+              {edu.societies && (
+                <p className="mt-4 font-mono text-[11px] tracking-[0.04em] text-muted">
+                  <span className="uppercase tracking-[0.12em]">Societies & Activities:</span>{" "}
+                  {edu.societies.join(" · ")}
+                </p>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  </div>
+);
+
+const journeyPanel = (
+  <div className="space-y-16">
+    {/* Professional Journey & What Drives Me */}
+    <section>
+      <h2 className={`mb-8 text-muted ${EYEBROW}`}>My Journey & What Drives Me</h2>
+      <div className="space-y-4">
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          The common thread across everything I&apos;ve done is that I&apos;ve always been the engineer closest to the customer.
+          At Boston University, I combined computer science with business administration because I wanted to understand
+          how systems create value, not just how they work. That instinct has shaped every role since.
+        </p>
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I&apos;ve expanded
+          into building the internal platform that now powers how the company sells and deploys its products. That work
+          operates on two layers: <strong>Layer 1</strong> is running technical discovery with enterprise clients, designing
+          and deploying containerized Azure infrastructure, and building the data pipelines and webhook integrations that
+          power client workflows. <strong>Layer 2</strong> is identifying that MoZeus had a scaling problem, where every
+          client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
+          That second layer, the platform work, has had a direct, measurable impact on company revenue.
+        </p>
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          Outside of work I build production-grade systems that stay live and require real engineering discipline to maintain.
+          A quantitative trading bot for prediction markets using Brownian motion probability models and Kelly Criterion
+          position sizing. A financial sentiment pipeline with a published MCP server on PyPI. Both share a design philosophy:
+          <strong> probability over prediction, math over intuition, systems over scripts</strong>. That&apos;s the same philosophy
+          I bring to infrastructure work at MoZeus: design for the math to be right, build systems that adapt, and let the
+          data decide.
+        </p>
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          I&apos;ve realized my best work comes from being the person writing the code and sitting in the room where the problem
+          arose. That feedback loop is what I want to build my career around. I&apos;m starting my Master&apos;s in Computer Science
+          at Georgia Tech focused on AI and ML next fall.
+        </p>
+      </div>
+    </section>
+
+    {/* Engineering Approach */}
+    <section>
+      <h2 className={`mb-8 text-muted ${EYEBROW}`}>How I Work With Clients</h2>
+      <div className={RULED_Y}>
+        {clientPrinciples.map((principle) => (
+          <div key={principle.title} className="grid gap-2 py-6 md:grid-cols-12 md:gap-6">
+            <h3 className="font-serif text-xl md:col-span-4">{principle.title}</h3>
+            <p className="leading-relaxed text-muted md:col-span-8">{principle.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Personal Interests */}
+    <section>
+      <h2 className={`mb-8 text-muted ${EYEBROW}`}>Beyond the Code</h2>
+      <div className="space-y-4">
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          I&apos;ve volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
+          their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project, using
+          semantic matching to connect shelter dogs with families based on temperament and lifestyle. It&apos;s
+          one of the few side projects I&apos;ve actually finished, because it solved a real problem I watched
+          play out every weekend.
+        </p>
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          I spent years as a competitive athlete, squash mainly, and that background still shapes how I think.
+          Athletes train with a chip on their shoulder, always assuming they&apos;re the underdog with something to
+          prove. That mentality stuck with me. I don&apos;t coast. I don&apos;t assume I&apos;ve figured it out. Every project
+          and role has an underlying drive to prove my aptitude.
+        </p>
+        <p className="max-w-[68ch] leading-relaxed text-muted">
+          Outside of work, I&apos;m fascinated by <strong>quantitative and computational finance engineering</strong>, the
+          intersection of math, systems design, and market dynamics. Both PolyBot and MarketPulse reflect that: PolyBot
+          doesn&apos;t predict where BTC goes, it computes whether the market&apos;s implied probability is miscalibrated.
+          MarketPulse&apos;s trading bot doesn&apos;t guess which stocks will go up, it sizes positions based on demonstrated
+          edge from actual trade statistics. Both use Kelly Criterion, both have learning pipelines that adapt based on
+          outcomes, both have automated test suites in the hundreds, and both are live, running systems.
+        </p>
+      </div>
+    </section>
+  </div>
 );
 
 export default function ExperiencePage() {
-  const [activeTab, setActiveTab] = useState<"experience" | "journey">("experience");
-
   return (
     <main className="mx-auto w-full max-w-5xl px-5 py-12 md:py-16">
       {/* Header */}
@@ -133,163 +248,14 @@ export default function ExperiencePage() {
         </p>
       </div>
 
-      {/* Tabs */}
-      <div className="mb-12 flex flex-wrap items-baseline gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.12em]">
-        <button
-          onClick={() => setActiveTab("experience")}
-          className={
-            activeTab === "experience"
-              ? "border-b-2 border-accent pb-2 text-foreground"
-              : "border-b-2 border-transparent pb-2 text-muted transition-colors hover:text-foreground"
-          }
-        >
-          Work History
-        </button>
-        <button
-          onClick={() => setActiveTab("journey")}
-          className={
-            activeTab === "journey"
-              ? "border-b-2 border-accent pb-2 text-foreground"
-              : "border-b-2 border-transparent pb-2 text-muted transition-colors hover:text-foreground"
-          }
-        >
-          My Journey
-        </button>
-      </div>
-
-      {activeTab === "experience" ? (
-        <div>
-          {/* Work Experience */}
-          <section className="mb-16">
-            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              Work Experience
-            </h2>
-            <div className="divide-y divide-foreground/15 border-t border-foreground/15">
-              {experiences.map((exp, index) => (
-                <TimelineItem key={index} exp={exp} />
-              ))}
-            </div>
-          </section>
-
-          {/* Education */}
-          <section>
-            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              Education
-            </h2>
-            <div className="divide-y divide-foreground/15 border-t border-foreground/15">
-              {education.map((edu, index) => (
-                <article key={index} className="grid gap-3 py-8 md:grid-cols-12 md:gap-6">
-                  <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
-                    <p>{edu.period}</p>
-                    <p className="mt-1.5">{edu.location}</p>
-                  </div>
-
-                  <div className="md:col-span-9">
-                    <h3 className="font-serif text-2xl">{edu.school}</h3>
-                    <p className="text-lg text-muted">{edu.degree}</p>
-                    {edu.specialization && (
-                      <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.specialization}</p>
-                    )}
-                    {edu.minor && (
-                      <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.minor}</p>
-                    )}
-
-                    {edu.societies && (
-                      <p className="mt-4 font-mono text-[11px] tracking-[0.04em] text-muted">
-                        <span className="uppercase tracking-[0.12em]">Societies & Activities:</span>{" "}
-                        {edu.societies.join(" · ")}
-                      </p>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-        </div>
-      ) : (
-        <div className="space-y-16">
-          {/* Professional Journey & What Drives Me */}
-          <section>
-            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              My Journey & What Drives Me
-            </h2>
-            <div className="space-y-4">
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                The common thread across everything I've done is that I've always been the engineer closest to the customer.
-                At Boston University, I combined computer science with business administration because I wanted to understand
-                how systems create value, not just how they work. That instinct has shaped every role since.
-              </p>
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I've expanded
-                into building the internal platform that now powers how the company sells and deploys its products. That work
-                operates on two layers: <strong>Layer 1</strong> is running technical discovery with enterprise clients, designing
-                and deploying containerized Azure infrastructure, and building the data pipelines and webhook integrations that
-                power client workflows. <strong>Layer 2</strong> is identifying that MoZeus had a scaling problem, where every
-                client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
-                That second layer, the platform work, has had a direct, measurable impact on company revenue.
-              </p>
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                Outside of work I build production-grade systems that stay live and require real engineering discipline to maintain.
-                A quantitative trading bot for prediction markets using Brownian motion probability models and Kelly Criterion
-                position sizing. A financial sentiment pipeline with a published MCP server on PyPI. Both share a design philosophy:
-                <strong> probability over prediction, math over intuition, systems over scripts</strong>. That's the same philosophy
-                I bring to infrastructure work at MoZeus: design for the math to be right, build systems that adapt, and let the
-                data decide.
-              </p>
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                I've realized my best work comes from being the person writing the code and sitting in the room where the problem
-                arose. That feedback loop is what I want to build my career around. I'm starting my Master's in Computer Science
-                at Georgia Tech focused on AI and ML next fall.
-              </p>
-            </div>
-          </section>
-
-          {/* Engineering Approach */}
-          <section>
-            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              How I Work With Clients
-            </h2>
-            <div className="divide-y divide-foreground/15 border-y border-foreground/15">
-              {clientPrinciples.map((principle) => (
-                <div key={principle.title} className="grid gap-2 py-6 md:grid-cols-12 md:gap-6">
-                  <h3 className="font-serif text-xl md:col-span-4">{principle.title}</h3>
-                  <p className="leading-relaxed text-muted md:col-span-8">{principle.body}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Personal Interests */}
-          <section>
-            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              Beyond the Code
-            </h2>
-            <div className="space-y-4">
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                I've volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
-                their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project, using
-                semantic matching to connect shelter dogs with families based on temperament and lifestyle. It's
-                one of the few side projects I've actually finished, because it solved a real problem I watched
-                play out every weekend.
-              </p>
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                I spent years as a competitive athlete, squash mainly, and that background still shapes how I think.
-                Athletes train with a chip on their shoulder, always assuming they're the underdog with something to
-                prove. That mentality stuck with me. I don't coast. I don't assume I've figured it out. Every project
-                and role has an underlying drive to prove my aptitude.
-              </p>
-              <p className="max-w-[68ch] leading-relaxed text-muted">
-                Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>, the
-                intersection of math, systems design, and market dynamics. Both PolyBot and MarketPulse reflect that: PolyBot
-                doesn't predict where BTC goes, it computes whether the market's implied probability is miscalibrated.
-                MarketPulse's trading bot doesn't guess which stocks will go up, it sizes positions based on demonstrated
-                edge from actual trade statistics. Both use Kelly Criterion, both have learning pipelines that adapt based on
-                outcomes, both have automated test suites in the hundreds, and both are live, running systems.
-              </p>
-            </div>
-          </section>
-        </div>
-      )}
+      <Tabs
+        className="mb-12"
+        tabs={[
+          { key: "experience", label: "Work History" },
+          { key: "journey", label: "My Journey" },
+        ]}
+        panels={{ experience: workHistoryPanel, journey: journeyPanel }}
+      />
     </main>
   );
 }

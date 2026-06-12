@@ -6,7 +6,6 @@ export type Experience = {
   location: string;
   period: string;
   achievements: string[];
-  logo?: string;
 };
 
 export type Education = {
@@ -45,6 +44,4 @@ export type Repository = {
   highlight?: string;   // key proof stat shown in place of star counts
   pypi?: string;        // PyPI project URL, if published
   install?: string;     // install command to display (e.g. pip install ...)
-  stars?: number;
-  forks?: number;
 };

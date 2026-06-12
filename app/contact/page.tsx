@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { SITE_CONFIG, SOCIAL_LINKS, CONTACT } from "../lib/site-config";
+import { EYEBROW, RULED_Y } from "../lib/styles";
 
 type FormData = {
   name: string;
@@ -15,10 +16,14 @@ const PURPOSES = [
   { value: "", label: "Select a purpose..." },
   { value: "hiring", label: "Hiring / Recruitment" },
   { value: "collaboration", label: "Collaboration / Partnership" },
-  { value: "speaking", label: "Networking" },
+  { value: "networking", label: "Networking" },
   { value: "consulting", label: "Consulting" },
   { value: "general", label: "Miscellaneous" },
 ] as const;
+
+const LABEL_CLASS = `mb-2 block text-muted ${EYEBROW}`;
+const FIELD_CLASS =
+  "w-full border border-hairline bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20";
 
 const INITIAL_FORM_STATE: FormData = {
   name: "",
@@ -92,7 +97,7 @@ export default function ContactPage() {
           </p>
 
           {/* Contact Methods */}
-          <div className="divide-y divide-foreground/15 border-y border-foreground/15">
+          <div className={RULED_Y}>
             <ContactMethod label="Email" href={SOCIAL_LINKS.email} value={SITE_CONFIG.email} />
             <ContactMethod
               label="Phone"
@@ -121,10 +126,8 @@ export default function ContactPage() {
 
         {/* Right Column - Contact Form */}
         <div>
-          <div className="border border-foreground/15 p-8">
-            <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-              Send a Message
-            </h2>
+          <div className="border border-hairline p-8">
+            <h2 className={`mb-6 text-muted ${EYEBROW}`}>Send a Message</h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <FormField
@@ -158,10 +161,7 @@ export default function ContactPage() {
               />
 
               <div>
-                <label
-                  htmlFor="purpose"
-                  className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
-                >
+                <label htmlFor="purpose" className={LABEL_CLASS}>
                   Purpose *
                 </label>
                 <select
@@ -170,7 +170,7 @@ export default function ContactPage() {
                   required
                   value={formData.purpose}
                   onChange={handleChange}
-                  className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  className={FIELD_CLASS}
                 >
                   {PURPOSES.map((p) => (
                     <option key={p.value} value={p.value}>
@@ -181,10 +181,7 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
-                >
+                <label htmlFor="message" className={LABEL_CLASS}>
                   Message *
                 </label>
                 <textarea
@@ -194,7 +191,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  className={FIELD_CLASS}
                   placeholder="Tell me about your inquiry..."
                 />
               </div>
@@ -244,7 +241,7 @@ function ContactMethod({
 }) {
   return (
     <div className="flex items-baseline justify-between gap-4 py-4">
-      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">{label}</p>
+      <p className={`text-muted ${EYEBROW}`}>{label}</p>
       <a
         href={href}
         {...(external && { target: "_blank", rel: "noopener noreferrer" })}
@@ -277,10 +274,7 @@ function FormField({
 }) {
   return (
     <div>
-      <label
-        htmlFor={name}
-        className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
-      >
+      <label htmlFor={name} className={LABEL_CLASS}>
         {label} {required && "*"}
         {optional && <span>(optional)</span>}
       </label>
@@ -291,7 +285,7 @@ function FormField({
         required={required}
         value={value}
         onChange={onChange}
-        className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+        className={FIELD_CLASS}
         placeholder={placeholder}
       />
     </div>

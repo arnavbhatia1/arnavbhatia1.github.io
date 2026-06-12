@@ -18,14 +18,15 @@ export default function AnimatedCounter({
   className = "",
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const hasAnimated = useRef(false);
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
+        if (entries[0].isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          observer.disconnect();
           // The CSS reduced-motion rule can't stop a rAF loop, so honor it here.
           if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
             setCount(end);
@@ -53,7 +54,7 @@ export default function AnimatedCounter({
     }
 
     return () => observer.disconnect();
-  }, [end, duration, hasAnimated]);
+  }, [end, duration]);
 
   return (
     <span ref={ref} className={className}>

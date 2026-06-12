@@ -3,13 +3,14 @@ import { Newsreader, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
-import PageTransition from "./components/PageTransition";
 import SiteAnalytics from "./components/SiteAnalytics";
 import CommandPalette from "./components/CommandPalette";
 import CommandMenuButton from "./components/CommandMenuButton";
+import { NAV_LINKS } from "./lib/site-config";
+import { EYEBROW } from "./lib/styles";
 import "./globals.css";
 
-const newsreader = Newsreader({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-newsreader", axes: ["opsz"] });
+const newsreader = Newsreader({ subsets: ["latin"], style: ["normal"], variable: "--font-newsreader", axes: ["opsz"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -67,27 +68,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${newsreader.variable} ${geistMono.variable} font-serif bg-background text-foreground antialiased`}>
         <SiteAnalytics />
         <CommandPalette />
-        <header className="sticky top-0 z-40 border-b border-foreground/15 bg-background">
+        <header className="sticky top-0 z-40 border-b border-hairline bg-background">
           <nav className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-5 py-4">
             <Link href="/" className="font-serif text-xl tracking-tight text-foreground hover:text-accent transition-colors">
               Arnav Bhatia
             </Link>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] uppercase tracking-[0.12em] sm:gap-x-6">
-              <Link href="/experience" className="nav-link text-muted hover:text-foreground transition-colors">Experience</Link>
-              <Link href="/projects" className="nav-link text-muted hover:text-foreground transition-colors">Projects</Link>
-              <Link href="/certifications" className="nav-link text-muted hover:text-foreground transition-colors">Certifications</Link>
-              <Link href="/resume" className="nav-link text-muted hover:text-foreground transition-colors">Resume</Link>
-              <Link href="/contact" className="nav-link text-muted hover:text-foreground transition-colors">Contact</Link>
+            <div className={`flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6 ${EYEBROW}`}>
+              {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="nav-link text-muted hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </Link>
+              ))}
               <CommandMenuButton />
               <ThemeToggle />
             </div>
           </nav>
         </header>
-        <PageTransition>
-          <div className="min-h-screen">
-            {children}
-          </div>
-        </PageTransition>
+        <div className="min-h-screen">{children}</div>
         <Footer />
       </body>
     </html>

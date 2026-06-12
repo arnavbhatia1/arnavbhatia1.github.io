@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { SITE_CONFIG } from "../lib/site-config";
+import { MONO_LINK, MONO_LINK_ACCENT } from "../lib/styles";
+
+const RESUME = SITE_CONFIG.resumePath;
 
 export default function ResumePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,26 +19,17 @@ export default function ResumePage() {
           <p className="mt-4 text-muted">View or download my resume</p>
         </div>
         <div className="flex flex-wrap items-baseline gap-x-8 gap-y-4 font-mono text-xs uppercase tracking-[0.12em]">
-          <a
-            href="/Arnav_Bhatia_Resume.pdf"
-            download
-            className="border-b border-accent pb-1 text-accent transition-opacity hover:opacity-75"
-          >
+          <a href={RESUME} download className={MONO_LINK_ACCENT}>
             Download PDF
           </a>
-          <a
-            href="/Arnav_Bhatia_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-b border-foreground/30 pb-1 transition-colors hover:border-accent hover:text-accent"
-          >
+          <a href={RESUME} target="_blank" rel="noopener noreferrer" className={MONO_LINK}>
             Open in new tab
           </a>
         </div>
       </div>
 
       {/* PDF Viewer - desktop (mobile browsers can't reliably render PDFs inline) */}
-      <div className="relative hidden border border-foreground/15 md:block">
+      <div className="relative hidden border border-hairline md:block">
         {isLoading && (
           <div className="absolute inset-0 z-10 flex items-center justify-center bg-background">
             <div className="flex flex-col items-center gap-3">
@@ -44,7 +39,7 @@ export default function ResumePage() {
           </div>
         )}
         <iframe
-          src="/Arnav_Bhatia_Resume.pdf#view=FitH"
+          src={`${RESUME}#view=FitH`}
           className="w-full h-[80vh] min-h-[600px]"
           onLoad={() => setIsLoading(false)}
           title="Resume PDF Viewer"
@@ -52,24 +47,15 @@ export default function ResumePage() {
       </div>
 
       {/* Mobile fallback - inline PDF embeds are unreliable on phones, so offer clear actions */}
-      <div className="border border-foreground/15 p-8 md:hidden">
+      <div className="border border-hairline p-8 md:hidden">
         <p className="text-sm text-muted">
           Inline preview isn&apos;t supported on most phones. Open or download the resume to view it.
         </p>
         <div className="mt-6 flex flex-col items-start gap-5 font-mono text-xs uppercase tracking-[0.12em]">
-          <a
-            href="/Arnav_Bhatia_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border-b border-accent pb-1 text-accent transition-opacity hover:opacity-75"
-          >
+          <a href={RESUME} target="_blank" rel="noopener noreferrer" className={MONO_LINK_ACCENT}>
             Open Resume
           </a>
-          <a
-            href="/Arnav_Bhatia_Resume.pdf"
-            download
-            className="border-b border-foreground/30 pb-1 transition-colors hover:border-accent hover:text-accent"
-          >
+          <a href={RESUME} download className={MONO_LINK}>
             Download PDF
           </a>
         </div>
@@ -78,11 +64,7 @@ export default function ResumePage() {
       {/* Fallback */}
       <p className="mt-6 text-sm text-muted">
         Can&apos;t see the PDF?{" "}
-        <a
-          href="/Arnav_Bhatia_Resume.pdf"
-          download
-          className="underline underline-offset-4 hover:text-accent"
-        >
+        <a href={RESUME} download className="underline underline-offset-4 hover:text-accent">
           Download it directly
         </a>{" "}
         or{" "}

@@ -17,22 +17,15 @@
   --muted: #9c948a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --background: #0e0c0a;
-    --foreground: #e8e4df;
-    --accent: #f0a33b;
-    --accent-foreground: #1a1714;
-    --muted: #9c948a;
-  }
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
+  /* Hairline rules are the design system's only structural device. */
+  --color-hairline: color-mix(in oklab, var(--foreground) 15%, transparent);
+  --color-hairline-strong: color-mix(in oklab, var(--foreground) 30%, transparent);
   --font-sans: var(--font-newsreader);
   --font-serif: var(--font-newsreader);
   --font-mono: var(--font-geist-mono);
@@ -95,6 +88,22 @@ html {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* ── Page Enter (replayed per route via app/template.tsx) ── */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.3s ease-out;
 }
 
 /* Respect users who prefer reduced motion (accessibility) */

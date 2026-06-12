@@ -1,4 +1,5 @@
 import { SOCIAL_LINKS } from "../lib/site-config";
+import { EYEBROW, RULED, ENTRY_GRID } from "../lib/styles";
 import type { Repository } from "../lib/types";
 
 // Ordered to lead with agentic / AI-native work (most relevant for target roles).
@@ -69,32 +70,30 @@ const proofStats = [
 
 export default function OpenSource() {
   return (
-    <section className="border-t border-foreground/15 px-6">
+    <section className="border-t border-hairline px-6">
       <div className="mx-auto max-w-5xl py-16 md:py-20">
         <div className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
-          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
-            Featured projects
-          </p>
+          <p className={`text-muted ${EYEBROW}`}>Featured projects</p>
           <a
             href={SOCIAL_LINKS.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="border-b border-foreground/30 pb-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
+            className={`border-b border-hairline-strong pb-0.5 transition-colors hover:border-accent hover:text-accent ${EYEBROW}`}
           >
             All projects on GitHub ↗
           </a>
         </div>
 
-        <div className="divide-y divide-foreground/15 border-t border-foreground/15">
+        <div className={RULED}>
           {repositories.map((repo) => (
             <a
               key={repo.name}
               href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group grid gap-3 py-8 md:grid-cols-12 md:gap-6"
+              className={`group ${ENTRY_GRID}`}
             >
-              <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
+              <div className={`text-muted md:col-span-3 md:pt-1.5 ${EYEBROW}`}>
                 <p>{repo.language}</p>
                 {repo.highlight && <p className="mt-1.5 normal-case">{repo.highlight}</p>}
               </div>
@@ -127,9 +126,9 @@ export default function OpenSource() {
         </div>
 
         {/* Proof stats (real signals, not star counts) */}
-        <div className="mt-14 grid gap-y-10 border-t border-foreground/15 pt-10 sm:grid-cols-3">
+        <div className="mt-14 grid gap-y-10 border-t border-hairline pt-10 sm:grid-cols-3">
           {proofStats.map((stat) => (
-            <div key={stat.label} className="border-l border-foreground/15 pl-6">
+            <div key={stat.label} className="border-l border-hairline pl-6">
               <p className="font-mono text-2xl tracking-tight text-accent md:text-3xl">{stat.value}</p>
               <p className="mt-2 max-w-[24ch] text-sm leading-relaxed text-muted">{stat.label}</p>
             </div>

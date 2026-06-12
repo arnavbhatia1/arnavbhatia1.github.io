@@ -1,30 +1,27 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { isDarkTheme, toggleTheme } from "../lib/theme";
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  // null until mounted: the server doesn't know the theme, so render a
+  // placeholder to avoid a hydration mismatch.
+  const [isDark, setIsDark] = useState<boolean | null>(null);
 
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setIsDark(stored === "dark" || (!stored && prefersDark));
+    const sync = () => setIsDark(isDarkTheme());
+    sync();
+    // Stays in sync when the theme is toggled elsewhere (command palette).
+    window.addEventListener("themechange", sync);
+    return () => window.removeEventListener("themechange", sync);
   }, []);
 
-  useEffect(() => {
-    if (!mounted) return;
-    document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  }, [isDark, mounted]);
-
-  if (!mounted) return <div className="h-9 w-9" />;
+  if (isDark === null) return <div className="h-8 w-8" />;
 
   return (
     <button
-      onClick={() => setIsDark(!isDark)}
-      className="flex h-8 w-8 items-center justify-center border border-foreground/15 bg-background transition hover:border-accent"
+      onClick={() => toggleTheme()}
+      className="flex h-8 w-8 items-center justify-center border border-hairline bg-background transition hover:border-accent"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       {isDark ? (
