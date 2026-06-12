@@ -2,162 +2,52 @@
 
 import Link from "next/link";
 import { SITE_CONFIG, SOCIAL_LINKS, NAV_LINKS } from "../lib/site-config";
-import { LinkedInIcon, GitHubIcon, EmailIcon, ChevronUpIcon } from "./ui/Icons";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-foreground/8 bg-background">
-      <div className="mx-auto max-w-5xl px-5 py-10">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {/* About */}
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
-              About
-            </h3>
-            <p className="text-sm leading-relaxed text-muted">
-              Full-stack engineer building scalable backend systems, ML pipelines, and cloud-native platforms.
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
-              Quick Links
-            </h3>
-            <ul className="space-y-2 text-sm">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-muted hover:text-foreground hover:underline"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
-              Resources
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href={SITE_CONFIG.resumePath}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted hover:text-foreground hover:underline"
-                >
-                  Resume
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SOCIAL_LINKS.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted hover:text-foreground hover:underline"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  href={SOCIAL_LINKS.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-muted hover:text-foreground hover:underline"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-muted">
-              Get in Touch
-            </h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  href={SOCIAL_LINKS.email}
-                  className="text-muted hover:text-foreground hover:underline"
-                >
-                  {SITE_CONFIG.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${SITE_CONFIG.phoneRaw}`}
-                  className="text-muted hover:text-foreground hover:underline"
-                >
-                  {SITE_CONFIG.phone}
-                </a>
-              </li>
-              <li className="pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-block rounded-full bg-foreground px-4 py-2 text-xs font-semibold text-background transition hover:bg-foreground/90"
-                >
-                  Contact Form
-                </Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="border-t border-foreground/15">
+      <div className="mx-auto max-w-5xl px-5 py-12">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-6">
+          <p className="font-serif text-xl tracking-tight">Arnav Bhatia</p>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.12em]">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-muted transition-colors hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-foreground/8 pt-8 sm:flex-row">
-          <p className="text-sm text-muted">
-            &copy; {currentYear} {SITE_CONFIG.name}. All rights reserved.
-          </p>
-
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <a
-              href={SOCIAL_LINKS.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted transition hover:text-foreground"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
+        <div className="mt-10 flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3 border-t border-foreground/15 pt-6 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+          <p>© {currentYear} {SITE_CONFIG.name}</p>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
             <a
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted transition hover:text-foreground"
-              aria-label="GitHub"
+              className="transition-colors hover:text-foreground"
             >
-              <GitHubIcon />
+              GitHub
             </a>
             <a
-              href={SOCIAL_LINKS.email}
-              className="text-muted transition hover:text-foreground"
-              aria-label="Email"
+              href={SOCIAL_LINKS.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-foreground"
             >
-              <EmailIcon />
+              LinkedIn
+            </a>
+            <a href={SOCIAL_LINKS.email} className="normal-case transition-colors hover:text-foreground">
+              {SITE_CONFIG.email}
             </a>
           </div>
         </div>
-
-        {/* Back to Top Button */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="mx-auto mt-8 flex items-center gap-2 text-sm text-muted transition hover:text-foreground"
-          aria-label="Back to top"
-        >
-          <ChevronUpIcon />
-          Back to top
-        </button>
       </div>
     </footer>
   );

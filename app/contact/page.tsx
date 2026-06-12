@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { SITE_CONFIG, SOCIAL_LINKS, CONTACT } from "../lib/site-config";
-import { EmailIcon, PhoneIcon, LinkedInIcon, GitHubIcon } from "../components/ui/Icons";
 
 type FormData = {
   name: string;
@@ -16,10 +15,9 @@ const PURPOSES = [
   { value: "", label: "Select a purpose..." },
   { value: "hiring", label: "Hiring / Recruitment" },
   { value: "collaboration", label: "Collaboration / Partnership" },
-  { value: "speaking", label: "Speaking Opportunity" },
-  { value: "consulting", label: "Consulting / Advisory" },
-  { value: "open-source", label: "Open Source Contribution" },
-  { value: "general", label: "General Inquiry" },
+  { value: "speaking", label: "Networking" },
+  { value: "consulting", label: "Consulting" },
+  { value: "general", label: "Miscellaneous" },
 ] as const;
 
 const INITIAL_FORM_STATE: FormData = {
@@ -81,39 +79,33 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-5xl px-5 py-10">
+    <main className="mx-auto w-full max-w-5xl px-5 py-12 md:py-16">
       <div className="grid gap-12 lg:grid-cols-2">
         {/* Left Column - Contact Info */}
         <div>
-          <h1 className="mb-4 font-serif text-4xl">Let&apos;s Connect</h1>
+          <h1 className="mb-4 font-serif text-4xl tracking-[-0.015em] md:text-5xl">
+            Let&apos;s Connect
+          </h1>
           <p className="mb-8 text-lg leading-relaxed text-muted">
             Whether you&apos;re looking to hire, collaborate on a project, or just want to chat about
             engineering and AI systems, I&apos;d love to hear from you.
           </p>
 
           {/* Contact Methods */}
-          <div className="space-y-6">
-            <ContactCard
-              icon={<EmailIcon />}
-              label="Email"
-              href={SOCIAL_LINKS.email}
-              value={SITE_CONFIG.email}
-            />
-            <ContactCard
-              icon={<PhoneIcon />}
+          <div className="divide-y divide-foreground/15 border-y border-foreground/15">
+            <ContactMethod label="Email" href={SOCIAL_LINKS.email} value={SITE_CONFIG.email} />
+            <ContactMethod
               label="Phone"
               href={`tel:${SITE_CONFIG.phoneRaw}`}
               value={SITE_CONFIG.phone}
             />
-            <ContactCard
-              icon={<LinkedInIcon />}
+            <ContactMethod
               label="LinkedIn"
               href={SOCIAL_LINKS.linkedin}
               value="linkedin.com/in/arnav-bhatia"
               external
             />
-            <ContactCard
-              icon={<GitHubIcon />}
+            <ContactMethod
               label="GitHub"
               href={SOCIAL_LINKS.github}
               value="github.com/arnavbhatia1"
@@ -122,18 +114,17 @@ export default function ContactPage() {
           </div>
 
           {/* Quick Response Note */}
-          <div className="mt-8 rounded-xl bg-foreground/5 p-5">
-            <p className="text-sm leading-relaxed text-muted">
-              <strong>Quick to respond!</strong> I typically reply within 24 hours. For urgent matters,
-              feel free to reach out via phone or LinkedIn message.
-            </p>
-          </div>
+          <p className="mt-6 text-sm leading-relaxed text-muted">
+            I typically reply within 24 hours. For urgent matters, reach out via phone or LinkedIn.
+          </p>
         </div>
 
         {/* Right Column - Contact Form */}
         <div>
-          <div className="rounded-2xl border border-foreground/8 bg-background p-8 shadow-lg">
-            <h2 className="mb-6 font-serif text-2xl">Send a Message</h2>
+          <div className="border border-foreground/15 p-8">
+            <h2 className="mb-6 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              Send a Message
+            </h2>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <FormField
@@ -167,7 +158,10 @@ export default function ContactPage() {
               />
 
               <div>
-                <label htmlFor="purpose" className="mb-2 block text-sm font-medium">
+                <label
+                  htmlFor="purpose"
+                  className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
+                >
                   Purpose *
                 </label>
                 <select
@@ -176,7 +170,7 @@ export default function ContactPage() {
                   required
                   value={formData.purpose}
                   onChange={handleChange}
-                  className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
                 >
                   {PURPOSES.map((p) => (
                     <option key={p.value} value={p.value}>
@@ -187,7 +181,10 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label htmlFor="message" className="mb-2 block text-sm font-medium">
+                <label
+                  htmlFor="message"
+                  className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
+                >
                   Message *
                 </label>
                 <textarea
@@ -197,7 +194,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                  className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
                   placeholder="Tell me about your inquiry..."
                 />
               </div>
@@ -205,21 +202,21 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full rounded-lg bg-accent px-6 py-3 font-semibold text-accent-foreground transition hover:opacity-90 disabled:opacity-50"
+                className="w-full bg-accent px-6 py-3 font-mono text-xs uppercase tracking-[0.12em] text-accent-foreground transition hover:opacity-90 disabled:opacity-50"
               >
                 {status === "sending" ? "Sending..." : "Send Message"}
               </button>
 
               {status === "success" && (
-                <div className="rounded-lg bg-green-50 p-4 text-sm text-green-800">
+                <div className="border-l-2 border-accent pl-4 text-sm text-muted">
                   Thanks for reaching out! I&apos;ll get back to you soon.
                 </div>
               )}
 
               {status === "error" && (
-                <div className="rounded-lg bg-red-50 p-4 text-sm text-red-800">
+                <div className="border-l-2 border-red-600 pl-4 text-sm text-muted">
                   Something went wrong sending your message. Please email me directly at{" "}
-                  <a href={SOCIAL_LINKS.email} className="font-semibold underline">
+                  <a href={SOCIAL_LINKS.email} className="underline underline-offset-4">
                     {SITE_CONFIG.email}
                   </a>
                   .
@@ -234,36 +231,27 @@ export default function ContactPage() {
 }
 
 // Helper Components
-function ContactCard({
-  icon,
+function ContactMethod({
   label,
   href,
   value,
   external = false,
 }: {
-  icon: React.ReactNode;
   label: string;
   href: string;
   value: string;
   external?: boolean;
 }) {
   return (
-    <div className="rounded-xl border border-foreground/8 bg-background p-5">
-      <div className="flex items-center gap-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-foreground/5">
-          {icon}
-        </div>
-        <div>
-          <p className="text-sm font-medium text-muted">{label}</p>
-          <a
-            href={href}
-            {...(external && { target: "_blank", rel: "noopener noreferrer" })}
-            className="font-semibold hover:underline"
-          >
-            {value}
-          </a>
-        </div>
-      </div>
+    <div className="flex items-baseline justify-between gap-4 py-4">
+      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">{label}</p>
+      <a
+        href={href}
+        {...(external && { target: "_blank", rel: "noopener noreferrer" })}
+        className="font-serif transition-colors hover:text-accent"
+      >
+        {value}
+      </a>
     </div>
   );
 }
@@ -289,9 +277,12 @@ function FormField({
 }) {
   return (
     <div>
-      <label htmlFor={name} className="mb-2 block text-sm font-medium">
+      <label
+        htmlFor={name}
+        className="mb-2 block font-mono text-[11px] uppercase tracking-[0.12em] text-muted"
+      >
         {label} {required && "*"}
-        {optional && <span className="text-muted">(optional)</span>}
+        {optional && <span>(optional)</span>}
       </label>
       <input
         type={type}
@@ -300,7 +291,7 @@ function FormField({
         required={required}
         value={value}
         onChange={onChange}
-        className="w-full rounded-lg border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+        className="w-full border border-foreground/15 bg-background px-4 py-3 text-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
         placeholder={placeholder}
       />
     </div>

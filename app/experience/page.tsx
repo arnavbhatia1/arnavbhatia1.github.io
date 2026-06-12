@@ -77,71 +77,81 @@ const education = [
   },
 ];
 
+const clientPrinciples = [
+  {
+    title: "Understand Before Building",
+    body: "I dig into the architecture and client feedback before writing code. The best technical solution is useless if it doesn't solve what the client actually needs.",
+  },
+  {
+    title: "Communicate Constantly",
+    body: "Clients don't want surprises. I keep stakeholders in the loop, set realistic expectations, and flag blockers early. Trust is built through transparency.",
+  },
+  {
+    title: "Demo Early, Iterate Fast",
+    body: "I ship working prototypes quickly and refine based on feedback. Real user input beats assumptions every time. Get it in front of clients and learn.",
+  },
+  {
+    title: "Own It End-to-End",
+    body: "From scoping to deployment to support, I take full ownership. Clients have one point of contact who can answer technical and business questions alike.",
+  },
+];
+
 const TimelineItem = ({ exp }: { exp: Experience }) => (
-  <div className="relative pl-8 pb-12 last:pb-0">
-    <div className="absolute left-[11px] top-[8px] bottom-0 w-[2px] bg-gradient-to-b from-foreground/20 to-transparent last:hidden" />
-    <div className="absolute left-0 top-[4px] h-6 w-6 rounded-full border-2 border-foreground bg-background flex items-center justify-center">
-      <div className="h-2 w-2 rounded-full bg-foreground" />
+  <article className="grid gap-3 py-8 md:grid-cols-12 md:gap-6">
+    <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
+      <p>{exp.period}</p>
+      <p className="mt-1.5">{exp.location}</p>
     </div>
 
-    <div className="rounded-2xl border border-foreground/8 bg-background p-6 shadow-sm transition hover:shadow-md">
-      <div className="mb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-        <div>
-          <h3 className="text-xl font-bold">{exp.company}</h3>
-          <p className="text-lg text-foreground/90">{exp.role}</p>
-        </div>
-        <div className="text-sm text-muted sm:text-right">
-          <p>{exp.period}</p>
-          <p>{exp.location}</p>
-        </div>
-      </div>
+    <div className="md:col-span-9">
+      <h3 className="font-serif text-2xl">{exp.company}</h3>
+      <p className="font-serif text-lg text-muted">{exp.role}</p>
 
-      <ul className="space-y-3">
+      <ul className="mt-4 space-y-2.5 list-disc pl-5 marker:text-foreground/40">
         {exp.achievements.map((achievement, i) => (
-          <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted">
-            <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-foreground/40" />
-            <span>{achievement}</span>
+          <li key={i} className="leading-relaxed text-muted">
+            {achievement}
           </li>
         ))}
       </ul>
     </div>
-  </div>
+  </article>
 );
 
 export default function ExperiencePage() {
   const [activeTab, setActiveTab] = useState<"experience" | "journey">("experience");
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-5xl px-5 py-10">
+    <main className="mx-auto w-full max-w-5xl px-5 py-12 md:py-16">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="mb-3 font-serif text-4xl">Professional Experience</h1>
-        <p className="max-w-3xl text-lg leading-relaxed text-muted">
+      <div className="mb-12">
+        <h1 className="mb-5 font-serif text-4xl tracking-[-0.015em] md:text-5xl">
+          Professional Experience
+        </h1>
+        <p className="max-w-[68ch] text-lg leading-relaxed text-muted">
           Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform behind 20% month-over-month revenue growth.
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="mb-8 flex flex-wrap items-center gap-2">
+      <div className="mb-12 flex flex-wrap items-baseline gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.12em]">
         <button
           onClick={() => setActiveTab("experience")}
-          className={[
-            "rounded-full border px-5 py-2.5 text-sm font-medium transition",
+          className={
             activeTab === "experience"
-              ? "border-foreground/80 bg-foreground text-background"
-              : "border-foreground/8 bg-background hover:bg-foreground/5",
-          ].join(" ")}
+              ? "border-b-2 border-accent pb-2 text-foreground"
+              : "border-b-2 border-transparent pb-2 text-muted transition-colors hover:text-foreground"
+          }
         >
           Work History
         </button>
         <button
           onClick={() => setActiveTab("journey")}
-          className={[
-            "rounded-full border px-5 py-2.5 text-sm font-medium transition",
+          className={
             activeTab === "journey"
-              ? "border-foreground/80 bg-foreground text-background"
-              : "border-foreground/8 bg-background hover:bg-foreground/5",
-          ].join(" ")}
+              ? "border-b-2 border-accent pb-2 text-foreground"
+              : "border-b-2 border-transparent pb-2 text-muted transition-colors hover:text-foreground"
+          }
         >
           My Journey
         </button>
@@ -149,10 +159,12 @@ export default function ExperiencePage() {
 
       {activeTab === "experience" ? (
         <div>
-          {/* Work Experience Timeline */}
+          {/* Work Experience */}
           <section className="mb-16">
-            <h2 className="mb-6 font-serif text-2xl">Work Experience</h2>
-            <div>
+            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              Work Experience
+            </h2>
+            <div className="divide-y divide-foreground/15 border-t border-foreground/15">
               {experiences.map((exp, index) => (
                 <TimelineItem key={index} exp={exp} />
               ))}
@@ -161,55 +173,53 @@ export default function ExperiencePage() {
 
           {/* Education */}
           <section>
-            <h2 className="mb-6 font-serif text-2xl">Education</h2>
-            <div className="space-y-4">
+            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              Education
+            </h2>
+            <div className="divide-y divide-foreground/15 border-t border-foreground/15">
               {education.map((edu, index) => (
-                <div key={index} className="rounded-2xl border border-foreground/8 bg-background p-6 shadow-sm">
-                  <div className="mb-3 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                    <div>
-                      <h3 className="text-xl font-bold">{edu.school}</h3>
-                      <p className="text-lg text-foreground/90">{edu.degree}</p>
-                      {edu.specialization && <p className="text-muted">{edu.specialization}</p>}
-                      {edu.minor && <p className="text-muted">{edu.minor}</p>}
-                    </div>
-                    <div className="text-sm text-muted sm:text-right">
-                      <p>{edu.period}</p>
-                      <p>{edu.location}</p>
-                    </div>
+                <article key={index} className="grid gap-3 py-8 md:grid-cols-12 md:gap-6">
+                  <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
+                    <p>{edu.period}</p>
+                    <p className="mt-1.5">{edu.location}</p>
                   </div>
 
-                  {edu.societies && (
-                    <div className="mt-4">
-                      <p className="mb-2 text-sm font-semibold text-foreground/90">Societies & Activities:</p>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.societies.map((society, i) => (
-                          <span
-                            key={i}
-                            className="inline-block rounded-full bg-foreground/5 px-3 py-1 text-xs font-medium"
-                          >
-                            {society}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  <div className="md:col-span-9">
+                    <h3 className="font-serif text-2xl">{edu.school}</h3>
+                    <p className="text-lg text-muted">{edu.degree}</p>
+                    {edu.specialization && (
+                      <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.specialization}</p>
+                    )}
+                    {edu.minor && (
+                      <p className="mt-1 max-w-[68ch] leading-relaxed text-muted">{edu.minor}</p>
+                    )}
+
+                    {edu.societies && (
+                      <p className="mt-4 font-mono text-[11px] tracking-[0.04em] text-muted">
+                        <span className="uppercase tracking-[0.12em]">Societies & Activities:</span>{" "}
+                        {edu.societies.join(" · ")}
+                      </p>
+                    )}
+                  </div>
+                </article>
               ))}
             </div>
           </section>
         </div>
       ) : (
-        <div className="space-y-8">
+        <div className="space-y-16">
           {/* Professional Journey & What Drives Me */}
           <section>
-            <h2 className="mb-4 font-serif text-2xl">My Journey & What Drives Me</h2>
-            <div className="space-y-4 text-muted leading-relaxed">
-              <p>
+            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              My Journey & What Drives Me
+            </h2>
+            <div className="space-y-4">
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 The common thread across everything I've done is that I've always been the engineer closest to the customer.
                 At Boston University, I combined computer science with business administration because I wanted to understand
                 how systems create value, not just how they work. That instinct has shaped every role since.
               </p>
-              <p>
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I've expanded
                 into building the internal platform that now powers how the company sells and deploys its products. That work
                 operates on two layers: <strong>Layer 1</strong> is running technical discovery with enterprise clients, designing
@@ -218,7 +228,7 @@ export default function ExperiencePage() {
                 client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
                 That second layer, the platform work, has had a direct, measurable impact on company revenue.
               </p>
-              <p>
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 Outside of work I build production-grade systems that stay live and require real engineering discipline to maintain.
                 A quantitative trading bot for prediction markets using Brownian motion probability models and Kelly Criterion
                 position sizing. A financial sentiment pipeline with a published MCP server on PyPI. Both share a design philosophy:
@@ -226,7 +236,7 @@ export default function ExperiencePage() {
                 I bring to infrastructure work at MoZeus: design for the math to be right, build systems that adapt, and let the
                 data decide.
               </p>
-              <p>
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 I've realized my best work comes from being the person writing the code and sitting in the room where the problem
                 arose. That feedback loop is what I want to build my career around. I'm starting my Master's in Computer Science
                 at Georgia Tech focused on AI and ML next fall.
@@ -236,57 +246,39 @@ export default function ExperiencePage() {
 
           {/* Engineering Approach */}
           <section>
-            <h2 className="mb-4 font-serif text-2xl">How I Work With Clients</h2>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-foreground/8 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Understand Before Building</h3>
-                <p className="text-sm text-muted">
-                  I dig into the architecture and client feedback before writing code. The best technical solution is useless if it
-                  doesn't solve what the client actually needs.
-                </p>
-              </div>
-              <div className="rounded-xl border border-foreground/8 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Communicate Constantly</h3>
-                <p className="text-sm text-muted">
-                  Clients don't want surprises. I keep stakeholders in the loop, set realistic expectations, and
-                  flag blockers early. Trust is built through transparency.
-                </p>
-              </div>
-              <div className="rounded-xl border border-foreground/8 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Demo Early, Iterate Fast</h3>
-                <p className="text-sm text-muted">
-                  I ship working prototypes quickly and refine based on feedback. Real user input beats assumptions
-                  every time. Get it in front of clients and learn.
-                </p>
-              </div>
-              <div className="rounded-xl border border-foreground/8 bg-background p-5">
-                <h3 className="mb-2 text-lg font-semibold">Own It End-to-End</h3>
-                <p className="text-sm text-muted">
-                  From scoping to deployment to support, I take full ownership. Clients have one point of contact
-                  who can answer technical and business questions alike.
-                </p>
-              </div>
+            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              How I Work With Clients
+            </h2>
+            <div className="divide-y divide-foreground/15 border-y border-foreground/15">
+              {clientPrinciples.map((principle) => (
+                <div key={principle.title} className="grid gap-2 py-6 md:grid-cols-12 md:gap-6">
+                  <h3 className="font-serif text-xl md:col-span-4">{principle.title}</h3>
+                  <p className="leading-relaxed text-muted md:col-span-8">{principle.body}</p>
+                </div>
+              ))}
             </div>
           </section>
 
           {/* Personal Interests */}
           <section>
-            <h2 className="mb-4 font-serif text-2xl">Beyond the Code</h2>
-            <div className="space-y-4 text-muted leading-relaxed">
-              <p>
+            <h2 className="mb-8 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+              Beyond the Code
+            </h2>
+            <div className="space-y-4">
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 I've volunteered 50+ hours with the <strong>Atlanta Humane Society</strong>, helping streamline
                 their adoption processes. That work inspired my <strong>CompanionMatcher</strong> project, using
                 semantic matching to connect shelter dogs with families based on temperament and lifestyle. It's
                 one of the few side projects I've actually finished, because it solved a real problem I watched
                 play out every weekend.
               </p>
-              <p>
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 I spent years as a competitive athlete, squash mainly, and that background still shapes how I think.
                 Athletes train with a chip on their shoulder, always assuming they're the underdog with something to
                 prove. That mentality stuck with me. I don't coast. I don't assume I've figured it out. Every project
                 and role has an underlying drive to prove my aptitude.
               </p>
-              <p>
+              <p className="max-w-[68ch] leading-relaxed text-muted">
                 Outside of work, I'm fascinated by <strong>quantitative and computational finance engineering</strong>, the
                 intersection of math, systems design, and market dynamics. Both PolyBot and MarketPulse reflect that: PolyBot
                 doesn't predict where BTC goes, it computes whether the market's implied probability is miscalibrated.

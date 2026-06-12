@@ -14,7 +14,7 @@ export default function AnimatedCounter({
   end,
   suffix = "",
   prefix = "",
-  duration = 2000,
+  duration = 700,
   className = "",
 }: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
@@ -26,6 +26,11 @@ export default function AnimatedCounter({
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
+          // The CSS reduced-motion rule can't stop a rAF loop, so honor it here.
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setCount(end);
+            return;
+          }
           const startTime = performance.now();
           const animate = (currentTime: number) => {
             const elapsed = currentTime - startTime;

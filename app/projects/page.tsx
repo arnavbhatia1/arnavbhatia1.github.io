@@ -16,35 +16,6 @@ type Project = {
   code?: string;
 };
 
-const Chip = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block rounded-full bg-foreground/5 px-2.5 py-1 text-xs">{children}</span>
-);
-
-const Card = ({ p }: { p: Project }) => (
-  <div className="rounded-2xl border border-foreground/8 bg-background p-4 shadow-sm transition hover:shadow-md hover:border-accent/20">
-    <h3 className="text-lg font-semibold">{p.title}</h3>
-    <p className="mt-1 text-sm leading-relaxed text-foreground/80">{p.blurb}</p>
-    {p.impact && (
-      <p className="mt-2 text-sm font-medium text-foreground/80">
-        Impact: <span className="font-normal">{p.impact}</span>
-      </p>
-    )}
-    {!!p.tech?.length && (
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {p.tech.map((t) => (
-          <Chip key={t}>{t}</Chip>
-        ))}
-      </div>
-    )}
-    {(p.demo || p.code) && (
-      <div className="mt-3 flex flex-wrap gap-3">
-        {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="text-sm font-semibold underline">Demo ↗</a>}
-        {p.code && <a href={p.code} target="_blank" rel="noreferrer" className="text-sm font-semibold underline">Code ↗</a>}
-      </div>
-    )}
-  </div>
-);
-
 const WORK: Project[] = [
   { title: "MoZeus Forge: Internal Deployment Platform", blurb: "Designed and built from scratch a .NET 9 Blazor Server application that automates Azure infrastructure provisioning using Bicep templates. Strategy Pattern with IDeploymentRequestBuilder for extensible resource types. Dynamic Template Catalog that auto-parses Bicep parameters and generates deployment forms. Includes an MCP Server exposing 10 tools to AI agents, a REST API with 8 endpoints, role-based access control with three permission tiers, and Azure SQL with Entity Framework Core (soft delete, optimistic concurrency). Cut new-account onboarding from 2 weeks to 1 day.", impact: "Turned bespoke client engagements into productized, repeatable deployments, contributing to the platform's measurable revenue impact.", tech: [".NET 9","Blazor Server","Bicep","Azure","Clean Architecture","Strategy Pattern","EF Core","MCP Server"] },
   { title: "Dynamic Package Loading Architecture", blurb: "Runtime plugin architecture where a single shared container image loads client-specific business logic by downloading NuGet packages from Azure DevOps Artifacts at request time. ConsumerFactoryLoader reads activation config from Azure Table Storage, downloads client NuGet packages via Managed Identity, instantiates the factory via reflection, and processes the request. Packages cached in memory after first download. No container rebuilds when adding new clients.", impact: "Adding a new client became a configuration and package publish, not a deployment. Fundamental shift in delivery velocity.", tech: ["C#/.NET 9","NuGet","Azure Table Storage","Managed Identity","Reflection","Container Apps"] },
@@ -67,22 +38,22 @@ export default function ProjectsPage() {
   const data = tab === "work" ? WORK : PERSONAL;
 
   return (
-    <main className="mx-auto min-h-[80vh] w-full max-w-5xl px-5 py-10">
-      <div className="mb-6 flex items-end justify-between gap-4">
-        <div>
-          <h1 className="font-serif text-3xl">Projects</h1>
-          <p className="mt-1 text-muted">Impact-focused work and personal builds.</p>
-        </div>
-      </div>
+    <main className="mx-auto w-full max-w-5xl px-5 py-12 md:py-16">
+      <header>
+        <h1 className="font-serif text-4xl tracking-[-0.015em] md:text-5xl">Projects</h1>
+        <p className="mt-3 text-muted">Impact-focused work and personal builds.</p>
+      </header>
 
-      <div className="mb-6 flex flex-wrap items-center gap-2">
+      <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-2">
         {TABS.map((t) => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
             className={[
-              "rounded-full border px-4 py-2 text-sm transition",
-              tab === t.key ? "border-foreground/80 bg-foreground text-background" : "border-foreground/8 bg-background hover:bg-foreground/5",
+              "font-mono text-xs uppercase tracking-[0.12em] transition-colors",
+              tab === t.key
+                ? "border-b-2 border-accent pb-2 text-foreground"
+                : "border-b-2 border-transparent pb-2 text-muted hover:text-foreground",
             ].join(" ")}
             aria-pressed={tab === t.key}
             aria-controls={`panel-${t.key}`}
@@ -92,8 +63,55 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <section id={`panel-${tab}`} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {data.map((p) => <Card key={p.title} p={p} />)}
+      <section
+        id={`panel-${tab}`}
+        className="mt-8 divide-y divide-foreground/15 border-t border-foreground/15"
+      >
+        {data.map((p) => (
+          <article key={p.title} className="py-8">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <h3 className="font-serif text-xl">{p.title}</h3>
+              {(p.demo || p.code) && (
+                <div className="flex flex-wrap items-baseline gap-x-6">
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border-b border-foreground/30 pb-1 font-mono text-xs uppercase tracking-[0.12em] transition-colors hover:border-accent hover:text-accent"
+                    >
+                      Demo ↗
+                    </a>
+                  )}
+                  {p.code && (
+                    <a
+                      href={p.code}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="border-b border-foreground/30 pb-1 font-mono text-xs uppercase tracking-[0.12em] transition-colors hover:border-accent hover:text-accent"
+                    >
+                      Code ↗
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+            <p className="mt-2 max-w-[68ch] leading-relaxed text-muted">{p.blurb}</p>
+            {p.impact && (
+              <p className="mt-3 max-w-[68ch]">
+                <span className="mr-3 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+                  Impact
+                </span>
+                <span className="text-sm leading-relaxed text-muted">{p.impact}</span>
+              </p>
+            )}
+            {!!p.tech?.length && (
+              <p className="mt-3 font-mono text-[11px] tracking-[0.04em] text-muted">
+                {p.tech.join(" · ")}
+              </p>
+            )}
+          </article>
+        ))}
       </section>
     </main>
   );

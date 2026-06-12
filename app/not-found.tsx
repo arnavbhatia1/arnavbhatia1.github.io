@@ -2,44 +2,32 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[80vh] flex-col items-center justify-center px-5 text-center">
-      {/* Glitchy 404 */}
-      <div className="relative mb-8">
-        <h1 className="text-[150px] font-bold leading-none tracking-tighter text-foreground/10 sm:text-[200px]">
-          404
-        </h1>
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="font-serif text-4xl sm:text-5xl">Page Not Found</span>
-        </div>
-      </div>
-
-      {/* Message */}
-      <p className="mb-8 max-w-md text-lg text-muted">
-        Looks like you've ventured into uncharted territory. The page you're looking for doesn't exist or has been moved.
+    <main className="mx-auto flex min-h-[70vh] w-full max-w-5xl flex-col justify-center px-5 py-16">
+      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
+        404 · Page not found
       </p>
 
-      {/* Actions */}
-      <div className="flex flex-wrap justify-center gap-4">
+      <h1 className="mt-6 font-serif text-4xl tracking-[-0.015em] md:text-6xl">
+        This page doesn&apos;t exist.
+      </h1>
+
+      <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-muted">
+        The URL may be mistyped, or the page has moved.
+      </p>
+
+      <div className="mt-10 flex gap-x-8 font-mono text-xs uppercase tracking-[0.12em]">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground transition hover:opacity-90"
+          className="border-b border-accent pb-1 text-accent transition-opacity hover:opacity-75"
         >
-          <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-          </svg>
-          Back to Home
+          Back to home
         </Link>
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-6 py-3 font-semibold transition hover:bg-foreground/5"
+          className="border-b border-foreground/30 pb-1 transition-colors hover:border-accent hover:text-accent"
         >
-          Contact Me
+          Contact
         </Link>
-      </div>
-
-      {/* Fun Element */}
-      <div className="mt-16 text-sm text-muted">
-        <p>Error Code: 404 | Lost in the void</p>
       </div>
     </main>
   );

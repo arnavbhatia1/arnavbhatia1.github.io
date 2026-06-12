@@ -126,19 +126,19 @@ export default function CommandPalette() {
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-start justify-center bg-foreground/30 px-4 pt-[18vh] backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-start justify-center bg-foreground/30 px-4 pt-[18vh]"
       onClick={close}
       role="presentation"
     >
       <div
-        className="w-full max-w-lg overflow-hidden rounded-2xl border border-foreground/10 bg-background shadow-2xl"
+        className="w-full max-w-lg overflow-hidden border border-foreground/15 bg-background"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={onKeyDown}
         role="dialog"
         aria-modal="true"
         aria-label="Command menu"
       >
-        <div className="flex items-center gap-3 border-b border-foreground/8 px-4">
+        <div className="flex items-center gap-3 border-b border-foreground/15 px-4">
           <svg className="h-4 w-4 flex-shrink-0 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
@@ -147,13 +147,13 @@ export default function CommandPalette() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Jump to a page or action..."
-            className="w-full bg-transparent py-4 text-sm outline-none placeholder:text-muted"
+            className="w-full bg-transparent py-4 font-mono text-sm outline-none placeholder:text-muted"
             aria-label="Search commands"
             role="combobox"
             aria-expanded="true"
             aria-controls="cmdk-list"
           />
-          <kbd className="hidden rounded border border-foreground/15 px-1.5 py-0.5 text-[10px] text-muted sm:inline">esc</kbd>
+          <kbd className="hidden border border-foreground/15 px-1.5 py-0.5 font-mono text-[10px] text-muted sm:inline">esc</kbd>
         </div>
 
         <ul id="cmdk-list" role="listbox" className="max-h-[50vh] overflow-y-auto p-2">
@@ -165,7 +165,7 @@ export default function CommandPalette() {
             if (groupItems.length === 0) return null;
             return (
               <li key={group}>
-                <p className="px-3 pb-1 pt-2 text-[10px] font-semibold uppercase tracking-wider text-muted">{group}</p>
+                <p className="px-3 pb-1 pt-2 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">{group}</p>
                 <ul>
                   {groupItems.map((c) => {
                     runningIndex += 1;
@@ -177,12 +177,12 @@ export default function CommandPalette() {
                           type="button"
                           onMouseEnter={() => setActive(idx)}
                           onClick={() => c.run()}
-                          className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm transition ${
-                            isActive ? "bg-accent/10 text-foreground" : "text-foreground/80 hover:bg-foreground/5"
+                          className={`flex w-full items-center justify-between gap-3 border-l-2 px-3 py-2.5 text-left text-sm transition ${
+                            isActive ? "border-accent bg-foreground/5 text-foreground" : "border-transparent text-foreground/80 hover:bg-foreground/5"
                           }`}
                         >
                           <span>{c.label}</span>
-                          {c.hint && <span className="text-xs text-muted">{c.hint}</span>}
+                          {c.hint && <span className="font-mono text-xs text-muted">{c.hint}</span>}
                         </button>
                       </li>
                     );

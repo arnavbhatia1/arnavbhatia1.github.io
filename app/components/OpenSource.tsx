@@ -1,18 +1,17 @@
 import { SOCIAL_LINKS } from "../lib/site-config";
 import type { Repository } from "../lib/types";
-import { GitHubIcon, ExternalLinkIcon } from "./ui/Icons";
 
 // Ordered to lead with agentic / AI-native work (most relevant for target roles).
 const repositories: Repository[] = [
   {
     name: "FinancialMCP",
     description:
-      "MCP server giving LLM agents structured access to financial intelligence: 24 tools spanning SEC EDGAR filings, CFTC positioning, Treasury yield curves, macro indicators, sentiment, and market-regime detection. No API keys required for core tools. Published on PyPI.",
+      "MCP server giving LLM agents structured access to financial intelligence: 42 tools spanning SEC EDGAR filings, CFTC positioning, Treasury yield curves, macro indicators, sentiment, and market-regime detection. No API keys required for core tools. Published on PyPI.",
     language: "Python",
     url: "https://github.com/arnavbhatia1/FinancialMCP",
     pypi: "https://pypi.org/project/financial-mcp-server/",
     install: "pip install financial-mcp-server",
-    highlight: "v0.1.6 · 3,500+ downloads · 24 tools",
+    highlight: "v0.1.12 · 3,500+ downloads · 42 tools",
     topics: ["mcp", "agentic", "anthropic-api", "sec-edgar", "python", "pypi"],
   },
   {
@@ -62,122 +61,79 @@ const repositories: Repository[] = [
   },
 ];
 
-const LANGUAGE_COLORS: Record<string, string> = {
-  JavaScript: "bg-yellow-400",
-  TypeScript: "bg-blue-500",
-  Python: "bg-green-500",
-  "Jupyter Notebook": "bg-orange-500",
-  Java: "bg-red-500",
-  Go: "bg-cyan-500",
-  Rust: "bg-orange-700",
-};
-
-function RepoIcon({ className = "h-5 w-5" }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 16 16">
-      <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z" />
-    </svg>
-  );
-}
+const proofStats = [
+  { value: "PyPI", label: "Published: financial-mcp-server v0.1.12" },
+  { value: "3,500+", label: "PyPI downloads" },
+  { value: "400+", label: "Automated tests across projects" },
+];
 
 export default function OpenSource() {
   return (
-    <section className="py-20 bg-foreground/[0.02]">
-      <div className="mx-auto max-w-5xl px-5">
-        <div className="mb-12 text-center">
-          <h2 className="mb-3 font-serif text-3xl md:text-4xl">Featured Projects</h2>
-          <p className="text-muted">Agentic AI tooling, trading systems, and ML, live, tested, and shipped.</p>
+    <section className="border-t border-foreground/15 px-6">
+      <div className="mx-auto max-w-5xl py-16 md:py-20">
+        <div className="mb-10 flex flex-wrap items-baseline justify-between gap-4">
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
+            Featured projects
+          </p>
+          <a
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border-b border-foreground/30 pb-0.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            All projects on GitHub ↗
+          </a>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="divide-y divide-foreground/15 border-t border-foreground/15">
           {repositories.map((repo) => (
             <a
               key={repo.name}
               href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl border border-foreground/8 bg-background p-6 shadow-sm transition hover:shadow-md hover:border-accent/20"
+              className="group grid gap-3 py-8 md:grid-cols-12 md:gap-6"
             >
-              {/* Header */}
-              <div className="mb-3 flex items-start justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  <RepoIcon className="h-5 w-5 text-muted" />
-                  <h3 className="font-semibold group-hover:text-accent transition-colors">{repo.name}</h3>
+              <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:col-span-3 md:pt-1.5">
+                <p>{repo.language}</p>
+                {repo.highlight && <p className="mt-1.5 normal-case">{repo.highlight}</p>}
+              </div>
+
+              <div className="md:col-span-9">
+                <h3 className="font-serif text-xl transition-colors group-hover:text-accent">
+                  {repo.name}
                   {repo.pypi && (
-                    <span className="rounded-full bg-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-accent">
+                    <span className="ml-3 font-mono text-[10px] uppercase tracking-[0.12em] text-accent">
                       PyPI
                     </span>
                   )}
-                </div>
-                <ExternalLinkIcon className="h-4 w-4 flex-shrink-0 text-muted transition group-hover:translate-x-0.5 group-hover:text-accent" />
-              </div>
-
-              {/* Description */}
-              <p className="mb-4 text-sm leading-relaxed text-muted">{repo.description}</p>
-
-              {/* Install command */}
-              {repo.install && (
-                <div className="mb-4 rounded-lg border border-foreground/8 bg-foreground/[0.04] px-3 py-2 font-mono text-xs text-foreground/80">
-                  <span className="text-muted">$ </span>
-                  {repo.install}
-                </div>
-              )}
-
-              {/* Topics */}
-              {repo.topics && repo.topics.length > 0 && (
-                <div className="mb-4 flex flex-wrap gap-1.5">
-                  {repo.topics.map((topic) => (
-                    <span
-                      key={topic}
-                      className="inline-block rounded-full bg-foreground/5 px-2 py-0.5 text-xs text-muted"
-                    >
-                      {topic}
-                    </span>
-                  ))}
-                </div>
-              )}
-
-              {/* Footer: language + proof stat (no vanity star counts) */}
-              <div className="flex items-center gap-4 text-xs text-muted">
-                <div className="flex items-center gap-1.5">
-                  <span className={`h-3 w-3 rounded-full ${LANGUAGE_COLORS[repo.language] || "bg-gray-400"}`} />
-                  <span>{repo.language}</span>
-                </div>
-                {repo.highlight && (
-                  <span className="font-medium text-foreground/70">{repo.highlight}</span>
+                  <span className="ml-2 text-muted transition-colors group-hover:text-accent">↗</span>
+                </h3>
+                <p className="mt-2 max-w-[68ch] leading-relaxed text-muted">{repo.description}</p>
+                {repo.install && (
+                  <p className="mt-3 font-mono text-xs text-foreground/80">
+                    <span className="text-muted">$ </span>
+                    {repo.install}
+                  </p>
+                )}
+                {repo.topics && repo.topics.length > 0 && (
+                  <p className="mt-3 font-mono text-[11px] tracking-[0.04em] text-muted">
+                    {repo.topics.join(" · ")}
+                  </p>
                 )}
               </div>
             </a>
           ))}
         </div>
 
-        {/* GitHub Profile Link */}
-        <div className="mt-10 text-center">
-          <a
-            href={SOCIAL_LINKS.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background px-5 py-2.5 text-sm font-semibold transition hover:bg-foreground/5 hover:border-accent/20"
-          >
-            <GitHubIcon className="h-4 w-4" />
-            View all projects on GitHub
-          </a>
-        </div>
-
         {/* Proof stats (real signals, not star counts) */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">PyPI</p>
-            <p className="mt-1 text-sm text-muted">Published: financial-mcp-server v0.1.6</p>
-          </div>
-          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">3,500+</p>
-            <p className="mt-1 text-sm text-muted">PyPI downloads</p>
-          </div>
-          <div className="rounded-xl border border-foreground/8 bg-background p-5 text-center">
-            <p className="text-3xl font-bold text-accent">400+</p>
-            <p className="mt-1 text-sm text-muted">Automated tests across projects</p>
-          </div>
+        <div className="mt-14 grid gap-y-10 border-t border-foreground/15 pt-10 sm:grid-cols-3">
+          {proofStats.map((stat) => (
+            <div key={stat.label} className="border-l border-foreground/15 pl-6">
+              <p className="font-mono text-2xl tracking-tight text-accent md:text-3xl">{stat.value}</p>
+              <p className="mt-2 max-w-[24ch] text-sm leading-relaxed text-muted">{stat.label}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
