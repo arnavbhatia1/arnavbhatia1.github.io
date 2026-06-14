@@ -26,6 +26,9 @@
   /* Hairline rules are the design system's only structural device. */
   --color-hairline: color-mix(in oklab, var(--foreground) 15%, transparent);
   --color-hairline-strong: color-mix(in oklab, var(--foreground) 30%, transparent);
+  /* Boundary for interactive controls whose border is the only edge cue (form
+     fields). 50% foreground meets WCAG 2.1 SC 1.4.11 (3:1) in both themes. */
+  --color-border-interactive: color-mix(in oklab, var(--foreground) 50%, transparent);
   --font-sans: var(--font-newsreader);
   --font-serif: var(--font-newsreader);
   --font-mono: var(--font-geist-mono);

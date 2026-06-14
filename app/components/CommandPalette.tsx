@@ -140,6 +140,7 @@ export default function CommandPalette() {
             role="combobox"
             aria-expanded="true"
             aria-controls="cmdk-list"
+            aria-activedescendant={filtered[active] ? `cmdk-opt-${filtered[active].id}` : undefined}
           />
           <kbd className="hidden border border-hairline px-1.5 py-0.5 font-mono text-[10px] text-muted sm:inline">esc</kbd>
         </div>
@@ -161,7 +162,7 @@ export default function CommandPalette() {
                     const idx = filtered.indexOf(c);
                     const isActive = idx === active;
                     return (
-                      <li key={c.id} role="option" aria-selected={isActive}>
+                      <li key={c.id} id={`cmdk-opt-${c.id}`} role="option" aria-selected={isActive}>
                         <button
                           type="button"
                           onMouseEnter={() => setActive(idx)}

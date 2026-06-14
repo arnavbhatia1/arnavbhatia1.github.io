@@ -42,7 +42,7 @@ const experiences: Experience[] = [
     ],
   },
   {
-    company: "Lighter Than Air",
+    company: "Lighter Than Air Research",
     role: "Technical Project Engineer Intern",
     location: "Sunnyvale, CA",
     period: "June 2022 - September 2022",
@@ -187,7 +187,7 @@ const journeyPanel = (
         <p className="max-w-[68ch] leading-relaxed text-muted">
           I&apos;ve realized my best work comes from being the person writing the code and sitting in the room where the problem
           arose. That feedback loop is what I want to build my career around. I&apos;m starting my Master&apos;s in Computer Science
-          at Georgia Tech focused on AI and ML next fall.
+          at Georgia Tech focused on AI and ML in Fall 2026.
         </p>
       </div>
     </section>

@@ -24,7 +24,7 @@ const companies = [
   { name: "MoZeus" },
   { name: "Blue Yonder" },
   { name: "Manhattan Associates" },
-  { name: "Lighter Than Air", sub: "NASA × Brin" },
+  { name: "Lighter Than Air Research", sub: "NASA × Brin" },
 ];
 
 const stack = [

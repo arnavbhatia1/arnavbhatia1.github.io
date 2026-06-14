@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   keywords: ["Software Engineer", "Full-Stack", "Product Engineer", "Solutions Engineer", "ML", "AI", "Cloud", "DevOps", "Azure", "AWS", "Georgia Tech", "Python", "C#"],
   authors: [{ name: "Arnav Bhatia" }],
   metadataBase: new URL("https://arnavbhatia1.github.io"),
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Arnav Bhatia | Software Engineer",
     description: "Software Engineer with 2+ years building production systems for enterprise clients. Hands-on backend and cloud-native development with customer-facing delivery.",
