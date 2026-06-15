@@ -12,22 +12,22 @@ const repositories: Repository[] = [
     url: "https://github.com/arnavbhatia1/FinancialMCP",
     pypi: "https://pypi.org/project/financial-mcp-server/",
     install: "pip install financial-mcp-server",
-    highlight: "v0.1.12 · 3,500+ downloads · 42 tools",
+    highlight: "v0.1.12 · 6,000+ downloads · 42 tools",
     topics: ["mcp", "agentic", "anthropic-api", "sec-edgar", "python", "pypi"],
   },
   {
     name: "PolyBot",
     description:
-      "Live, profitable trading bot for Polymarket 5-minute BTC markets. Brownian-motion probability modeling, Kelly Criterion sizing, and a daily agentic pipeline that backtests parameter changes and hot-swaps weights autonomously when the Sharpe ratio improves.",
+      "Autonomous trader on Polymarket's 5-minute BTC markets. Kelly-sized, fee-aware entries with adverse-selection monitoring and tiered circuit breakers, plus a nightly learning loop that backtests parameter changes and tunes the exit engine. Live and profitable across 10,000+ trades.",
     language: "Python",
     url: "https://github.com/arnavbhatia1/PolyBot",
-    highlight: "39% ROI over 3 months · 10k+ trades · live",
+    highlight: "10,000+ live trades · Profitable",
     topics: ["agentic", "anthropic-api", "trading-bot", "polymarket", "python", "sqlite"],
   },
   {
     name: "MarketPulse",
     description:
-      "Sentiment intelligence for financial markets. Ingests Google News, Yahoo Finance, CNBC, and MarketWatch RSS feeds, applies weak supervision with 16 labeling functions, and trains a classifier paired with a Kelly-sized paper-trading bot for end-to-end signal-to-execution validation.",
+      "Sentiment intelligence for financial markets. Ingests live RSS feeds (Google News, Yahoo Finance, CNBC, MarketWatch), applies weak supervision with 16 labeling functions over TF-IDF + logistic regression, and pairs the classifier with a Kelly-sized paper-trading bot that consumes my Financial-MCP server, closing the signal-to-execution loop.",
     language: "Python",
     url: "https://github.com/arnavbhatia1/MarketPulse",
     highlight: "160 automated tests · weak supervision",
@@ -64,7 +64,7 @@ const repositories: Repository[] = [
 
 const proofStats = [
   { value: "PyPI", label: "Published: financial-mcp-server v0.1.12" },
-  { value: "3,500+", label: "PyPI downloads" },
+  { value: "6,000+", label: "PyPI downloads" },
   { value: "400+", label: "Automated tests across projects" },
 ];
 

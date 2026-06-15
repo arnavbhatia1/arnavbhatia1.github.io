@@ -30,11 +30,11 @@ const companies = [
 const stack = [
   {
     category: "Cloud & Infrastructure",
-    items: "Azure (2+ yrs production: Container Apps, Bicep, RBAC), AWS, Docker, Kubernetes, CI/CD",
+    items: "Azure (2+ yrs production: Container Apps, Bicep, KEDA, RBAC), AWS, Docker, Kubernetes,CI/CD",
   },
   {
     category: "Backend & APIs",
-    items: "Python, TypeScript, C#/.NET, SQL, REST, OpenAPI, Node.js, Microservices",
+    items: "Python, C#/.NET, TypeScript, SQL, React, REST, OpenAPI, Microservices",
   },
   {
     category: "Data, ML & AI",
@@ -47,7 +47,7 @@ const highlights = [
   {
     org: "MoZeus",
     title: "MoZeus Forge: Internal Deployment Platform",
-    body: "Designed and built a .NET 9 Blazor application that automates Azure infrastructure provisioning via Bicep templates. Cut new-account onboarding from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.",
+    body: "Built from zero an internal Azure platform (.NET, Bicep, embedded 10-tool MCP server) that deploys the full client stack as parameterized modules, fed by ETL pipelines handling 1M+ records per client. Cut new-account onboarding from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.",
   },
   {
     org: "MoZeus",
@@ -57,22 +57,22 @@ const highlights = [
   {
     org: "Blue Yonder",
     title: "Enterprise Gateway Architecture",
-    body: "Built and owned BFF gateway serving 100+ daily enterprise users, unifying 2,700+ microservice endpoints with auto-generated OpenAPI docs.",
+    body: "Unified 2,700+ microservice endpoints into one API surface (.NET + React) for 100+ daily enterprise users, with auto-generated OpenAPI docs; became the primary escalation point for client integration teams during production migrations.",
   },
   {
     org: "Blue Yonder",
     title: "ML Deployment Pipeline",
-    body: "Architected CI/CD for ML model publishing across 8 environments, achieving 60% faster deployments with versioning, rollback, and full traceability.",
+    body: "Built a CI/CD publishing pipeline for ML models across 8 environments (GitHub Actions, automated rollback, versioning, audit trail), cutting deployment time 60%. Passed compliance review first-pass and was adopted company-wide.",
   },
   {
     org: "MoZeus",
     title: "Cloud Cost Optimization",
-    body: "Cut Azure infrastructure spend 50% from $20K to $10K/month by redesigning container infrastructure around scale-to-zero. Standardized as defaults in every future deployment.",
+    body: "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting client compute with scale-to-zero autoscaling (KEDA). Standardized as defaults in every future deployment.",
   },
   {
     org: "Manhattan Associates",
-    title: "ML Demand Forecasting",
-    body: "Prototyped TensorFlow models improving inventory prediction by 25%, supporting integration across 200+ fulfillment nodes.",
+    title: "Inventory Microservices",
+    body: "Shipped RESTful microservices handling inventory across 200+ fulfillment nodes, improving inventory prediction accuracy 25% over baseline.",
   },
 ];
 
@@ -111,9 +111,10 @@ export default function Home() {
               </h1>
 
               <p className={`${newsreaderItalic.className} mt-8 max-w-[36rem] text-lg italic leading-relaxed text-foreground/90 md:text-xl`}>
-                Two years shipping enterprise infrastructure and ML pipelines from discovery to
-                production, plus agentic AI tooling, a published MCP server, and a live, profitable
-                trading bot. Equally at home in whiteboard architecture, live demos, and customer
+                Two years as the sole technical contact on enterprise accounts, from discovery to
+                production. My edge is the agentic-AI stack: a published MCP server with 6,000+
+                downloads, an internal deployment platform with embedded agent tooling, and a live,
+                profitable trading bot. At home in whiteboard architecture, live demos, and customer
                 escalation calls.
               </p>
 

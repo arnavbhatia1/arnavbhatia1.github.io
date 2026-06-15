@@ -13,9 +13,9 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Drove 20% MoM revenue growth by building MoZeus Forge from zero, an internal Azure deployment platform (Bicep) that turned bespoke client engagements into productized, repeatable deployments.",
-      "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; patterns surfaced across accounts shaped core features (RunComfy AI processing; generic API adapter for client specs).",
-      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting compute and storage across client environments.",
+      "Built MoZeus Forge from zero, an internal Azure platform (.NET, Bicep, embedded 10-tool MCP server) that deploys the full client stack as parameterized modules; faster, repeatable delivery shortened sales cycles and drove re-signs, supporting ~20% annual revenue growth.",
+      "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; recurring client needs were productized into reusable Forge modules (third-party AI-processing integrations and client-agnostic APIs).",
+      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting client compute with scale-to-zero autoscaling (KEDA).",
       "Cut new-account onboarding from 2 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
     ],
   },
@@ -227,8 +227,9 @@ const journeyPanel = (
           intersection of math, systems design, and market dynamics. Both PolyBot and MarketPulse reflect that: PolyBot
           doesn&apos;t predict where BTC goes, it computes whether the market&apos;s implied probability is miscalibrated.
           MarketPulse&apos;s trading bot doesn&apos;t guess which stocks will go up, it sizes positions based on demonstrated
-          edge from actual trade statistics. Both use Kelly Criterion, both have learning pipelines that adapt based on
-          outcomes, both have automated test suites in the hundreds, and both are live, running systems.
+          edge from actual trade statistics. Both use Kelly Criterion and both have learning pipelines that adapt based
+          on outcomes, with automated test suites in the hundreds. PolyBot trades live; MarketPulse runs on paper,
+          consuming my published MCP server to validate the signal-to-execution loop end to end.
         </p>
       </div>
     </section>
@@ -244,7 +245,7 @@ export default function ExperiencePage() {
           Professional Experience
         </h1>
         <p className="max-w-[68ch] text-lg leading-relaxed text-muted">
-          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform behind 20% month-over-month revenue growth.
+          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform supporting ~20% annual revenue growth.
         </p>
       </div>
 
