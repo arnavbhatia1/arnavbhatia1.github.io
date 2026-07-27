@@ -13,10 +13,10 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Built MoZeus Forge from zero, an internal Azure platform (.NET, Bicep, embedded 10-tool MCP server) that deploys the full client stack as parameterized modules; faster, repeatable delivery shortened sales cycles and drove re-signs, supporting ~20% annual revenue growth.",
-      "Ran 6+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; recurring client needs were productized into reusable Forge modules (third-party AI-processing integrations and client-agnostic APIs).",
-      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting client compute with scale-to-zero autoscaling (KEDA).",
-      "Cut new-account onboarding from 2 weeks to 1 day with ETL pipelines processing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
+      "Built MoZeus Forge from zero, a multi-tenant Azure platform (.NET, Bicep, 3-tier RBAC, embedded 10-tool MCP server) that provisions the full client stack as parameterized modules; faster, repeatable delivery shortened sales cycles, won re-signs, and expanded programs across account bases, supporting ~20% annual revenue growth.",
+      "Ran 7+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; recurring client requests were productized into reusable Forge modules, so every new account reuses proven components instead of bespoke builds.",
+      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting all client compute around KEDA autoscaling.",
+      "Cut time-to-value from 2 weeks to 1 day with Python ETL pipelines landing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
     ],
   },
   {
@@ -36,8 +36,8 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "May 2023 - August 2023",
     achievements: [
-      "Shipped RESTful microservices to production handling inventory updates and order events flow across 200+ fulfillment nodes.",
-      "Improved inventory prediction accuracy 25% over baseline on curated supply chain datasets, evaluated against both precision/recall and business-impact metrics.",
+      "Shipped RESTful microservices to production moving inventory updates and order events across 200+ fulfillment nodes.",
+      "Improved demand prediction accuracy 25% over baseline on curated supply chain datasets, evaluated against both precision/recall and business-impact metrics.",
       "Built Python monitoring dashboard reducing test cycles 20% and surfacing real-time insights to non-technical stakeholders.",
     ],
   },

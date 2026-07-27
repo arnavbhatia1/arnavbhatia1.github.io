@@ -30,16 +30,20 @@ const companies = [
 const stack = [
   {
     category: "Cloud & Infrastructure",
-    items: "Azure (2+ yrs production: Container Apps, Bicep, KEDA, RBAC), AWS, Docker, Kubernetes,CI/CD",
+    items: "Azure (2+ yrs production: Container Apps, Bicep, KEDA, RBAC), Docker, CI/CD, IaC",
   },
   {
     category: "Backend & APIs",
-    items: "Python, C#/.NET, TypeScript, SQL, React, REST, OpenAPI, Microservices",
+    items: "Python, C#/.NET, TypeScript, SQL, React, REST, OpenAPI, OAuth, Microservices",
   },
   {
-    category: "Data, ML & AI",
+    category: "Data & Pipelines",
+    items: "ETL Pipelines, Azure SQL, Redis, Multi-tenant Isolation, Pandas, Scikit-learn",
+  },
+  {
+    category: "AI & Agents",
     items:
-      "Anthropic API, MCP Servers, Agentic Pipelines, LLM Tooling & Evals, Scikit-learn, Pandas, TensorFlow, Weak Supervision",
+      "Anthropic API, MCP (authoring + client), Agentic Pipelines, Eval-driven Development, Weak Supervision, TensorFlow",
   },
 ];
 
@@ -47,7 +51,7 @@ const highlights = [
   {
     org: "MoZeus",
     title: "MoZeus Forge: Internal Deployment Platform",
-    body: "Built from zero an internal Azure platform (.NET, Bicep, embedded 10-tool MCP server) that deploys the full client stack as parameterized modules, fed by ETL pipelines handling 1M+ records per client. Cut new-account onboarding from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.",
+    body: "Built from zero a multi-tenant Azure platform (.NET, Bicep, 3-tier RBAC, embedded 10-tool MCP server) that provisions the full client stack as parameterized modules, fed by Python ETL pipelines landing 1M+ records per client. Cut time-to-value from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.",
   },
   {
     org: "MoZeus",
@@ -72,7 +76,7 @@ const highlights = [
   {
     org: "Manhattan Associates",
     title: "Inventory Microservices",
-    body: "Shipped RESTful microservices handling inventory across 200+ fulfillment nodes, improving inventory prediction accuracy 25% over baseline.",
+    body: "Shipped RESTful microservices moving inventory across 200+ fulfillment nodes, improving demand prediction accuracy 25% over baseline.",
   },
 ];
 
@@ -99,7 +103,7 @@ export default function Home() {
       <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="mx-auto max-w-5xl">
           <p className={`mb-10 text-muted ${EYEBROW}`}>
-            Arnav Bhatia · Atlanta, GA · SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML)
+            Arnav Bhatia · Atlanta, GA · SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML), Fall 2026
           </p>
 
           <div className="grid gap-12 md:grid-cols-12">
@@ -111,8 +115,8 @@ export default function Home() {
               </h1>
 
               <p className={`${newsreaderItalic.className} mt-8 max-w-[36rem] text-lg italic leading-relaxed text-foreground/90 md:text-xl`}>
-                Two years as the sole technical contact on enterprise accounts, from discovery to
-                production. My edge is the agentic-AI stack: a published MCP server with 6,000+
+                Two years as the sole technical contact on 7+ enterprise accounts, from discovery to
+                production. My edge is the agentic-AI stack: a published MCP server with 8,000+
                 downloads, an internal deployment platform with embedded agent tooling, and a live,
                 profitable trading bot. At home in whiteboard architecture, live demos, and customer
                 escalation calls.

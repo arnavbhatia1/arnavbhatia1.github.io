@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: "Arnav Bhatia | Software Engineer",
   description: "Software Engineer with 2+ years building production systems for enterprise clients, from discovery to deployment. Incoming M.S. CS (AI/ML) at Georgia Tech.",
-  keywords: ["Software Engineer", "Full-Stack", "Product Engineer", "Solutions Engineer", "ML", "AI", "Cloud", "DevOps", "Azure", "AWS", "Georgia Tech", "Python", "C#"],
+  keywords: ["Software Engineer", "Forward Deployed Engineer", "Solutions Engineer", "Solutions Architect", "MCP", "Agentic AI", "ML", "Cloud", "DevOps", "Azure", "Georgia Tech", "Python", "C#"],
   authors: [{ name: "Arnav Bhatia" }],
   metadataBase: new URL("https://arnavbhatia1.github.io"),
   alternates: { canonical: "/" },

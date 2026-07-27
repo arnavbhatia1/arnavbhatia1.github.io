@@ -12,16 +12,16 @@ const repositories: Repository[] = [
     url: "https://github.com/arnavbhatia1/FinancialMCP",
     pypi: "https://pypi.org/project/financial-mcp-server/",
     install: "pip install financial-mcp-server",
-    highlight: "v0.1.12 · 6,000+ downloads · 42 tools",
+    highlight: "v0.1.12 · 8,000+ downloads · 42 tools",
     topics: ["mcp", "agentic", "anthropic-api", "sec-edgar", "python", "pypi"],
   },
   {
     name: "PolyBot",
     description:
-      "Autonomous trader on Polymarket's 5-minute BTC markets. Kelly-sized, fee-aware entries with adverse-selection monitoring and tiered circuit breakers, plus a nightly learning loop that backtests parameter changes and tunes the exit engine. Live and profitable across 10,000+ trades.",
+      "Autonomous microstructure trader on Polymarket's 5-minute BTC markets. Sub-350ms tick-to-order, Kelly-sized entries behind fee and adverse-selection gates, tiered circuit breakers, plus a nightly loop that retunes the exit engine and promotes changes only past pre-registered kill bars. Live and profitable across 10,000+ trades.",
     language: "Python",
     url: "https://github.com/arnavbhatia1/PolyBot",
-    highlight: "10,000+ live trades · Profitable",
+    highlight: "Sub-350ms tick-to-order · Profitable",
     topics: ["agentic", "anthropic-api", "trading-bot", "polymarket", "python", "sqlite"],
   },
   {
@@ -64,7 +64,7 @@ const repositories: Repository[] = [
 
 const proofStats = [
   { value: "PyPI", label: "Published: financial-mcp-server v0.1.12" },
-  { value: "6,000+", label: "PyPI downloads" },
+  { value: "8,000+", label: "PyPI downloads" },
   { value: "400+", label: "Automated tests across projects" },
 ];
 

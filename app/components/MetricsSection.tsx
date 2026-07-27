@@ -4,7 +4,7 @@ import { EYEBROW } from "../lib/styles";
 const metrics = [
   { value: 20, suffix: "%", label: "Annual revenue growth since platform launch" },
   { value: 120, prefix: "$", suffix: "K", label: "Annual cloud savings from infrastructure redesign" },
-  { value: 6, suffix: "+", label: "Enterprise clients delivered end-to-end" },
+  { value: 7, suffix: "+", label: "Enterprise clients delivered end-to-end" },
   { value: 60, suffix: "%", label: "Faster deployments with CI/CD pipelines" },
 ];
 
