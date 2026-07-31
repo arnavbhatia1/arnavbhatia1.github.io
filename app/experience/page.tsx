@@ -9,14 +9,16 @@ export const metadata = {
 const experiences: Experience[] = [
   {
     company: "MoZeus",
-    role: "Software Engineer",
+    role: "Forward Deployed Software Engineer",
     location: "Atlanta, GA",
     period: "September 2025 - Present",
     achievements: [
-      "Built MoZeus Forge from zero, a multi-tenant Azure platform (.NET, Bicep, 3-tier RBAC, embedded 10-tool MCP server) that provisions the full client stack as parameterized modules; faster, repeatable delivery shortened sales cycles, won re-signs, and expanded programs across account bases, supporting ~20% annual revenue growth.",
-      "Ran 7+ enterprise accounts end-to-end (discovery, solutioning, live demos, and production delivery) as sole technical owner; recurring client requests were productized into reusable Forge modules, so every new account reuses proven components instead of bespoke builds.",
-      "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting all client compute around KEDA autoscaling.",
-      "Cut time-to-value from 2 weeks to 1 day with Python ETL pipelines landing 1M+ records per client, eliminating the largest blocker in the customer-go-live path.",
+      "Sole engineer across 7+ enterprise accounts, end to end: all discovery calls, live demos, production deployments, and escalations.",
+      "Cut client onboarding from 2 weeks to 1 day with MoZeus Forge, a multi-tenant provisioning platform built from zero: parameterized Bicep modules deploy each client's full Azure stack, API adapters connect client systems in hours, and Python ETL pipelines land 1M+ client records yearly.",
+      "Faster onboarding shortened sales cycles and won re-signs across current accounts, supporting ~20% annual revenue growth.",
+      "Turned a one-off client request for AI photo backgrounds compositing customers' faces into a product now sold across accounts.",
+      "Halved Azure compute cost from $20K to $10K/month by moving client workloads off always-on VMs onto scale-to-zero Container Apps with KEDA queue autoscaling, and reworked dynamic package loading so all product offerings run on demand.",
+      "Embedded a 10-tool MCP server in the platform so AI agents can run provisioning and diagnostics against client infrastructure.",
     ],
   },
   {
@@ -25,8 +27,8 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "March 2024 - September 2025",
     achievements: [
-      "Unified 2,700+ microservice endpoints into a single API surface (.NET + React) used by 100+ daily enterprise users; became the technical escalation point for client integration teams when migrations broke in production.",
-      "Cut ML model deployment cycles 60% across 8 environments by shipping a publishing pipeline with automated rollback, strict versioning, and full audit trail, built to enterprise compliance requirements from day one.",
+      "Unified 2,700+ REST microservice endpoints behind a single OpenAPI-documented gateway (.NET + React) now serving 100+ enterprise users; became the technical escalation point for client integration teams when migrations broke in production.",
+      "Built the CI/CD publishing pipeline for ML deployment across 8 environments (GitHub Actions, automated rollback, strict versioning, full audit trail); cleared compliance on first pass and spread organically into the company-wide standard, cutting deploy time 60%.",
       "Automated backend scheduling workflows (Python, C#) and built out NUnit test infrastructure from scratch; caught bugs at commit time instead of QA, freeing the team to ship more client-facing features each quarter.",
     ],
   },
@@ -36,8 +38,8 @@ const experiences: Experience[] = [
     location: "Atlanta, GA",
     period: "May 2023 - August 2023",
     achievements: [
-      "Shipped RESTful microservices to production moving inventory updates and order events across 200+ fulfillment nodes.",
-      "Improved demand prediction accuracy 25% over baseline on curated supply chain datasets, evaluated against both precision/recall and business-impact metrics.",
+      "Built demand-forecasting ML prototypes with the warehouse ops team; product owners measured accuracy 25% over baseline.",
+      "Delivered Java REST microservices moving live inventory data across 200+ fulfillment nodes to feed the forecasting prototypes.",
       "Built Python monitoring dashboard reducing test cycles 20% and surfacing real-time insights to non-technical stakeholders.",
     ],
   },
@@ -47,7 +49,7 @@ const experiences: Experience[] = [
     location: "Sunnyvale, CA",
     period: "June 2022 - September 2022",
     achievements: [
-      "Coordinated avionics certifications and stakeholder schedules for Pathfinder 1, a hydrogen airship at NASA Ames Research Center.",
+      "Managed avionics certifications and stakeholder schedules for Pathfinder 1, the hydrogen airship at NASA Ames Research Center.",
     ],
   },
 ];
@@ -245,7 +247,7 @@ export default function ExperiencePage() {
           Professional Experience
         </h1>
         <p className="max-w-[68ch] text-lg leading-relaxed text-muted">
-          Software and platform engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I built the deployment platform supporting ~20% annual revenue growth.
+          Forward-deployed engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I own 7+ enterprise accounts end to end and built the deployment platform supporting ~20% annual revenue growth.
         </p>
       </div>
 

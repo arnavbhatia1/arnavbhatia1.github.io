@@ -30,7 +30,7 @@ const companies = [
 const stack = [
   {
     category: "Cloud & Infrastructure",
-    items: "Azure (2+ yrs production: Container Apps, Bicep, KEDA, RBAC), Docker, CI/CD, IaC",
+    items: "Azure (2+ yrs production: Container Apps, Bicep, KEDA, Azure SQL, Managed Identity, RBAC), Azure DevOps, GitHub Actions, Docker, CI/CD, IaC",
   },
   {
     category: "Backend & APIs",
@@ -51,7 +51,7 @@ const highlights = [
   {
     org: "MoZeus",
     title: "MoZeus Forge: Internal Deployment Platform",
-    body: "Built from zero a multi-tenant Azure platform (.NET, Bicep, 3-tier RBAC, embedded 10-tool MCP server) that provisions the full client stack as parameterized modules, fed by Python ETL pipelines landing 1M+ records per client. Cut time-to-value from 2 weeks to 1 day, turning bespoke client engagements into repeatable, productized deployments.",
+    body: "Built from zero a multi-tenant Azure platform (.NET, Bicep, 3-tier RBAC) that provisions each client's full stack as parameterized modules, with API adapters that connect client systems in hours and Python ETL pipelines landing 1M+ client records yearly. An embedded 10-tool MCP server lets AI agents run provisioning and diagnostics against client infrastructure. Cut client onboarding from 2 weeks to 1 day, turning bespoke engagements into repeatable, productized deployments.",
   },
   {
     org: "MoZeus",
@@ -61,7 +61,7 @@ const highlights = [
   {
     org: "Blue Yonder",
     title: "Enterprise Gateway Architecture",
-    body: "Unified 2,700+ microservice endpoints into one API surface (.NET + React) for 100+ daily enterprise users, with auto-generated OpenAPI docs; became the primary escalation point for client integration teams during production migrations.",
+    body: "Unified 2,700+ REST microservice endpoints behind one OpenAPI-documented gateway (.NET + React) now serving 100+ enterprise users; became the primary escalation point for client integration teams during production migrations.",
   },
   {
     org: "Blue Yonder",
@@ -71,7 +71,12 @@ const highlights = [
   {
     org: "MoZeus",
     title: "Cloud Cost Optimization",
-    body: "Cut Azure infrastructure spend 50% ($20K to $10K/month) by re-architecting client compute with scale-to-zero autoscaling (KEDA). Standardized as defaults in every future deployment.",
+    body: "Halved Azure compute cost ($20K to $10K/month) by moving client workloads off always-on VMs onto scale-to-zero Container Apps with KEDA queue autoscaling, and reworked dynamic package loading so all product offerings run on demand. Standardized as defaults in every future deployment.",
+  },
+  {
+    org: "MoZeus",
+    title: "AI Photo Backgrounds",
+    body: "Turned a one-off client request into a product. Built face compositing that drops event guests into branded AI-generated backgrounds, then generalized it out of the single engagement; it is now sold across accounts.",
   },
   {
     org: "Manhattan Associates",
@@ -103,7 +108,7 @@ export default function Home() {
       <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="mx-auto max-w-5xl">
           <p className={`mb-10 text-muted ${EYEBROW}`}>
-            Arnav Bhatia · Atlanta, GA · SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML), Fall 2026
+            Arnav Bhatia · Atlanta, GA · Forward Deployed SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML), Fall 2026
           </p>
 
           <div className="grid gap-12 md:grid-cols-12">
