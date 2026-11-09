@@ -185,8 +185,9 @@ const journeyPanel = (
         <p className="max-w-[68ch] leading-relaxed text-muted">
           At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I built
           the internal platform that powered how the company sold and deployed its products. At <strong>Moody&apos;s Analytics</strong>,
-          I bring that customer-facing engineering experience to AI partnerships, onboarding, and agent integrations.
-          My work at MoZeus operated on two layers: <strong>Layer 1</strong> was running technical discovery with enterprise clients, designing
+          I now build financial AI solutions with enterprise customers and partners, drawing on that customer-facing
+          engineering experience across AI partnerships, onboarding, and agent integrations. My MoZeus work operated on
+          two layers: <strong>Layer 1</strong> was running technical discovery with enterprise clients, designing
           and deploying containerized Azure infrastructure, and building the data pipelines and webhook integrations that
           powered client workflows. <strong>Layer 2</strong> was identifying that MoZeus had a scaling problem, where every
           client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
