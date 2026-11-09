@@ -14,15 +14,15 @@ const newsreader = Newsreader({ subsets: ["latin"], style: ["normal"], variable:
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Arnav Bhatia | Forward Deployed Engineer",
-  description: "Forward-deployed engineer who embeds with enterprise customers: discovery, building, live demos, production ownership, escalations. Owns 7+ enterprise accounts end to end. Incoming M.S. CS (AI/ML) at Georgia Tech.",
-  keywords: ["Forward Deployed Engineer", "Software Engineer", "Solutions Engineer", "Solutions Architect", "MCP", "Agentic AI", "ML", "Cloud", "DevOps", "Azure", "Georgia Tech", "Python", "C#"],
+  title: "Arnav Bhatia | AI Partnerships Engineer",
+  description: "Assistant Director, AI Partnerships Engineer at Moody's Analytics in New York City, building financial AI solutions with enterprise customers and partners.",
+  keywords: ["AI Partnerships Engineer", "Moody's Analytics", "Software Engineer", "Solutions Engineer", "Solutions Architect", "MCP", "Agentic AI", "ML", "Cloud", "DevOps", "Azure", "Georgia Tech", "Python", "C#"],
   authors: [{ name: "Arnav Bhatia" }],
   metadataBase: new URL("https://arnavbhatia1.github.io"),
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Arnav Bhatia | Forward Deployed Engineer",
-    description: "Forward-deployed engineer who embeds with enterprise customers, from discovery to production ownership. Built the platform that cut client onboarding from two weeks to one day.",
+    title: "Arnav Bhatia | AI Partnerships Engineer",
+    description: "Assistant Director, AI Partnerships Engineer at Moody's Analytics, connecting trusted data, cloud ecosystems, and AI agents to customer workflows.",
     url: "https://arnavbhatia1.github.io",
     siteName: "Arnav Bhatia",
     images: [
@@ -38,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Arnav Bhatia | Forward Deployed Engineer",
-    description: "Forward-deployed engineer who embeds with enterprise customers, from discovery to production ownership. Published MCP server with 8,000+ downloads.",
+    title: "Arnav Bhatia | AI Partnerships Engineer",
+    description: "Assistant Director, AI Partnerships Engineer at Moody's Analytics. Published MCP server with 8,000+ downloads.",
     images: ["/og-image.png"],
   },
   robots: {

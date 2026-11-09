@@ -21,6 +21,7 @@ const ctaLinks = [
 ];
 
 const companies = [
+  { name: "Moody's Analytics" },
   { name: "MoZeus" },
   { name: "Blue Yonder" },
   { name: "Manhattan Associates" },
@@ -86,6 +87,7 @@ const highlights = [
 ];
 
 const roles = [
+  "AI Partnerships Engineer / Lead",
   "Forward Deployed Engineer",
   "Solutions Engineer / Architect",
   "Software Engineer (Infra / Platform)",
@@ -108,7 +110,7 @@ export default function Home() {
       <section className="px-6 pt-16 pb-20 md:pt-24 md:pb-28">
         <div className="mx-auto max-w-5xl">
           <p className={`mb-10 text-muted ${EYEBROW}`}>
-            Arnav Bhatia · Atlanta, GA · Forward Deployed SWE @ MoZeus · Georgia Tech M.S. Computer Science (AI/ML), Fall 2026
+            Arnav Bhatia · New York City · Assistant Director, AI Partnerships Engineer @ Moody&apos;s Analytics
           </p>
 
           <div className="grid gap-12 md:grid-cols-12">
@@ -120,11 +122,12 @@ export default function Home() {
               </h1>
 
               <p className={`${newsreaderItalic.className} mt-8 max-w-[36rem] text-lg italic leading-relaxed text-foreground/90 md:text-xl`}>
-                Two years as the sole technical contact on 7+ enterprise accounts, from discovery to
-                production. My edge is the agentic-AI stack: a published MCP server with 8,000+
-                downloads, an internal deployment platform with embedded agent tooling, and a live,
-                profitable trading bot. At home in whiteboard architecture, live demos, and customer
-                escalation calls.
+                At Moody&apos;s Analytics, I build financial AI solutions with enterprise customers and
+                partners. Before that, I built customer-facing platforms and production systems at
+                MoZeus and Blue Yonder. Across those roles, I connect customer needs to technical
+                delivery, from onboarding and integrations to cloud infrastructure. I&apos;m now looking
+                for AI partnerships roles that bring MCPs, agents, and hyperscaler ecosystems into
+                customer workflows.
               </p>
 
               <MonoLinks links={heroLinks} />
@@ -215,9 +218,9 @@ export default function Home() {
               ))}
             </ul>
             <p className="mt-10 max-w-[60ch] leading-relaxed text-muted">
-              I&apos;ve always been the engineer closest to the customer, writing the code and sitting
-              in the room where the problem arose. That feedback loop is what I build my career
-              around.
+              I&apos;m especially interested in roles where technical implementation, partner ecosystems,
+              and customer outcomes meet. I bring experience across AI partnerships, forward-deployed
+              engineering, solutions, and platform work.
             </p>
           </div>
         </div>
@@ -230,7 +233,7 @@ export default function Home() {
       <section className="border-t border-hairline px-6">
         <div className="mx-auto max-w-5xl py-20 md:py-28">
           <h2 className="max-w-3xl font-serif text-3xl leading-tight md:text-5xl">
-            Hiring for forward-deployed, solutions, or platform roles?
+            Hiring for AI partnerships, forward-deployed, solutions, or platform roles?
           </h2>
           <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-muted">
             The resume is current, the code is public, and I reply within a day.

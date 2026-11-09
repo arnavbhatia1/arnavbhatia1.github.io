@@ -46,7 +46,7 @@ export default function CommandPalette() {
     { id: "resume", label: "Resume", group: "Navigate", keywords: "cv", run: () => go("/resume") },
     { id: "contact", label: "Contact", group: "Navigate", keywords: "email message hire", run: () => go("/contact") },
     { id: "dl", label: "Download resume (PDF)", group: "Actions", hint: "PDF", keywords: "cv pdf download", run: () => external(SITE_CONFIG.resumePath) },
-    { id: "email", label: "Email Arnav", group: "Actions", hint: SITE_CONFIG.email, keywords: "contact hire mail", run: () => { window.location.href = SOCIAL_LINKS.email; setOpen(false); } },
+    { id: "email", label: "Email Arnav", group: "Actions", hint: SITE_CONFIG.email, keywords: "contact hire mail", run: () => { window.location.assign(SOCIAL_LINKS.email); setOpen(false); } },
     { id: "linkedin", label: "Open LinkedIn", group: "Actions", keywords: "social profile", run: () => external(SOCIAL_LINKS.linkedin) },
     { id: "github", label: "Open GitHub", group: "Actions", keywords: "code repos source", run: () => external(SOCIAL_LINKS.github) },
     { id: "theme", label: "Toggle dark / light theme", group: "Actions", hint: "Theme", keywords: "dark light mode appearance", run: () => { toggleTheme(); setOpen(false); } },
@@ -59,27 +59,30 @@ export default function CommandPalette() {
 
   // Open via ⌘K / Ctrl+K, or the header button's custom event.
   useEffect(() => {
+    const onOpen = () => {
+      setQuery("");
+      setActive(0);
+      setOpen(true);
+    };
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
         e.preventDefault();
-        setOpen((v) => !v);
+        if (open) setOpen(false);
+        else onOpen();
       }
     };
-    const onOpen = () => setOpen(true);
     window.addEventListener("keydown", onKey);
     window.addEventListener("cmdk:open", onOpen);
     return () => {
       window.removeEventListener("keydown", onKey);
       window.removeEventListener("cmdk:open", onOpen);
     };
-  }, []);
+  }, [open]);
 
   // Focus management: store/restore focus, reset state, focus the input.
   useEffect(() => {
     if (open) {
       lastFocused.current = document.activeElement as HTMLElement;
-      setQuery("");
-      setActive(0);
       requestAnimationFrame(() => inputRef.current?.focus());
       document.body.style.overflow = "hidden";
     } else {

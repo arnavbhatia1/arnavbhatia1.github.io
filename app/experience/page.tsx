@@ -8,10 +8,23 @@ export const metadata = {
 
 const experiences: Experience[] = [
   {
+    company: "Moody's Analytics",
+    role: "Assistant Director, AI Partnerships Engineer",
+    location: "New York City, NY",
+    period: "September 2025 - Present",
+    achievements: [
+      "Forward-deployed and customer success engineer helping enterprise customers deploy financial AI solutions directly in partner ecosystems.",
+      "Open and expand new revenue streams by building agents and integrations in partner platforms, with direct ownership of onboarding, authentication, entitlements, automation, and customer delivery.",
+      "Drive partner-facing AI adoption across hyperscaler and ecosystem integration layers, translating customer needs into production-ready agent, MCP, and workflow deployments.",
+      "Operate at the intersection of product strategy, customer enablement, and software engineering: turning AI opportunities into revenue-generating, production-ready solutions for financial workflows.",
+      "Focus on MCPs + agents + hyperscaler ecosystems to deliver secure, scalable AI experiences for enterprise customers.",
+    ],
+  },
+  {
     company: "MoZeus",
     role: "Forward Deployed Software Engineer",
     location: "Atlanta, GA",
-    period: "September 2025 - Present",
+    period: "September 2025 - September 2025",
     achievements: [
       "Sole engineer across 7+ enterprise accounts, end to end: all discovery calls, live demos, production deployments, and escalations.",
       "Cut client onboarding from 2 weeks to 1 day with MoZeus Forge, a multi-tenant provisioning platform built from zero: parameterized Bicep modules deploy each client's full Azure stack, API adapters connect client systems in hours, and Python ETL pipelines land 1M+ client records yearly.",
@@ -170,11 +183,12 @@ const journeyPanel = (
           how systems create value, not just how they work. That instinct has shaped every role since.
         </p>
         <p className="max-w-[68ch] leading-relaxed text-muted">
-          At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I&apos;ve expanded
-          into building the internal platform that now powers how the company sells and deploys its products. That work
-          operates on two layers: <strong>Layer 1</strong> is running technical discovery with enterprise clients, designing
+          At <strong>Blue Yonder</strong> I owned backend infrastructure at scale. At <strong>MoZeus</strong> I built
+          the internal platform that powered how the company sold and deployed its products. At <strong>Moody&apos;s Analytics</strong>,
+          I bring that customer-facing engineering experience to AI partnerships, onboarding, and agent integrations.
+          My work at MoZeus operated on two layers: <strong>Layer 1</strong> was running technical discovery with enterprise clients, designing
           and deploying containerized Azure infrastructure, and building the data pipelines and webhook integrations that
-          power client workflows. <strong>Layer 2</strong> is identifying that MoZeus had a scaling problem, where every
+          powered client workflows. <strong>Layer 2</strong> was identifying that MoZeus had a scaling problem, where every
           client engagement was custom, manual, and slow, and systematically building the internal infrastructure to fix it.
           That second layer, the platform work, has had a direct, measurable impact on company revenue.
         </p>
@@ -183,7 +197,7 @@ const journeyPanel = (
           A quantitative trading bot for prediction markets using Brownian motion probability models and Kelly Criterion
           position sizing. A financial sentiment pipeline with a published MCP server on PyPI. Both share a design philosophy:
           <strong> probability over prediction, math over intuition, systems over scripts</strong>. That&apos;s the same philosophy
-          I bring to infrastructure work at MoZeus: design for the math to be right, build systems that adapt, and let the
+          I bring to partnership engineering at Moody&apos;s: design for the math to be right, build systems that adapt, and let the
           data decide.
         </p>
         <p className="max-w-[68ch] leading-relaxed text-muted">
@@ -247,7 +261,7 @@ export default function ExperiencePage() {
           Professional Experience
         </h1>
         <p className="max-w-[68ch] text-lg leading-relaxed text-muted">
-          Forward-deployed engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. At Blue Yonder I owned backend systems at scale. At MoZeus I own 7+ enterprise accounts end to end and built the deployment platform supporting ~20% annual revenue growth.
+          Forward-deployed engineer with 2+ years owning both client-facing delivery and the internal infrastructure that makes it scalable. Based in New York City, I now work at Moody&apos;s Analytics as an Assistant Director, AI Partnerships Engineer, where I build financial AI solutions directly in partner ecosystems for enterprise customers.
         </p>
       </div>
 
